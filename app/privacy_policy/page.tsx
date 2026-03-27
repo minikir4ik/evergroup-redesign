@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 export const metadata: Metadata = {
   title: "Privacy Policy | EVERGROUP",
   description:
-    "Privacy Policy for MoneyRun App Users. Learn how we collect, use, and protect your information.",
+    "Privacy Policy for EVERGROUP users. Learn how we collect, use, and protect your information.",
 };
 
 export default function PrivacyPolicyPage() {

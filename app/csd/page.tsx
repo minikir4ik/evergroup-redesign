@@ -218,7 +218,7 @@ const mockup = (
               width: "6px",
               height: "6px",
               borderRadius: "100px",
-              backgroundColor: "#22c55e",
+              backgroundColor: "var(--color-accent)",
             }}
           />
           <span

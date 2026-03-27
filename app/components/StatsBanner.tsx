@@ -90,10 +90,11 @@ function AnimatedStat({
 export default function StatsBanner() {
   return (
     <section
-      className="py-24 border-t border-b"
+      className="relative py-24 border-t border-b overflow-hidden"
       style={{ borderColor: "var(--color-border-subtle)" }}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="absolute inset-0 gradient-mesh opacity-50" />
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollAnimation>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-0">
             {stats.map((stat, index) => (

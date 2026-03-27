@@ -98,14 +98,14 @@ const barHeights = [40, 65, 50, 85, 55, 95, 70];
 
 function currencyColor(c: string) {
   if (c === "USD") return "var(--color-accent)";
-  if (c === "EUR") return "#22c55e";
-  if (c === "GBP") return "#a78bfa";
-  return "#f59e0b";
+  if (c === "EUR") return "var(--color-accent)";
+  if (c === "GBP") return "var(--color-text-muted)";
+  return "var(--color-text-muted)";
 }
 
 function statusColor(s: string) {
-  if (s === "Pending") return "#f59e0b";
-  return "#22c55e";
+  if (s === "Pending") return "var(--color-text-muted)";
+  return "var(--color-accent)";
 }
 
 /* ── Mockup ── */
@@ -122,7 +122,7 @@ const mockup = (
       <span
         style={{
           fontSize: "var(--text-xs)",
-          color: "#22c55e",
+          color: "var(--color-accent)",
           fontWeight: 500,
         }}
       >

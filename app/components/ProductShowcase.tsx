@@ -56,9 +56,9 @@ function TableRow({ cells, isLast }: { cells: React.ReactNode[]; isLast?: boolea
 function Badge({ text, variant = "default" }: { text: string; variant?: "default" | "success" | "warning" | "danger" }) {
   const colors = {
     default: { bg: "var(--color-accent-glow)", color: "var(--color-accent)" },
-    success: { bg: "rgba(34,197,94,0.15)", color: "#22c55e" },
-    warning: { bg: "rgba(234,179,8,0.15)", color: "#eab308" },
-    danger: { bg: "rgba(239,68,68,0.15)", color: "#ef4444" },
+    success: { bg: "rgba(34,197,94,0.15)", color: "var(--color-accent)" },
+    warning: { bg: "rgba(100,116,139,0.15)", color: "var(--color-text-muted)" },
+    danger: { bg: "rgba(100,116,139,0.15)", color: "var(--color-text-muted)" },
   };
   const c = colors[variant];
   return (
@@ -77,9 +77,9 @@ function CRCMockup() {
         <div className="relative flex h-20 w-20 items-center justify-center">
           <svg className="absolute inset-0 h-full w-full -rotate-90" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="40" fill="none" strokeWidth="6" style={{ stroke: "var(--color-border)" }} />
-            <circle cx="50" cy="50" r="40" fill="none" strokeWidth="6" strokeLinecap="round" strokeDasharray={`${87 * 2.51} ${251 - 87 * 2.51}`} style={{ stroke: "#22c55e" }} />
+            <circle cx="50" cy="50" r="40" fill="none" strokeWidth="6" strokeLinecap="round" strokeDasharray={`${87 * 2.51} ${251 - 87 * 2.51}`} style={{ stroke: "var(--color-accent)" }} />
           </svg>
-          <span className="text-lg font-bold" style={{ fontFamily: "var(--font-mono)", color: "#22c55e" }}>87</span>
+          <span className="text-lg font-bold" style={{ fontFamily: "var(--font-mono)", color: "var(--color-accent)" }}>87</span>
         </div>
       </div>
       {/* Status badges */}
@@ -199,7 +199,7 @@ function CSDMockup() {
             className="flex items-center gap-2 px-3 py-2"
             style={{ borderBottom: i < 2 ? "1px solid var(--color-border)" : "none" }}
           >
-            <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "#22c55e" }} />
+            <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "var(--color-accent)" }} />
             <span className="text-xs truncate" style={{ color: "var(--color-text-secondary)" }}>{a.action}</span>
             <span className="text-xs ml-auto shrink-0" style={{ color: "var(--color-text-muted)", fontFamily: "var(--font-mono)" }}>{a.time}</span>
           </div>

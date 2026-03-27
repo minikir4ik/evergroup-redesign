@@ -71,8 +71,9 @@ export default function ProductPageLayout({
       </div>
 
       {/* Hero */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="relative py-16 lg:py-24 overflow-hidden">
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Copy */}
             <ScrollAnimation>
@@ -295,10 +296,11 @@ export default function ProductPageLayout({
 
       {/* CTA */}
       <section
-        className="py-24 border-t text-center"
+        className="relative py-24 border-t text-center overflow-hidden"
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <ScrollAnimation>
             <h2
               className="text-3xl font-bold tracking-tight"

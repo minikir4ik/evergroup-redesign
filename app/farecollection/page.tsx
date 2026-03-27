@@ -119,7 +119,7 @@ const mockup = (
       <span
         style={{
           fontSize: "var(--text-xs)",
-          color: "#22c55e",
+          color: "var(--color-accent)",
           fontWeight: 500,
         }}
       >
@@ -208,7 +208,7 @@ const mockup = (
               <td className="py-2">
                 <span
                   style={{
-                    color: r.status === "Active" ? "#22c55e" : "#f59e0b",
+                    color: r.status === "Active" ? "var(--color-accent)" : "var(--color-text-muted)",
                     fontWeight: 500,
                   }}
                 >

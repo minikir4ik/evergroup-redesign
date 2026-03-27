@@ -95,15 +95,15 @@ const transactions = [
 ];
 
 function riskColor(level: string) {
-  if (level === "High") return "#ef4444";
-  if (level === "Medium") return "#f59e0b";
-  return "#22c55e";
+  if (level === "High") return "var(--color-text-muted)";
+  if (level === "Medium") return "var(--color-text-muted)";
+  return "var(--color-accent)";
 }
 
 function statusColor(status: string) {
-  if (status === "Flagged") return "#ef4444";
-  if (status === "Review") return "#f59e0b";
-  return "#22c55e";
+  if (status === "Flagged") return "var(--color-text-muted)";
+  if (status === "Review") return "var(--color-text-muted)";
+  return "var(--color-accent)";
 }
 
 /* ── Mockup ── */
@@ -145,7 +145,7 @@ const mockup = (
             height: "80px",
             borderRadius: "100px",
             border: "4px solid",
-            borderColor: "#f59e0b",
+            borderColor: "var(--color-text-muted)",
           }}
         >
           <span

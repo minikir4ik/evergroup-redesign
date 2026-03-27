@@ -11,10 +11,11 @@ export default function CTASection() {
 
   return (
     <section
-      className="py-32 border-t"
+      className="relative py-32 border-t overflow-hidden"
       style={{ borderColor: "var(--color-border-subtle)" }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <ScrollAnimation>
           <h2
             className="text-4xl lg:text-5xl font-bold tracking-tight"
@@ -26,7 +27,7 @@ export default function CTASection() {
         <ScrollAnimation delay={0.1}>
           <button
             onClick={scrollToContact}
-            className="mt-10 px-10 py-4 rounded-full font-medium text-lg transition-all duration-200 hover:translate-y-[-2px]"
+            className="mt-10 px-10 py-4 rounded-full font-medium text-lg transition-all duration-200 hover:translate-y-[-2px] cursor-pointer"
             style={{
               backgroundColor: "var(--color-accent)",
               color: "var(--color-on-accent)",

@@ -111,7 +111,7 @@ export default function Footer() {
             className="text-xs"
             style={{ color: "var(--color-text-muted)" }}
           >
-            &copy; 2024 Evergroup FZCO. All rights reserved.
+            &copy; 2025 Evergroup FZCO. All rights reserved.
           </p>
         </div>
       </div>

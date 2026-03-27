@@ -68,8 +68,8 @@ export default function ContactSection() {
                   required
                   className="w-full px-4 py-3 rounded-lg bg-transparent border text-white transition-colors duration-200 focus:outline-none"
                   style={{ borderColor: "var(--color-border)", fontFamily: "var(--font-body)" }}
-                  onFocus={(e) => (e.target.style.borderColor = "var(--color-accent)")}
-                  onBlur={(e) => (e.target.style.borderColor = "var(--color-border)")}
+                  onFocus={(e) => { e.target.style.borderColor = "var(--color-accent)"; e.target.style.backgroundColor = "rgba(79,110,247,0.05)"; }}
+                  onBlur={(e) => { e.target.style.borderColor = "var(--color-border)"; e.target.style.backgroundColor = "transparent"; }}
                 />
               </div>
 
@@ -88,8 +88,8 @@ export default function ContactSection() {
                   required
                   className="w-full px-4 py-3 rounded-lg bg-transparent border text-white transition-colors duration-200 focus:outline-none"
                   style={{ borderColor: "var(--color-border)", fontFamily: "var(--font-body)" }}
-                  onFocus={(e) => (e.target.style.borderColor = "var(--color-accent)")}
-                  onBlur={(e) => (e.target.style.borderColor = "var(--color-border)")}
+                  onFocus={(e) => { e.target.style.borderColor = "var(--color-accent)"; e.target.style.backgroundColor = "rgba(79,110,247,0.05)"; }}
+                  onBlur={(e) => { e.target.style.borderColor = "var(--color-border)"; e.target.style.backgroundColor = "transparent"; }}
                 />
               </div>
 
@@ -108,8 +108,8 @@ export default function ContactSection() {
                   required
                   className="w-full px-4 py-3 rounded-lg bg-transparent border text-white transition-colors duration-200 focus:outline-none resize-none"
                   style={{ borderColor: "var(--color-border)", fontFamily: "var(--font-body)" }}
-                  onFocus={(e) => (e.target.style.borderColor = "var(--color-accent)")}
-                  onBlur={(e) => (e.target.style.borderColor = "var(--color-border)")}
+                  onFocus={(e) => { e.target.style.borderColor = "var(--color-accent)"; (e.target as HTMLTextAreaElement).style.backgroundColor = "rgba(79,110,247,0.05)"; }}
+                  onBlur={(e) => { e.target.style.borderColor = "var(--color-border)"; (e.target as HTMLTextAreaElement).style.backgroundColor = "transparent"; }}
                 />
               </div>
 

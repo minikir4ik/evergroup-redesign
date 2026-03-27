@@ -3,22 +3,36 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
-/* ── Product links used in the dropdown ── */
 const products = [
-  { label: "CRC", href: "/crc", description: "Compliance & Risk Control" },
-  { label: "Momentum Pay", href: "/momentumpay", description: "Payment Processing" },
-  { label: "Fare Collection", href: "/farecollection", description: "Transit Fare Systems" },
-  { label: "CSD", href: "/csd", description: "Custom Software Development" },
+  { label: "CRC", desc: "Compliance Risk Control", href: "/crc" },
+  { label: "Momentum Pay", desc: "Payment Processing", href: "/momentumpay" },
+  { label: "Fare Collection", desc: "Transit Fare Systems", href: "/farecollection" },
+  { label: "CSD", desc: "Custom Software", href: "/csd" },
 ];
+
+const scrollToContact = (e: React.MouseEvent) => {
+  e.preventDefault();
+  const el = document.getElementById("contact");
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  } else {
+    window.location.href = "/#contact";
+  }
+};
+
+const ChevronDown = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+  </svg>
+);
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
-  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [dropOpen, setDropOpen] = useState(false);
+  const [mobileDropOpen, setMobileDropOpen] = useState(false);
+  const dropRef = useRef<HTMLDivElement>(null);
 
-  /* ── Scroll listener ── */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
@@ -26,241 +40,182 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* ── Close dropdown on outside click ── */
   useEffect(() => {
-    const onClickOutside = (e: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(e.target as Node)
-      ) {
-        setProductsOpen(false);
-      }
+    const handler = (e: MouseEvent) => {
+      if (dropRef.current && !dropRef.current.contains(e.target as Node)) setDropOpen(false);
     };
-    document.addEventListener("mousedown", onClickOutside);
-    return () => document.removeEventListener("mousedown", onClickOutside);
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  /* ── Lock body scroll when mobile menu is open ── */
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#0a0f1e]/80 backdrop-blur-xl border-b border-slate-800/50"
-          : "bg-transparent border-b border-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50"
+      style={{
+        transition: "background-color var(--duration-medium) var(--ease-smooth), border-color var(--duration-medium) var(--ease-smooth)",
+        backgroundColor: scrolled ? "rgba(10,15,30,0.8)" : "transparent",
+        borderBottom: `1px solid ${scrolled ? "var(--color-border-subtle)" : "transparent"}`,
+        backdropFilter: scrolled ? "blur(16px)" : "none",
+        WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
+      }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto" style={{ padding: "0 var(--space-6)" }}>
         <div className="flex items-center justify-between h-16">
-          {/* ── Logo ── */}
+          {/* Logo */}
           <Link
             href="/"
-            className="text-white text-lg font-bold tracking-tight"
+            className="font-bold tracking-tight text-xl"
+            style={{ fontFamily: "var(--font-display)", color: "var(--color-text)" }}
           >
             EVERGROUP
           </Link>
 
-          {/* ── Desktop nav ── */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop nav */}
+          <div className="hidden md:flex items-center" style={{ gap: "var(--space-8)" }}>
             {/* Products dropdown */}
-            <div
-              ref={dropdownRef}
-              className="relative"
-              onMouseEnter={() => setProductsOpen(true)}
-              onMouseLeave={() => setProductsOpen(false)}
-            >
+            <div ref={dropRef} className="relative" onMouseEnter={() => setDropOpen(true)} onMouseLeave={() => setDropOpen(false)}>
               <button
-                className="flex items-center gap-1 text-sm text-slate-300 hover:text-white transition-colors"
-                onClick={() => setProductsOpen((prev) => !prev)}
+                className="flex items-center cursor-pointer"
+                style={{ gap: "var(--space-1)", fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", transition: "color var(--duration-base) var(--ease-smooth)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-accent)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-secondary)")}
+                onClick={() => setDropOpen((p) => !p)}
+                aria-expanded={dropOpen}
               >
                 Products
-                <svg
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                    productsOpen ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${dropOpen ? "rotate-180" : ""}`} />
               </button>
 
-              {/* Dropdown panel */}
               <div
-                className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-all duration-200 ${
-                  productsOpen
-                    ? "opacity-100 translate-y-0 pointer-events-auto"
-                    : "opacity-0 -translate-y-1 pointer-events-none"
-                }`}
+                className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+                style={{
+                  opacity: dropOpen ? 1 : 0,
+                  transform: `translateX(-50%) translateY(${dropOpen ? "0" : "-4px"})`,
+                  pointerEvents: dropOpen ? "auto" : "none",
+                  transition: "opacity var(--duration-base) var(--ease-smooth), transform var(--duration-base) var(--ease-smooth)",
+                }}
               >
-                <div className="w-64 rounded-xl bg-[#0f1629] border border-slate-800/80 shadow-2xl shadow-black/40 p-2">
-                  {products.map((product) => (
+                <div
+                  className="w-64 rounded-lg"
+                  style={{ background: "var(--color-surface)", border: "1px solid var(--color-border)", padding: "var(--space-2)" }}
+                >
+                  {products.map((p) => (
                     <Link
-                      key={product.href}
-                      href={product.href}
-                      className="flex flex-col gap-0.5 rounded-lg px-3 py-2.5 hover:bg-slate-800/50 transition-colors"
-                      onClick={() => setProductsOpen(false)}
+                      key={p.href}
+                      href={p.href}
+                      onClick={() => setDropOpen(false)}
+                      className="flex flex-col rounded-md"
+                      style={{ padding: "var(--space-3) var(--space-3)", transition: "background-color var(--duration-fast) var(--ease-smooth)" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--color-surface-raised)")}
+                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
                     >
-                      <span className="text-sm font-medium text-white">
-                        {product.label}
-                      </span>
-                      <span className="text-xs text-slate-400">
-                        {product.description}
-                      </span>
+                      <span style={{ fontSize: "var(--text-sm)", fontWeight: 500, color: "var(--color-text)" }}>{p.label}</span>
+                      <span style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)" }}>{p.desc}</span>
                     </Link>
                   ))}
                 </div>
               </div>
             </div>
 
-            {/* Company */}
             <a
-              href="/#about"
-              className="text-sm text-slate-300 hover:text-white transition-colors"
+              href="#"
+              style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", transition: "color var(--duration-base) var(--ease-smooth)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-accent)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-secondary)")}
             >
               Company
             </a>
 
-            {/* Contact */}
             <a
-              href="mailto:ask@evergroup.tech"
-              className="text-sm text-slate-300 hover:text-white transition-colors"
+              href="#contact"
+              onClick={scrollToContact}
+              style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", transition: "color var(--duration-base) var(--ease-smooth)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-accent)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-secondary)")}
             >
               Contact
             </a>
 
-            {/* CTA */}
             <a
-              href="mailto:ask@evergroup.tech"
-              className="ml-2 inline-flex items-center justify-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-500 transition-colors"
+              href="#contact"
+              onClick={scrollToContact}
+              className="rounded-full cursor-pointer"
+              style={{
+                marginLeft: "var(--space-2)",
+                padding: "var(--space-2) var(--space-6)",
+                fontSize: "var(--text-sm)",
+                fontWeight: 500,
+                backgroundColor: "var(--color-accent)",
+                color: "var(--color-on-accent)",
+                transition: "transform var(--duration-base) var(--ease-spring), background-color var(--duration-base) var(--ease-smooth)",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.backgroundColor = "var(--color-accent-hover)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.backgroundColor = "var(--color-accent)"; }}
             >
               Get Started
             </a>
           </div>
 
-          {/* ── Mobile hamburger ── */}
+          {/* Mobile hamburger */}
           <button
-            className="md:hidden text-white p-2 -mr-2"
-            onClick={() => setMobileOpen((prev) => !prev)}
-            aria-label="Toggle menu"
+            className="md:hidden p-2 -mr-2 cursor-pointer"
+            style={{ color: "var(--color-text)" }}
+            onClick={() => setMobileOpen((p) => !p)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
           >
-            {mobileOpen ? (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+            </svg>
           </button>
         </div>
       </div>
 
-      {/* ── Mobile menu ── */}
+      {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          mobileOpen ? "max-h-[28rem] opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className="md:hidden overflow-hidden"
+        style={{
+          maxHeight: mobileOpen ? "28rem" : "0",
+          opacity: mobileOpen ? 1 : 0,
+          transition: "max-height var(--duration-medium) var(--ease-smooth), opacity var(--duration-medium) var(--ease-smooth)",
+        }}
       >
-        <div className="bg-[#0a0f1e]/95 backdrop-blur-xl border-t border-slate-800/50 px-6 py-5 flex flex-col gap-1">
-          {/* Products accordion */}
+        <div style={{ backgroundColor: "rgba(10,15,30,0.95)", backdropFilter: "blur(16px)", borderTop: "1px solid var(--color-border-subtle)", padding: "var(--space-6)" }} className="flex flex-col" role="menu">
           <button
-            className="flex items-center justify-between w-full py-3 text-sm text-slate-300 hover:text-white transition-colors"
-            onClick={() => setMobileProductsOpen((prev) => !prev)}
+            className="flex items-center justify-between w-full cursor-pointer"
+            style={{ padding: "var(--space-3) 0", fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", transition: "color var(--duration-base) var(--ease-smooth)" }}
+            onClick={() => setMobileDropOpen((p) => !p)}
+            aria-expanded={mobileDropOpen}
           >
             Products
-            <svg
-              className={`w-4 h-4 transition-transform duration-200 ${
-                mobileProductsOpen ? "rotate-180" : ""
-              }`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
+            <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileDropOpen ? "rotate-180" : ""}`} />
           </button>
 
-          <div
-            className={`overflow-hidden transition-all duration-200 ${
-              mobileProductsOpen ? "max-h-60" : "max-h-0"
-            }`}
-          >
-            <div className="pl-4 pb-2 flex flex-col gap-1">
-              {products.map((product) => (
-                <Link
-                  key={product.href}
-                  href={product.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="py-2 text-sm text-slate-400 hover:text-white transition-colors"
-                >
-                  {product.label}
+          <div className="overflow-hidden" style={{ maxHeight: mobileDropOpen ? "15rem" : "0", transition: "max-height var(--duration-base) var(--ease-smooth)" }}>
+            <div className="flex flex-col" style={{ paddingLeft: "var(--space-4)", paddingBottom: "var(--space-2)", gap: "var(--space-1)" }}>
+              {products.map((p) => (
+                <Link key={p.href} href={p.href} onClick={() => setMobileOpen(false)} style={{ padding: "var(--space-2) 0", fontSize: "var(--text-sm)", color: "var(--color-text-muted)", transition: "color var(--duration-base) var(--ease-smooth)" }} role="menuitem">
+                  {p.label}
                 </Link>
               ))}
             </div>
           </div>
 
-          {/* Company */}
-          <a
-            href="/#about"
-            onClick={() => setMobileOpen(false)}
-            className="py-3 text-sm text-slate-300 hover:text-white transition-colors"
-          >
-            Company
-          </a>
+          <a href="#" onClick={() => setMobileOpen(false)} style={{ padding: "var(--space-3) 0", fontSize: "var(--text-sm)", color: "var(--color-text-secondary)" }} role="menuitem">Company</a>
 
-          {/* Contact */}
-          <a
-            href="mailto:ask@evergroup.tech"
-            onClick={() => setMobileOpen(false)}
-            className="py-3 text-sm text-slate-300 hover:text-white transition-colors"
-          >
-            Contact
-          </a>
+          <a href="#contact" onClick={(e) => { scrollToContact(e); setMobileOpen(false); }} style={{ padding: "var(--space-3) 0", fontSize: "var(--text-sm)", color: "var(--color-text-secondary)" }} role="menuitem">Contact</a>
 
-          {/* CTA */}
           <a
-            href="mailto:ask@evergroup.tech"
-            onClick={() => setMobileOpen(false)}
-            className="mt-3 inline-flex items-center justify-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-blue-500 transition-colors"
+            href="#contact"
+            onClick={(e) => { scrollToContact(e); setMobileOpen(false); }}
+            className="rounded-full text-center"
+            style={{ marginTop: "var(--space-3)", padding: "var(--space-3) var(--space-6)", fontSize: "var(--text-sm)", fontWeight: 500, backgroundColor: "var(--color-accent)", color: "var(--color-on-accent)" }}
+            role="menuitem"
           >
             Get Started
           </a>

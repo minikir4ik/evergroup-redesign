@@ -20,7 +20,7 @@ export default function Hero() {
         <div className="text-center max-w-4xl mx-auto">
           <ScrollAnimation delay={0.1}>
             <h1
-              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-[0.95]"
+              className="text-7xl lg:text-8xl font-black tracking-tighter leading-[0.95]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Software That

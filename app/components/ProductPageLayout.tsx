@@ -78,7 +78,7 @@ export default function ProductPageLayout({
             {/* Left: Copy */}
             <ScrollAnimation>
               <h1
-                className="text-5xl lg:text-6xl font-black tracking-tighter"
+                className="text-5xl lg:text-7xl font-black tracking-tighter"
                 style={{
                   fontFamily: "var(--font-display)",
                   lineHeight: 1.1,
@@ -158,7 +158,7 @@ export default function ProductPageLayout({
               Features
             </p>
             <h2
-              className="text-3xl font-bold tracking-tight"
+              className="text-4xl font-bold tracking-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Key capabilities
@@ -226,7 +226,7 @@ export default function ProductPageLayout({
               Process
             </p>
             <h2
-              className="text-3xl font-bold tracking-tight"
+              className="text-4xl font-bold tracking-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
               How it works
@@ -303,7 +303,7 @@ export default function ProductPageLayout({
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <ScrollAnimation>
             <h2
-              className="text-3xl font-bold tracking-tight"
+              className="text-4xl font-bold tracking-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Ready to get started?

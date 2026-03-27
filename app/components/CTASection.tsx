@@ -18,7 +18,7 @@ export default function CTASection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <ScrollAnimation>
           <h2
-            className="text-4xl lg:text-5xl font-bold tracking-tight"
+            className="text-5xl lg:text-6xl font-bold tracking-tight"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Ready to modernize your infrastructure?

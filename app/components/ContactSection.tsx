@@ -26,7 +26,7 @@ export default function ContactSection() {
             Contact
           </p>
           <h2
-            className="text-4xl font-bold tracking-tight mb-12"
+            className="text-5xl font-bold tracking-tight mb-12"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Let&apos;s build together.

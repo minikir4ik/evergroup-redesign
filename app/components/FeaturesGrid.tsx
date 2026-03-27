@@ -95,7 +95,7 @@ export default function FeaturesGrid() {
         </ScrollAnimation>
         <ScrollAnimation delay={0.05}>
           <h2
-            className="text-4xl font-bold tracking-tight text-center mt-4"
+            className="text-5xl font-bold tracking-tight text-center mt-4"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Everything your financial team needs.

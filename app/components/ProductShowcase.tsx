@@ -265,7 +265,7 @@ export default function ProductShowcase() {
         </ScrollAnimation>
         <ScrollAnimation delay={0.05}>
           <h2
-            className="text-4xl font-bold tracking-tight text-center mt-4"
+            className="text-5xl font-bold tracking-tight text-center mt-4"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Four products. One platform.
@@ -285,7 +285,7 @@ export default function ProductShowcase() {
                   {/* Text side */}
                   <div className={!isOdd ? "lg:order-last" : ""}>
                     <h3
-                      className="text-2xl font-bold"
+                      className="text-3xl font-bold"
                       style={{ fontFamily: "var(--font-display)" }}
                     >
                       {product.name}

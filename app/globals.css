@@ -70,6 +70,22 @@ body {
   color: var(--color-on-accent);
 }
 
+.breadcrumb-link {
+  color: var(--color-text-muted);
+  transition: color var(--duration-base) var(--ease-smooth);
+}
+.breadcrumb-link:hover {
+  color: var(--color-accent);
+}
+
+.privacy-link {
+  color: var(--color-accent);
+  transition: color var(--duration-base) var(--ease-smooth);
+}
+.privacy-link:hover {
+  color: var(--color-accent-hover);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

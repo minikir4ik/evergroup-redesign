@@ -17,17 +17,47 @@ export default function TabSwitcher({ tabs }: { tabs: Tab[] }) {
           <button
             key={i}
             onClick={() => setActive(i)}
-            className={`px-8 py-3.5 rounded-xl font-semibold text-sm tracking-wide transition-all duration-200 cursor-pointer ${
-              active === i
-                ? "bg-blue-600 text-white shadow-lg shadow-blue-600/20"
-                : "bg-slate-800/50 text-slate-400 hover:bg-slate-700/50"
-            }`}
+            className="px-8 py-3.5 rounded-xl font-semibold tracking-wide cursor-pointer"
+            style={{
+              fontSize: "var(--text-sm)",
+              backgroundColor:
+                active === i ? "var(--color-accent)" : "var(--color-surface)",
+              color:
+                active === i
+                  ? "var(--color-on-accent)"
+                  : "var(--color-text-secondary)",
+              boxShadow:
+                active === i
+                  ? "0 8px 24px var(--color-accent-glow)"
+                  : "none",
+              transition:
+                "background-color var(--duration-base) var(--ease-smooth), color var(--duration-base) var(--ease-smooth), box-shadow var(--duration-base) var(--ease-smooth)",
+            }}
+            onMouseEnter={(e) => {
+              if (active !== i) {
+                e.currentTarget.style.backgroundColor =
+                  "var(--color-surface-raised)";
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (active !== i) {
+                e.currentTarget.style.backgroundColor =
+                  "var(--color-surface)";
+              }
+            }}
           >
             {tab.label}
           </button>
         ))}
       </div>
-      <div className="transition-all duration-300">{tabs[active].content}</div>
+      <div
+        style={{
+          transition:
+            "opacity var(--duration-medium) var(--ease-smooth)",
+        }}
+      >
+        {tabs[active].content}
+      </div>
     </div>
   );
 }

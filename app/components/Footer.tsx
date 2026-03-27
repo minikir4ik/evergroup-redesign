@@ -1,15 +1,10 @@
 import Link from "next/link";
 
-const productLinks = [
+const navLinks = [
   { label: "CRC", href: "/crc" },
   { label: "Momentum Pay", href: "/momentumpay" },
   { label: "Fare Collection", href: "/farecollection" },
-  { label: "CSD", href: "/csd" },
-];
-
-const companyLinks = [
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "mailto:ask@evergroup.tech" },
+  { label: "Custom Software", href: "/csd" },
 ];
 
 const legalLinks = [
@@ -18,32 +13,52 @@ const legalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0f1e] pt-16 pb-8">
+    <footer
+      className="py-16 border-t"
+      style={{ borderColor: "var(--color-accent)" }}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* ── Top: Logo + tagline ── */}
-        <div className="mb-12">
-          <Link
-            href="/"
-            className="text-white text-lg font-bold tracking-tight"
-          >
-            EVERGROUP
-          </Link>
-          <p className="mt-2 text-slate-400 text-sm max-w-xs">
-            Financial infrastructure, modernized.
-          </p>
-        </div>
-
-        {/* ── Middle: Link columns ── */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12">
-          {/* Products */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Column 1: Logo + Tagline */}
           <div>
-            <h3 className="text-white text-sm font-semibold mb-4">Products</h3>
+            <p
+              className="text-xl font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              EVERGROUP
+            </p>
+            <p
+              className="mt-2 text-sm"
+              style={{ color: "var(--color-text-muted)" }}
+            >
+              Software that powers finance.
+            </p>
+          </div>
+
+          {/* Column 2: Navigation */}
+          <div>
+            <h3
+              className="text-xs uppercase tracking-widest mb-4"
+              style={{
+                color: "var(--color-text-muted)",
+                fontFamily: "var(--font-mono)",
+              }}
+            >
+              Navigation
+            </h3>
             <ul className="flex flex-col gap-3">
-              {productLinks.map((link) => (
+              {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-white transition-colors text-sm"
+                    className="text-sm transition-colors"
+                    style={{ color: "var(--color-text-muted)" }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.color = "var(--color-accent)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = "var(--color-text-muted)")
+                    }
                   >
                     {link.label}
                   </Link>
@@ -52,41 +67,30 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Column 3: Legal */}
           <div>
-            <h3 className="text-white text-sm font-semibold mb-4">Company</h3>
-            <ul className="flex flex-col gap-3">
-              {companyLinks.map((link) => (
-                <li key={link.href}>
-                  {link.href.startsWith("mailto:") ? (
-                    <a
-                      href={link.href}
-                      className="text-slate-400 hover:text-white transition-colors text-sm"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <a
-                      href={link.href}
-                      className="text-slate-400 hover:text-white transition-colors text-sm"
-                    >
-                      {link.label}
-                    </a>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="text-white text-sm font-semibold mb-4">Legal</h3>
+            <h3
+              className="text-xs uppercase tracking-widest mb-4"
+              style={{
+                color: "var(--color-text-muted)",
+                fontFamily: "var(--font-mono)",
+              }}
+            >
+              Legal
+            </h3>
             <ul className="flex flex-col gap-3">
               {legalLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-white transition-colors text-sm"
+                    className="text-sm transition-colors"
+                    style={{ color: "var(--color-text-muted)" }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.color = "var(--color-accent)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = "var(--color-text-muted)")
+                    }
                   >
                     {link.label}
                   </Link>
@@ -96,9 +100,15 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ── Bottom: Divider + copyright ── */}
-        <div className="border-t border-slate-800 pt-8">
-          <p className="text-slate-500 text-sm">
+        {/* Bottom bar */}
+        <div
+          className="pt-8 mt-8 border-t"
+          style={{ borderColor: "var(--color-border-subtle)" }}
+        >
+          <p
+            className="text-xs"
+            style={{ color: "var(--color-text-muted)" }}
+          >
             &copy; 2024 Evergroup FZCO. All rights reserved.
           </p>
         </div>

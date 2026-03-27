@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Syne, Epilogue, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "./components/SmoothScroll";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -39,7 +40,9 @@ export default function RootLayout({
       lang="en"
       className={`${syne.variable} ${epilogue.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="min-h-screen flex flex-col">{children}</body>
+      <body className="min-h-screen flex flex-col">
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }

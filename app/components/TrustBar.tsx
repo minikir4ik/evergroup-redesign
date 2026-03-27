@@ -1,6 +1,6 @@
 "use client";
 
-import ScrollReveal from "./ScrollReveal";
+import ScrollAnimation from "./ScrollAnimation";
 
 const companies = [
   "ACME BANK",
@@ -12,26 +12,34 @@ const companies = [
 
 export default function TrustBar() {
   return (
-    <section className="border-t border-b border-slate-800/50 py-12">
-      <div className="max-w-6xl mx-auto px-6">
-        <ScrollReveal>
-          <p className="text-sm text-slate-500 uppercase tracking-widest text-center">
-            Trusted by teams in finance, transport, and enterprise
+    <section className="py-16 border-t border-b" style={{ borderColor: "var(--color-border-subtle)" }}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <ScrollAnimation>
+          <p
+            className="text-center text-sm mb-10"
+            style={{ color: "var(--color-text-muted)", fontFamily: "var(--font-body)" }}
+          >
+            Powering teams across finance, transport, and enterprise
           </p>
-        </ScrollReveal>
-
-        <ScrollReveal delay={150}>
-          <div className="mt-8 flex flex-wrap items-center justify-evenly gap-8">
+        </ScrollAnimation>
+        <ScrollAnimation delay={0.1}>
+          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-4">
             {companies.map((name) => (
               <span
                 key={name}
-                className="text-slate-600 font-semibold text-sm tracking-wide"
+                className="text-sm tracking-widest font-medium uppercase"
+                style={{
+                  color: "var(--color-text-muted)",
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "var(--text-xs)",
+                  opacity: 0.5,
+                }}
               >
                 {name}
               </span>
             ))}
           </div>
-        </ScrollReveal>
+        </ScrollAnimation>
       </div>
     </section>
   );

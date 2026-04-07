@@ -5,7 +5,6 @@ import FeaturesGrid from "./components/FeaturesGrid";
 import ProductShowcase from "./components/ProductShowcase";
 import CasesSection from "./components/CasesSection";
 import StatsBanner from "./components/StatsBanner";
-import CTASection from "./components/CTASection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 
@@ -19,7 +18,6 @@ export default function Home() {
       <ProductShowcase />
       <CasesSection />
       <StatsBanner />
-      <CTASection />
       <ContactSection />
       <Footer />
     </>

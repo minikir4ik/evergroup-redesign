@@ -1,118 +1,36 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
-const navLinks = [
+const links = [
   { label: "CRC", href: "/crc" },
   { label: "Momentum Pay", href: "/momentumpay" },
   { label: "Fare Collection", href: "/farecollection" },
   { label: "Custom Software", href: "/csd" },
-];
-
-const legalLinks = [
   { label: "Privacy Policy", href: "/privacy_policy" },
 ];
 
 export default function Footer() {
   return (
-    <footer
-      className="py-16 border-t"
-      style={{ borderColor: "var(--color-accent)" }}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Column 1: Logo + Tagline */}
-          <div>
-            <p
-              className="text-xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              EVERGROUP
-            </p>
-            <p
-              className="mt-2 text-sm"
-              style={{ color: "var(--color-text-muted)" }}
-            >
-              Software that powers finance.
-            </p>
-          </div>
-
-          {/* Column 2: Navigation */}
-          <div>
-            <h3
-              className="text-xs uppercase tracking-widest mb-4"
-              style={{
-                color: "var(--color-text-muted)",
-                fontFamily: "var(--font-mono)",
-              }}
-            >
-              Navigation
-            </h3>
-            <ul className="flex flex-col gap-3">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm transition-colors"
-                    style={{ color: "var(--color-text-muted)" }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "var(--color-accent)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = "var(--color-text-muted)")
-                    }
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 3: Legal */}
-          <div>
-            <h3
-              className="text-xs uppercase tracking-widest mb-4"
-              style={{
-                color: "var(--color-text-muted)",
-                fontFamily: "var(--font-mono)",
-              }}
-            >
-              Legal
-            </h3>
-            <ul className="flex flex-col gap-3">
-              {legalLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm transition-colors"
-                    style={{ color: "var(--color-text-muted)" }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "var(--color-accent)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = "var(--color-text-muted)")
-                    }
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <footer className="border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#0f0f0f" }}>
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <Link href="/">
+            <Image src="/logos/evergroup-logo.png" alt="EVERGROUP" width={160} height={32} className="h-8 w-auto" />
+          </Link>
+          <nav className="flex flex-wrap items-center gap-6">
+            {links.map((link) => (
+              <Link key={link.href} href={link.href} className="text-sm transition-colors" style={{ color: "#666666" }}>
+                {link.label}
+              </Link>
+            ))}
+          </nav>
         </div>
-
-        {/* Bottom bar */}
-        <div
-          className="pt-8 mt-8 border-t"
-          style={{ borderColor: "var(--color-border-subtle)" }}
-        >
-          <p
-            className="text-xs"
-            style={{ color: "var(--color-text-muted)" }}
-          >
-            &copy; 2025 Evergroup FZCO. All rights reserved.
-          </p>
+      </div>
+      <div className="border-t" style={{ borderColor: "#2a2a2a" }}>
+        <div className="max-w-6xl mx-auto px-6 py-6">
+          <p style={{ fontSize: "11px", color: "#666666" }}>&copy; 2026 Evergroup FZCO. All rights reserved.</p>
         </div>
       </div>
     </footer>

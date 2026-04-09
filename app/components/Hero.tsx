@@ -28,7 +28,7 @@ export default function Hero() {
           </ScrollAnimation>
 
           <ScrollAnimation delay={0.2}>
-            <p className="mt-8 max-w-2xl mx-auto" style={{ fontSize: "16px", lineHeight: 1.7, color: "#a0a0a0" }}>
+            <p className="mt-8 max-w-2xl mx-auto" style={{ fontSize: "18px", lineHeight: 1.8, color: "#a0a0a0" }}>
               Compliance, payments, and fare collection systems built for financial institutions and transport operators.
             </p>
           </ScrollAnimation>
@@ -96,9 +96,9 @@ export default function Hero() {
                   { label: "Avg. Latency", value: "42ms", change: "-15%" },
                 ].map((m) => (
                   <div key={m.label} className="rounded-lg p-4" style={{ border: "1px solid #2a2a2a", background: "#141414" }}>
-                    <p style={{ fontSize: "11px", color: "#666666" }}>{m.label}</p>
+                    <p style={{ fontSize: "13px", color: "#666666" }}>{m.label}</p>
                     <p className="text-xl font-bold mt-1" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{m.value}</p>
-                    <p style={{ fontSize: "11px", color: "#6abf4b" }} className="mt-1">{m.change}</p>
+                    <p style={{ fontSize: "13px", color: "#6abf4b" }} className="mt-1">{m.change}</p>
                   </div>
                 ))}
               </div>
@@ -115,7 +115,7 @@ export default function Hero() {
               </div>
 
               <div className="hidden sm:block rounded-lg overflow-hidden" style={{ border: "1px solid #2a2a2a" }}>
-                <div className="grid grid-cols-4 gap-4 px-4 py-2" style={{ fontSize: "11px", color: "#666666", borderBottom: "1px solid #2a2a2a", fontFamily: "var(--font-mono)" }}>
+                <div className="grid grid-cols-4 gap-4 px-4 py-2" style={{ fontSize: "13px", color: "#666666", borderBottom: "1px solid #2a2a2a", fontFamily: "var(--font-mono)" }}>
                   <span>Transaction</span><span>Amount</span><span>Status</span><span>Date</span>
                 </div>
                 {[

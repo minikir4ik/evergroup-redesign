@@ -5,7 +5,7 @@ import ScrollAnimation, { StaggerContainer } from "./ScrollAnimation";
 const features = [
   {
     title: "Compliance Automation",
-    description: "Real-time monitoring and regulatory reporting.",
+    description: "Real-time monitoring and regulatory reporting. Covers AML, KYC, and sanctions screening across multiple jurisdictions.",
     stat: "50+ data sources",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" strokeWidth={1.5} stroke="#6abf4b" strokeLinecap="round" strokeLinejoin="round">
@@ -16,7 +16,7 @@ const features = [
   },
   {
     title: "Payment Processing",
-    description: "Multi-currency settlement and merchant analytics.",
+    description: "Multi-currency settlement and merchant analytics. Supports instant payouts to contractors and suppliers worldwide.",
     stat: "50+ currencies",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" strokeWidth={1.5} stroke="#6abf4b" strokeLinecap="round" strokeLinejoin="round">
@@ -26,7 +26,7 @@ const features = [
   },
   {
     title: "Fare Collection",
-    description: "Contactless transit payments and route optimization.",
+    description: "Contactless transit payments and route optimization. Handles NFC, QR, and bank card acceptance at scale.",
     stat: "48K+ daily rides",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" strokeWidth={1.5} stroke="#6abf4b" strokeLinecap="round" strokeLinejoin="round">
@@ -39,7 +39,7 @@ const features = [
   },
   {
     title: "Custom Development",
-    description: "Full-cycle engineering for financial systems.",
+    description: "Full-cycle engineering for financial systems. From architecture through deployment with dedicated fintech teams.",
     stat: "94% test coverage",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" strokeWidth={1.5} stroke="#6abf4b" strokeLinecap="round" strokeLinejoin="round">
@@ -51,7 +51,7 @@ const features = [
   },
   {
     title: "Risk Intelligence",
-    description: "Automated KYC/AML screening and scoring.",
+    description: "Automated KYC/AML screening and scoring. Integrates with global watchlists and produces audit-ready reports.",
     stat: "1,847 KYC verified",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" strokeWidth={1.5} stroke="#6abf4b" strokeLinecap="round" strokeLinejoin="round">
@@ -62,7 +62,7 @@ const features = [
   },
   {
     title: "API Platform",
-    description: "Developer-first integrations and webhooks.",
+    description: "Developer-first integrations and webhooks. Comprehensive SDKs and sandbox environments for rapid prototyping.",
     stat: "<42ms latency",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" strokeWidth={1.5} stroke="#6abf4b" strokeLinecap="round" strokeLinejoin="round">
@@ -78,40 +78,40 @@ const features = [
 
 export default function FeaturesGrid() {
   return (
-    <section id="features" className="py-16 lg:py-24 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#141414" }}>
+    <section id="features" className="py-24 lg:py-32 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#141414" }}>
       <div className="max-w-6xl mx-auto px-6">
         <ScrollAnimation>
-          <p className="text-center uppercase" style={{ fontSize: "11px", letterSpacing: "0.15em", color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
+          <p className="text-center uppercase" style={{ fontSize: "12px", letterSpacing: "0.2em", color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
             Capabilities
           </p>
         </ScrollAnimation>
         <ScrollAnimation delay={0.05}>
-          <h2 className="text-5xl text-center mt-4" style={{ fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
+          <h2 className="text-center mt-4" style={{ fontSize: "52px", fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
             Platform Capabilities
           </h2>
         </ScrollAnimation>
         <ScrollAnimation delay={0.1}>
-          <p className="mt-3 max-w-xl" style={{ fontSize: "16px", lineHeight: 1.7, color: "#a0a0a0" }}>
+          <p className="mt-3 max-w-xl" style={{ fontSize: "18px", lineHeight: 1.8, color: "#a0a0a0" }}>
             Compliance, payments, transit, and engineering -- delivered as production-grade software.
           </p>
         </ScrollAnimation>
 
-        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16">
+        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-16">
           {features.map((feature) => (
             <div
               key={feature.title}
               data-stagger-item
-              className="rounded-xl p-6"
+              className="rounded-xl p-8"
               style={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a", transition: "all 200ms ease" }}
             >
               <div className="mb-4">{feature.icon}</div>
-              <h3 style={{ fontSize: "20px", fontWeight: 600, fontFamily: "var(--font-display)", color: "#ffffff" }}>
+              <h3 style={{ fontSize: "24px", fontWeight: 600, fontFamily: "var(--font-display)", color: "#ffffff" }}>
                 {feature.title}
               </h3>
-              <p className="mt-2" style={{ fontSize: "16px", lineHeight: 1.7, color: "#a0a0a0" }}>
+              <p className="mt-2" style={{ fontSize: "18px", lineHeight: 1.8, color: "#a0a0a0" }}>
                 {feature.description}
               </p>
-              <p className="mt-4" style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.15em", fontWeight: 600, color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
+              <p className="mt-4" style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.2em", fontWeight: 600, color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
                 {feature.stat}
               </p>
             </div>

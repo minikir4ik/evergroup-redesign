@@ -21,7 +21,7 @@ export default function Footer() {
           </Link>
           <nav className="flex flex-wrap items-center gap-6">
             {links.map((link) => (
-              <Link key={link.href} href={link.href} className="text-sm transition-colors" style={{ color: "#666666" }}>
+              <Link key={link.href} href={link.href} className="transition-colors" style={{ fontSize: "15px", color: "#a0a0a0" }}>
                 {link.label}
               </Link>
             ))}
@@ -30,7 +30,7 @@ export default function Footer() {
       </div>
       <div className="border-t" style={{ borderColor: "#2a2a2a" }}>
         <div className="max-w-6xl mx-auto px-6 py-6">
-          <p style={{ fontSize: "11px", color: "#666666" }}>&copy; 2026 Evergroup FZCO. All rights reserved.</p>
+          <p style={{ fontSize: "13px", color: "#a0a0a0" }}>&copy; 2026 Evergroup FZCO. All rights reserved.</p>
         </div>
       </div>
     </footer>

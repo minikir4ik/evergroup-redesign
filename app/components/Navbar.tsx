@@ -65,8 +65,10 @@ export default function Navbar() {
             <div ref={dropRef} className="relative" onMouseEnter={() => setDropOpen(true)} onMouseLeave={() => setDropOpen(false)}>
               <button
                 className="flex items-center gap-1 cursor-pointer"
-                style={{ fontSize: "13px", color: "#a0a0a0" }}
+                style={{ fontSize: "16px", color: "#a0a0a0", transition: "color 200ms ease" }}
                 onClick={() => setDropOpen((p) => !p)}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#a0a0a0")}
                 aria-expanded={dropOpen}
               >
                 Products
@@ -98,8 +100,8 @@ export default function Navbar() {
               </div>
             </div>
 
-            <a href="#" style={{ fontSize: "13px", color: "#a0a0a0" }}>Company</a>
-            <a href="#contact" onClick={scrollToContact} style={{ fontSize: "13px", color: "#a0a0a0" }}>Contact</a>
+            <a href="#" style={{ fontSize: "16px", color: "#a0a0a0", transition: "color 200ms ease" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")} onMouseLeave={(e) => (e.currentTarget.style.color = "#a0a0a0")}>Company</a>
+            <a href="#contact" onClick={scrollToContact} style={{ fontSize: "16px", color: "#a0a0a0", transition: "color 200ms ease" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")} onMouseLeave={(e) => (e.currentTarget.style.color = "#a0a0a0")}>Contact</a>
 
             <a
               href="#contact"
@@ -136,7 +138,7 @@ export default function Navbar() {
         <div style={{ backgroundColor: "rgba(15,15,15,0.95)", backdropFilter: "blur(16px)", borderTop: "1px solid #2a2a2a", padding: "24px" }} className="flex flex-col" role="menu">
           <button
             className="flex items-center justify-between w-full cursor-pointer"
-            style={{ padding: "12px 0", fontSize: "13px", color: "#a0a0a0" }}
+            style={{ padding: "12px 0", fontSize: "16px", color: "#a0a0a0" }}
             onClick={() => setMobileDropOpen((p) => !p)}
             aria-expanded={mobileDropOpen}
           >
@@ -154,8 +156,8 @@ export default function Navbar() {
             </div>
           </div>
 
-          <a href="#" onClick={() => setMobileOpen(false)} style={{ padding: "12px 0", fontSize: "13px", color: "#a0a0a0" }} role="menuitem">Company</a>
-          <a href="#contact" onClick={(e) => { scrollToContact(e); setMobileOpen(false); }} style={{ padding: "12px 0", fontSize: "13px", color: "#a0a0a0" }} role="menuitem">Contact</a>
+          <a href="#" onClick={() => setMobileOpen(false)} style={{ padding: "12px 0", fontSize: "16px", color: "#a0a0a0" }} role="menuitem">Company</a>
+          <a href="#contact" onClick={(e) => { scrollToContact(e); setMobileOpen(false); }} style={{ padding: "12px 0", fontSize: "16px", color: "#a0a0a0" }} role="menuitem">Contact</a>
 
           <a
             href="#contact"

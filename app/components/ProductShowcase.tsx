@@ -43,14 +43,14 @@ function CRCMockup() {
         ].map((s) => (
           <div key={s.label} className="rounded-lg px-3 py-2.5 text-center" style={{ backgroundColor: "#141414" }}>
             <p className="text-sm font-semibold" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{s.value}</p>
-            <p style={{ fontSize: "11px", color: "#666666" }} className="mt-0.5">{s.label}</p>
+            <p style={{ fontSize: "13px", color: "#666666" }} className="mt-0.5">{s.label}</p>
           </div>
         ))}
       </div>
       <div className="rounded-lg overflow-hidden" style={{ border: "1px solid #2a2a2a" }}>
         <div className="grid grid-cols-4 px-3 py-1.5" style={{ backgroundColor: "#141414" }}>
           {["Client", "Score", "Risk", "Flag"].map((h) => (
-            <span key={h} style={{ fontSize: "11px", color: "#666666", fontFamily: "var(--font-mono)" }}>{h}</span>
+            <span key={h} style={{ fontSize: "13px", color: "#666666", fontFamily: "var(--font-mono)" }}>{h}</span>
           ))}
         </div>
         {[
@@ -82,14 +82,14 @@ function MomentumPayMockup() {
         ].map((s) => (
           <div key={s.label} className="rounded-lg px-3 py-2.5 text-center" style={{ backgroundColor: "#141414" }}>
             <p className="text-sm font-semibold" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{s.value}</p>
-            <p style={{ fontSize: "11px", color: "#666666" }} className="mt-0.5">{s.label}{s.sub && <span> / {s.sub}</span>}</p>
+            <p style={{ fontSize: "13px", color: "#666666" }} className="mt-0.5">{s.label}{s.sub && <span> / {s.sub}</span>}</p>
           </div>
         ))}
       </div>
       <div className="rounded-lg overflow-hidden" style={{ border: "1px solid #2a2a2a" }}>
         <div className="grid grid-cols-4 px-3 py-1.5" style={{ backgroundColor: "#141414" }}>
           {["Recipient", "Amount", "CCY", "Status"].map((h) => (
-            <span key={h} style={{ fontSize: "11px", color: "#666666", fontFamily: "var(--font-mono)" }}>{h}</span>
+            <span key={h} style={{ fontSize: "13px", color: "#666666", fontFamily: "var(--font-mono)" }}>{h}</span>
           ))}
         </div>
         {[
@@ -121,14 +121,14 @@ function FareCollectionMockup() {
         ].map((s) => (
           <div key={s.label} className="rounded-lg px-3 py-2.5 text-center" style={{ backgroundColor: "#141414" }}>
             <p className="text-sm font-semibold" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{s.value}</p>
-            <p style={{ fontSize: "11px", color: "#666666" }} className="mt-0.5">{s.label}</p>
+            <p style={{ fontSize: "13px", color: "#666666" }} className="mt-0.5">{s.label}</p>
           </div>
         ))}
       </div>
       <div className="rounded-lg overflow-hidden mb-4" style={{ border: "1px solid #2a2a2a" }}>
         <div className="grid grid-cols-4 px-3 py-1.5" style={{ backgroundColor: "#141414" }}>
           {["Route", "Rides", "Revenue", "Load"].map((h) => (
-            <span key={h} style={{ fontSize: "11px", color: "#666666", fontFamily: "var(--font-mono)" }}>{h}</span>
+            <span key={h} style={{ fontSize: "13px", color: "#666666", fontFamily: "var(--font-mono)" }}>{h}</span>
           ))}
         </div>
         {[
@@ -175,14 +175,14 @@ function CSDMockup() {
         ].map((s) => (
           <div key={s.label} className="rounded-lg px-3 py-2.5 text-center" style={{ backgroundColor: "#141414" }}>
             <p className="text-sm font-semibold" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{s.value}</p>
-            <p style={{ fontSize: "11px", color: "#666666" }} className="mt-0.5">{s.label}</p>
+            <p style={{ fontSize: "13px", color: "#666666" }} className="mt-0.5">{s.label}</p>
           </div>
         ))}
       </div>
       <div className="rounded-lg overflow-hidden" style={{ border: "1px solid #2a2a2a" }}>
         <div className="grid grid-cols-4 px-3 py-1.5" style={{ backgroundColor: "#141414" }}>
           {["Task", "Owner", "Status", "ETA"].map((h) => (
-            <span key={h} style={{ fontSize: "11px", color: "#666666", fontFamily: "var(--font-mono)" }}>{h}</span>
+            <span key={h} style={{ fontSize: "13px", color: "#666666", fontFamily: "var(--font-mono)" }}>{h}</span>
           ))}
         </div>
         {[
@@ -208,6 +208,7 @@ const products = [
     name: "CRC",
     subtitle: "Compliance Risk Control",
     description: "Automate compliance. Reduce risk. Stay ahead of regulation.",
+    intro: "CRC is a compliance risk management platform that automates screening, monitoring, and reporting for regulated financial institutions. It connects to 50+ data sources to deliver real-time risk intelligence and audit-ready documentation.",
     bullets: ["Real-time transaction monitoring", "Configurable risk scoring engine"],
     link: "/crc",
     mockup: <CRCMockup />,
@@ -216,6 +217,7 @@ const products = [
     name: "Momentum Pay",
     subtitle: "Payment Processing",
     description: "Instant contractor payments at scale. Multi-currency. Fraud-resistant.",
+    intro: "Momentum Pay is a payment processing engine built for high-volume contractor and supplier payouts. It handles multi-currency settlement, fraud detection, and reconciliation in a single integrated platform.",
     bullets: ["Real-time settlement in 50+ currencies", "ML-powered fraud scoring on every transaction"],
     link: "/momentumpay",
     mockup: <MomentumPayMockup />,
@@ -224,6 +226,7 @@ const products = [
     name: "Fare Collection",
     subtitle: "Transit Fare Systems",
     description: "End-to-end automated fare collection for public transport networks.",
+    intro: "Fare Collection is an automated fare management system for public transport operators and municipalities. It supports contactless payments, route-level analytics, and real-time revenue tracking across entire transit networks.",
     bullets: ["NFC, QR, and smart card acceptance", "Route-level revenue analytics"],
     link: "/farecollection",
     mockup: <FareCollectionMockup />,
@@ -232,6 +235,7 @@ const products = [
     name: "CSD",
     subtitle: "Custom Software",
     description: "Full-cycle software development for financial and enterprise clients.",
+    intro: "CSD is a custom software development service for banks, PSPs, and enterprise financial clients. Dedicated engineering teams deliver cloud-native solutions from architecture design through production deployment.",
     bullets: ["Cloud-native architecture from day one", "Dedicated engineering teams with fintech expertise"],
     link: "/csd",
     mockup: <CSDMockup />,
@@ -240,20 +244,20 @@ const products = [
 
 export default function ProductShowcase() {
   return (
-    <section id="products" className="py-16 lg:py-24 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#0f0f0f" }}>
+    <section id="products" className="py-24 lg:py-32 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#0f0f0f" }}>
       <div className="max-w-6xl mx-auto px-6">
         <ScrollAnimation>
-          <p className="text-center uppercase" style={{ fontSize: "11px", letterSpacing: "0.15em", color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
+          <p className="text-center uppercase" style={{ fontSize: "12px", letterSpacing: "0.2em", color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
             Products
           </p>
         </ScrollAnimation>
         <ScrollAnimation delay={0.05}>
-          <h2 className="text-5xl text-center mt-4" style={{ fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
+          <h2 className="text-center mt-4" style={{ fontSize: "52px", fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
             Product Suite
           </h2>
         </ScrollAnimation>
         <ScrollAnimation delay={0.1}>
-          <p className="mt-3 text-center" style={{ fontSize: "16px", lineHeight: 1.7, color: "#a0a0a0" }}>
+          <p className="mt-3 text-center" style={{ fontSize: "18px", lineHeight: 1.8, color: "#a0a0a0" }}>
             Four products, one platform.
           </p>
         </ScrollAnimation>
@@ -267,7 +271,7 @@ export default function ProductShowcase() {
               style={index > 0 ? { borderTop: "1px solid #2a2a2a" } : undefined}
             >
               <ScrollAnimation>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                   <div className={!isOdd ? "lg:order-last" : ""}>
                     <h3 className="text-5xl lg:text-6xl" style={{ fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
                       {product.name}
@@ -275,18 +279,21 @@ export default function ProductShowcase() {
                         {product.subtitle}
                       </span>
                     </h3>
-                    <p className="mt-4" style={{ fontSize: "16px", lineHeight: 1.7, color: "#a0a0a0" }}>
+                    <p className="mt-4" style={{ fontSize: "18px", lineHeight: 1.8, color: "#a0a0a0" }}>
                       {product.description}
+                    </p>
+                    <p className="mt-3" style={{ fontSize: "18px", lineHeight: 1.8, color: "#a0a0a0" }}>
+                      {product.intro}
                     </p>
                     <ul className="mt-6 space-y-3">
                       {product.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-3">
                           <span className="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style={{ backgroundColor: "#6abf4b" }} />
-                          <span style={{ color: "#a0a0a0" }}>{bullet}</span>
+                          <span style={{ fontSize: "18px", lineHeight: 1.8, color: "#a0a0a0" }}>{bullet}</span>
                         </li>
                       ))}
                     </ul>
-                    <Link href={product.link} className="mt-6 inline-flex items-center gap-1 font-medium" style={{ color: "#6abf4b" }}>
+                    <Link href={product.link} className="mt-6 inline-flex items-center gap-1 hover:underline" style={{ fontSize: "16px", fontWeight: 600, color: "#6abf4b" }}>
                       Learn more <span>&rarr;</span>
                     </Link>
                   </div>

@@ -60,30 +60,30 @@ function AnimatedStat({ value, suffix, label, sub }: { value: number; suffix: st
       <p style={{ fontSize: "clamp(36px, 4vw, 48px)", fontWeight: 700, fontFamily: "var(--font-display)", lineHeight: 1, color: "#ffffff" }}>
         {display}{suffix}
       </p>
-      <p className="mt-3" style={{ fontSize: "16px", fontWeight: 500, color: "#a0a0a0" }}>{label}</p>
-      <p className="mt-1" style={{ fontSize: "11px", color: "#666666" }}>{sub}</p>
+      <p className="mt-3" style={{ fontSize: "18px", fontWeight: 500, lineHeight: 1.8, color: "#a0a0a0" }}>{label}</p>
+      <p className="mt-1" style={{ fontSize: "13px", color: "#666666" }}>{sub}</p>
     </div>
   );
 }
 
 export default function StatsBanner() {
   return (
-    <section className="py-16 lg:py-24 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#0f0f0f" }}>
+    <section className="py-24 lg:py-32 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#0f0f0f" }}>
       <div className="max-w-6xl mx-auto px-6">
         <ScrollAnimation>
-          <p className="uppercase" style={{ fontSize: "11px", letterSpacing: "0.15em", color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
+          <p className="uppercase" style={{ fontSize: "12px", letterSpacing: "0.2em", color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
             By the Numbers
           </p>
-          <h2 className="text-5xl mt-4" style={{ fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
+          <h2 className="mt-4" style={{ fontSize: "52px", fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
             Proven at Scale
           </h2>
-          <p className="mt-3" style={{ fontSize: "16px", lineHeight: 1.7, color: "#a0a0a0" }}>
+          <p className="mt-3" style={{ fontSize: "18px", lineHeight: 1.8, color: "#a0a0a0" }}>
             Production metrics across all platforms.
           </p>
         </ScrollAnimation>
 
         <ScrollAnimation delay={0.1}>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 mt-12">
             {stats.map((stat, index) => (
               <div
                 key={stat.label}

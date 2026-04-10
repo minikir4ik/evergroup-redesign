@@ -21,11 +21,6 @@ export const metadata: Metadata = {
   title: "EVERGROUP — Financial Infrastructure, Reimagined",
   description:
     "Software that powers compliance, payments, fare collection, and custom financial systems.",
-  icons: {
-    icon: [{ url: "/logos/evergroup-logo.png", type: "image/png" }],
-    shortcut: "/logos/evergroup-logo.png",
-    apple: "/logos/evergroup-logo.png",
-  },
 };
 
 export default function RootLayout({

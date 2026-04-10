@@ -22,7 +22,8 @@ export const metadata: Metadata = {
   description:
     "Software that powers compliance, payments, fare collection, and custom financial systems.",
   icons: {
-    icon: "/logos/evergroup-logo.png",
+    icon: [{ url: "/logos/evergroup-logo.png", type: "image/png" }],
+    shortcut: "/logos/evergroup-logo.png",
     apple: "/logos/evergroup-logo.png",
   },
 };

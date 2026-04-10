@@ -21,7 +21,7 @@ function MockupShell({ children }: { children: React.ReactNode }) {
 function Badge({ text, variant = "green" }: { text: string; variant?: "green" | "gray" | "amber" | "red" }) {
   const styles = {
     green: { backgroundColor: "rgba(106,191,75,0.15)", color: "#6abf4b" },
-    gray: { backgroundColor: "rgba(102,102,102,0.15)", color: "#666666" },
+    gray: { backgroundColor: "rgba(102,102,102,0.15)", color: "#888888" },
     amber: { backgroundColor: "rgba(245,158,11,0.15)", color: "#f59e0b" },
     red: { backgroundColor: "rgba(239,68,68,0.15)", color: "#ef4444" },
   };
@@ -43,14 +43,14 @@ function CRCMockup() {
         ].map((s) => (
           <div key={s.label} className="rounded-lg px-3 py-2.5 text-center" style={{ backgroundColor: "#141414" }}>
             <p className="text-sm font-semibold" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{s.value}</p>
-            <p style={{ fontSize: "13px", color: "#666666" }} className="mt-0.5">{s.label}</p>
+            <p style={{ fontSize: "13px", color: "#888888" }} className="mt-0.5">{s.label}</p>
           </div>
         ))}
       </div>
       <div className="rounded-lg overflow-hidden" style={{ border: "1px solid #2a2a2a" }}>
         <div className="grid grid-cols-4 px-3 py-1.5" style={{ backgroundColor: "#141414" }}>
           {["Client", "Score", "Risk", "Flag"].map((h) => (
-            <span key={h} style={{ fontSize: "13px", color: "#666666", fontFamily: "var(--font-mono)" }}>{h}</span>
+            <span key={h} style={{ fontSize: "13px", color: "#888888", fontFamily: "var(--font-mono)" }}>{h}</span>
           ))}
         </div>
         {[
@@ -60,10 +60,10 @@ function CRCMockup() {
           { client: "DeltaCorp", score: "87", risk: "Low", riskVariant: "green" as const, flag: "None" },
         ].map((row, i) => (
           <div key={row.client} className="grid grid-cols-4 px-3 py-2" style={{ borderBottom: i < 3 ? "1px solid #2a2a2a" : "none" }}>
-            <span className="text-xs" style={{ color: "#a0a0a0" }}>{row.client}</span>
+            <span className="text-xs" style={{ color: "#b8b8b8" }}>{row.client}</span>
             <span className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{row.score}</span>
             <span><Badge text={row.risk} variant={row.riskVariant} /></span>
-            <span className="text-xs" style={{ color: "#666666" }}>{row.flag}</span>
+            <span className="text-xs" style={{ color: "#888888" }}>{row.flag}</span>
           </div>
         ))}
       </div>
@@ -82,14 +82,14 @@ function MomentumPayMockup() {
         ].map((s) => (
           <div key={s.label} className="rounded-lg px-3 py-2.5 text-center" style={{ backgroundColor: "#141414" }}>
             <p className="text-sm font-semibold" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{s.value}</p>
-            <p style={{ fontSize: "13px", color: "#666666" }} className="mt-0.5">{s.label}{s.sub && <span> / {s.sub}</span>}</p>
+            <p style={{ fontSize: "13px", color: "#888888" }} className="mt-0.5">{s.label}{s.sub && <span> / {s.sub}</span>}</p>
           </div>
         ))}
       </div>
       <div className="rounded-lg overflow-hidden" style={{ border: "1px solid #2a2a2a" }}>
         <div className="grid grid-cols-4 px-3 py-1.5" style={{ backgroundColor: "#141414" }}>
           {["Recipient", "Amount", "CCY", "Status"].map((h) => (
-            <span key={h} style={{ fontSize: "13px", color: "#666666", fontFamily: "var(--font-mono)" }}>{h}</span>
+            <span key={h} style={{ fontSize: "13px", color: "#888888", fontFamily: "var(--font-mono)" }}>{h}</span>
           ))}
         </div>
         {[
@@ -99,9 +99,9 @@ function MomentumPayMockup() {
           { recipient: "Yandex Go", amount: "RUB2.1M", ccy: "RUB", status: "Settled", variant: "green" as const },
         ].map((row, i) => (
           <div key={row.recipient} className="grid grid-cols-4 px-3 py-2" style={{ borderBottom: i < 3 ? "1px solid #2a2a2a" : "none" }}>
-            <span className="text-xs" style={{ color: "#a0a0a0" }}>{row.recipient}</span>
+            <span className="text-xs" style={{ color: "#b8b8b8" }}>{row.recipient}</span>
             <span className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{row.amount}</span>
-            <span className="text-xs" style={{ color: "#666666" }}>{row.ccy}</span>
+            <span className="text-xs" style={{ color: "#888888" }}>{row.ccy}</span>
             <span><Badge text={row.status} variant={row.variant} /></span>
           </div>
         ))}
@@ -121,14 +121,14 @@ function FareCollectionMockup() {
         ].map((s) => (
           <div key={s.label} className="rounded-lg px-3 py-2.5 text-center" style={{ backgroundColor: "#141414" }}>
             <p className="text-sm font-semibold" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{s.value}</p>
-            <p style={{ fontSize: "13px", color: "#666666" }} className="mt-0.5">{s.label}</p>
+            <p style={{ fontSize: "13px", color: "#888888" }} className="mt-0.5">{s.label}</p>
           </div>
         ))}
       </div>
       <div className="rounded-lg overflow-hidden mb-4" style={{ border: "1px solid #2a2a2a" }}>
         <div className="grid grid-cols-4 px-3 py-1.5" style={{ backgroundColor: "#141414" }}>
           {["Route", "Rides", "Revenue", "Load"].map((h) => (
-            <span key={h} style={{ fontSize: "13px", color: "#666666", fontFamily: "var(--font-mono)" }}>{h}</span>
+            <span key={h} style={{ fontSize: "13px", color: "#888888", fontFamily: "var(--font-mono)" }}>{h}</span>
           ))}
         </div>
         {[
@@ -138,7 +138,7 @@ function FareCollectionMockup() {
           { route: "Tram Line 7", rides: "6,430", revenue: "$15.4K", load: "62%" },
         ].map((row, i) => (
           <div key={row.route} className="grid grid-cols-4 px-3 py-2" style={{ borderBottom: i < 3 ? "1px solid #2a2a2a" : "none" }}>
-            <span className="text-xs" style={{ color: "#a0a0a0" }}>{row.route}</span>
+            <span className="text-xs" style={{ color: "#b8b8b8" }}>{row.route}</span>
             <span className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{row.rides}</span>
             <span className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{row.revenue}</span>
             <span><Badge text={row.load} variant="green" /></span>
@@ -160,7 +160,7 @@ function CSDMockup() {
     <MockupShell>
       <div className="mb-4">
         <div className="flex items-center justify-between mb-1.5">
-          <span className="text-xs" style={{ color: "#a0a0a0" }}>Sprint 14 -- Payment Gateway</span>
+          <span className="text-xs" style={{ color: "#b8b8b8" }}>Sprint 14 -- Payment Gateway</span>
           <span className="text-xs font-semibold" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>73%</span>
         </div>
         <div className="h-1.5 w-full rounded-full overflow-hidden" style={{ backgroundColor: "#2a2a2a" }}>
@@ -175,14 +175,14 @@ function CSDMockup() {
         ].map((s) => (
           <div key={s.label} className="rounded-lg px-3 py-2.5 text-center" style={{ backgroundColor: "#141414" }}>
             <p className="text-sm font-semibold" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{s.value}</p>
-            <p style={{ fontSize: "13px", color: "#666666" }} className="mt-0.5">{s.label}</p>
+            <p style={{ fontSize: "13px", color: "#888888" }} className="mt-0.5">{s.label}</p>
           </div>
         ))}
       </div>
       <div className="rounded-lg overflow-hidden" style={{ border: "1px solid #2a2a2a" }}>
         <div className="grid grid-cols-4 px-3 py-1.5" style={{ backgroundColor: "#141414" }}>
           {["Task", "Owner", "Status", "ETA"].map((h) => (
-            <span key={h} style={{ fontSize: "13px", color: "#666666", fontFamily: "var(--font-mono)" }}>{h}</span>
+            <span key={h} style={{ fontSize: "13px", color: "#888888", fontFamily: "var(--font-mono)" }}>{h}</span>
           ))}
         </div>
         {[
@@ -192,10 +192,10 @@ function CSDMockup() {
           { task: "Load testing", owner: "AK", status: "Queued", variant: "gray" as const, eta: "Apr 7" },
         ].map((row, i) => (
           <div key={row.task} className="grid grid-cols-4 px-3 py-2" style={{ borderBottom: i < 3 ? "1px solid #2a2a2a" : "none" }}>
-            <span className="text-xs" style={{ color: "#a0a0a0" }}>{row.task}</span>
+            <span className="text-xs" style={{ color: "#b8b8b8" }}>{row.task}</span>
             <span className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{row.owner}</span>
             <span><Badge text={row.status} variant={row.variant} /></span>
-            <span className="text-xs" style={{ color: "#666666" }}>{row.eta}</span>
+            <span className="text-xs" style={{ color: "#888888" }}>{row.eta}</span>
           </div>
         ))}
       </div>
@@ -247,7 +247,7 @@ export default function ProductShowcase() {
     <section id="products" className="py-24 lg:py-32 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#0f0f0f" }}>
       <div className="max-w-6xl mx-auto px-6">
         <ScrollAnimation>
-          <p className="text-center uppercase" style={{ fontSize: "12px", letterSpacing: "0.2em", color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
+          <p className="text-center uppercase" style={{ fontSize: "13px", letterSpacing: "0.25em", fontWeight: 500, color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
             Products
           </p>
         </ScrollAnimation>
@@ -257,7 +257,7 @@ export default function ProductShowcase() {
           </h2>
         </ScrollAnimation>
         <ScrollAnimation delay={0.1}>
-          <p className="mt-3 text-center" style={{ fontSize: "18px", lineHeight: 1.8, color: "#a0a0a0" }}>
+          <p className="mt-3 text-center" style={{ fontSize: "18px", lineHeight: 1.8, color: "#b8b8b8" }}>
             Four products, one platform.
           </p>
         </ScrollAnimation>
@@ -275,26 +275,26 @@ export default function ProductShowcase() {
                   <div className={!isOdd ? "lg:order-last" : ""}>
                     <h3 className="text-5xl lg:text-6xl" style={{ fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
                       {product.name}
-                      <span className="block font-normal mt-1" style={{ fontSize: "16px", color: "#666666" }}>
+                      <span className="block font-normal mt-1" style={{ fontSize: "16px", color: "#888888" }}>
                         {product.subtitle}
                       </span>
                     </h3>
-                    <p className="mt-4" style={{ fontSize: "18px", lineHeight: 1.8, color: "#a0a0a0" }}>
+                    <p className="mt-4" style={{ fontSize: "17px", lineHeight: 1.8, color: "#b8b8b8" }}>
                       {product.description}
                     </p>
-                    <p className="mt-3" style={{ fontSize: "18px", lineHeight: 1.8, color: "#a0a0a0" }}>
+                    <p className="mt-3" style={{ fontSize: "17px", lineHeight: 1.8, color: "#b8b8b8" }}>
                       {product.intro}
                     </p>
                     <ul className="mt-6 space-y-3">
                       {product.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-3">
                           <span className="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style={{ backgroundColor: "#6abf4b" }} />
-                          <span style={{ fontSize: "18px", lineHeight: 1.8, color: "#a0a0a0" }}>{bullet}</span>
+                          <span style={{ fontSize: "16px", lineHeight: 1.8, color: "#b8b8b8" }}>{bullet}</span>
                         </li>
                       ))}
                     </ul>
-                    <Link href={product.link} className="mt-6 inline-flex items-center gap-1 hover:underline" style={{ fontSize: "16px", fontWeight: 600, color: "#6abf4b" }}>
-                      Learn more <span>&rarr;</span>
+                    <Link href={product.link} className="group/btn mt-6 inline-flex items-center gap-2 rounded-[6px] border border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b] hover:text-black transition-colors duration-200" style={{ padding: "10px 20px", fontSize: "15px", fontWeight: 600 }}>
+                      Learn more <span className="inline-block transition-transform duration-200 group-hover/btn:translate-x-1">&rarr;</span>
                     </Link>
                   </div>
                   <div className={!isOdd ? "lg:order-first" : ""}>

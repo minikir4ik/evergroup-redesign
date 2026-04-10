@@ -8,7 +8,7 @@ export default function TrustBar() {
     <section className="py-24 lg:py-32 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#0f0f0f" }}>
       <div className="max-w-6xl mx-auto px-6">
         <ScrollAnimation>
-          <p className="text-center" style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.2em", color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
+          <p className="text-center" style={{ fontSize: "13px", textTransform: "uppercase", letterSpacing: "0.25em", fontWeight: 500, color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
             Payment Systems
           </p>
         </ScrollAnimation>
@@ -34,7 +34,7 @@ export default function TrustBar() {
         <div className="my-14" style={{ borderTop: "1px solid #2a2a2a" }} />
 
         <ScrollAnimation>
-          <p className="text-center" style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.2em", color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
+          <p className="text-center" style={{ fontSize: "13px", textTransform: "uppercase", letterSpacing: "0.25em", fontWeight: 500, color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
             Technology Partners
           </p>
         </ScrollAnimation>

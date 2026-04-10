@@ -28,7 +28,7 @@ export default function Hero() {
           </ScrollAnimation>
 
           <ScrollAnimation delay={0.2}>
-            <p className="mt-8 max-w-2xl mx-auto" style={{ fontSize: "18px", lineHeight: 1.8, color: "#a0a0a0" }}>
+            <p className="mt-8 max-w-2xl mx-auto" style={{ fontSize: "18px", lineHeight: 1.8, color: "#b8b8b8" }}>
               Compliance, payments, and fare collection systems built for financial institutions and transport operators.
             </p>
           </ScrollAnimation>
@@ -79,7 +79,7 @@ export default function Hero() {
                     key={tab}
                     className="text-sm font-medium pb-2"
                     style={{
-                      color: i === 0 ? "#ffffff" : "#666666",
+                      color: i === 0 ? "#ffffff" : "#888888",
                       borderBottom: i === 0 ? "2px solid #6abf4b" : "none",
                     }}
                   >
@@ -96,7 +96,7 @@ export default function Hero() {
                   { label: "Avg. Latency", value: "42ms", change: "-15%" },
                 ].map((m) => (
                   <div key={m.label} className="rounded-lg p-4" style={{ border: "1px solid #2a2a2a", background: "#141414" }}>
-                    <p style={{ fontSize: "13px", color: "#666666" }}>{m.label}</p>
+                    <p style={{ fontSize: "13px", color: "#888888" }}>{m.label}</p>
                     <p className="text-xl font-bold mt-1" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{m.value}</p>
                     <p style={{ fontSize: "13px", color: "#6abf4b" }} className="mt-1">{m.change}</p>
                   </div>
@@ -115,7 +115,7 @@ export default function Hero() {
               </div>
 
               <div className="hidden sm:block rounded-lg overflow-hidden" style={{ border: "1px solid #2a2a2a" }}>
-                <div className="grid grid-cols-4 gap-4 px-4 py-2" style={{ fontSize: "13px", color: "#666666", borderBottom: "1px solid #2a2a2a", fontFamily: "var(--font-mono)" }}>
+                <div className="grid grid-cols-4 gap-4 px-4 py-2" style={{ fontSize: "13px", color: "#888888", borderBottom: "1px solid #2a2a2a", fontFamily: "var(--font-mono)" }}>
                   <span>Transaction</span><span>Amount</span><span>Status</span><span>Date</span>
                 </div>
                 {[
@@ -128,20 +128,20 @@ export default function Hero() {
                     className="grid grid-cols-4 gap-4 px-4 py-3 text-sm"
                     style={{ borderBottom: i < 2 ? "1px solid #2a2a2a" : "none" }}
                   >
-                    <span style={{ fontFamily: "var(--font-mono)", color: "#a0a0a0" }}>{row.tx}</span>
+                    <span style={{ fontFamily: "var(--font-mono)", color: "#b8b8b8" }}>{row.tx}</span>
                     <span style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{row.amt}</span>
                     <span>
                       <span
                         className="inline-flex rounded-full px-2 py-0.5 text-[10px] font-semibold"
                         style={{
                           backgroundColor: row.status === "Completed" ? "rgba(106,191,75,0.15)" : "rgba(102,102,102,0.15)",
-                          color: row.status === "Completed" ? "#6abf4b" : "#666666",
+                          color: row.status === "Completed" ? "#6abf4b" : "#888888",
                         }}
                       >
                         {row.status}
                       </span>
                     </span>
-                    <span style={{ color: "#666666" }}>{row.date}</span>
+                    <span style={{ color: "#888888" }}>{row.date}</span>
                   </div>
                 ))}
               </div>

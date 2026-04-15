@@ -63,18 +63,22 @@ export default function Hero() {
               transform: "perspective(2000px) rotateX(2deg)",
             }}
           >
+            {/* Browser chrome */}
             <div className="flex items-center gap-2 px-4 py-3" style={{ borderBottom: "1px solid #2a2a2a" }}>
               <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#333" }} />
-                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#333" }} />
-                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#333" }} />
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#ff5f57" }} />
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#febc2e" }} />
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#28c840" }} />
               </div>
-              <div className="flex-1 mx-8 h-6 rounded-full" style={{ backgroundColor: "#252525", maxWidth: "300px" }} />
+              <div className="flex-1 mx-8 h-7 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#252525", maxWidth: "340px" }}>
+                <span style={{ fontSize: "12px", color: "#888888", fontFamily: "var(--font-mono)" }}>app.evergroup.tech</span>
+              </div>
             </div>
 
             <div className="p-6 lg:p-8">
+              {/* Tab row */}
               <div className="flex gap-6 mb-8">
-                {["Overview", "Transactions", "Analytics", "Settings"].map((tab, i) => (
+                {["Overview", "Transactions", "Compliance", "Settings"].map((tab, i) => (
                   <span
                     key={tab}
                     className="text-sm font-medium pb-2"
@@ -88,61 +92,88 @@ export default function Hero() {
                 ))}
               </div>
 
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+              {/* Row 1 — 4 stat cards */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                 {[
-                  { label: "Total Volume", value: "$2,847,392", change: "+12.4%" },
-                  { label: "Active Users", value: "1,284", change: "+8.1%" },
-                  { label: "Success Rate", value: "99.7%", change: "+0.3%" },
-                  { label: "Avg. Latency", value: "42ms", change: "-15%" },
+                  { label: "Platform Uptime", value: "99.9%", sub: "+0.0%", subColor: "#6abf4b" },
+                  { label: "Partner Companies", value: "700+", sub: "Active across CIS & UAE", subColor: "#888888" },
+                  { label: "Compliance Checks", value: "50+", sub: "Data sources integrated", subColor: "#888888" },
+                  { label: "Active Drivers", value: "100,000", sub: "Momentum Pay network", subColor: "#888888" },
                 ].map((m) => (
                   <div key={m.label} className="rounded-lg p-4" style={{ border: "1px solid #2a2a2a", background: "#141414" }}>
-                    <p style={{ fontSize: "13px", color: "#888888" }}>{m.label}</p>
+                    <p style={{ fontSize: "12px", color: "#888888" }}>{m.label}</p>
                     <p className="text-xl font-bold mt-1" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{m.value}</p>
-                    <p style={{ fontSize: "13px", color: "#6abf4b" }} className="mt-1">{m.change}</p>
+                    <p style={{ fontSize: "11px", marginTop: "4px", color: m.subColor }}>{m.sub}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="rounded-lg p-6 mb-6" style={{ border: "1px solid #2a2a2a", background: "#141414" }}>
-                <div className="flex items-end justify-between h-32 gap-2">
-                  {[40, 65, 45, 80, 55, 90, 70, 95, 60, 85, 75, 100].map((h, i) => (
-                    <div key={i} className="flex-1 rounded-t" style={{
-                      height: `${h}%`,
-                      backgroundColor: i === 11 ? "#6abf4b" : "#2a2a2a",
-                    }} />
+              {/* Row 2 — Bar chart */}
+              <div className="rounded-lg p-5 mb-6" style={{ border: "1px solid #2a2a2a", background: "#141414" }}>
+                <p className="mb-4" style={{ fontSize: "12px", color: "#888888", fontFamily: "var(--font-mono)" }}>Transaction Volume &mdash; Last 7 Days</p>
+                <div className="flex items-end gap-2" style={{ height: "80px" }}>
+                  {[45, 68, 52, 80, 62, 74, 90].map((h, i) => (
+                    <div
+                      key={i}
+                      className="flex-1 rounded-t transition-colors"
+                      style={{
+                        height: `${h}%`,
+                        backgroundColor: i === 6 ? "#6abf4b" : "#2a2a2a",
+                      }}
+                    />
+                  ))}
+                </div>
+                <div className="flex justify-between mt-2">
+                  {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Today"].map((d) => (
+                    <span key={d} className="flex-1 text-center" style={{ fontSize: "10px", color: "#555555", fontFamily: "var(--font-mono)" }}>{d}</span>
                   ))}
                 </div>
               </div>
 
-              <div className="hidden sm:block rounded-lg overflow-hidden" style={{ border: "1px solid #2a2a2a" }}>
-                <div className="grid grid-cols-4 gap-4 px-4 py-2" style={{ fontSize: "13px", color: "#888888", borderBottom: "1px solid #2a2a2a", fontFamily: "var(--font-mono)" }}>
-                  <span>Transaction</span><span>Amount</span><span>Status</span><span>Date</span>
+              {/* Row 3 — Activity feed */}
+              <div className="hidden sm:block rounded-lg overflow-hidden mb-6" style={{ border: "1px solid #2a2a2a" }}>
+                <div className="grid grid-cols-4 gap-4 px-4 py-2" style={{ fontSize: "12px", color: "#888888", borderBottom: "1px solid #2a2a2a", fontFamily: "var(--font-mono)" }}>
+                  <span>Type</span><span>Status</span><span>Region</span><span>Time</span>
                 </div>
                 {[
-                  { tx: "TXN-4829", amt: "$12,400", status: "Completed", date: "Mar 27" },
-                  { tx: "TXN-4828", amt: "$8,920", status: "Processing", date: "Mar 27" },
-                  { tx: "TXN-4827", amt: "$34,100", status: "Completed", date: "Mar 26" },
+                  { type: "KYC Verification", status: "Passed", region: "Central Asia", time: "2 min ago" },
+                  { type: "Fare Collection", status: "Processed", region: "Uzbekistan", time: "5 min ago" },
+                  { type: "Contractor Payout", status: "Settled", region: "CIS Network", time: "12 min ago" },
                 ].map((row, i) => (
                   <div
-                    key={row.tx}
+                    key={row.type}
                     className="grid grid-cols-4 gap-4 px-4 py-3 text-sm"
                     style={{ borderBottom: i < 2 ? "1px solid #2a2a2a" : "none" }}
                   >
-                    <span style={{ fontFamily: "var(--font-mono)", color: "#b8b8b8" }}>{row.tx}</span>
-                    <span style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{row.amt}</span>
-                    <span>
+                    <span style={{ fontFamily: "var(--font-mono)", color: "#b8b8b8", fontSize: "13px" }}>{row.type}</span>
+                    <span className="flex items-center gap-1.5">
+                      <span style={{ color: "#6abf4b", fontSize: "13px", fontFamily: "var(--font-mono)" }}>&#10003;</span>
                       <span
                         className="inline-flex rounded-full px-2 py-0.5 text-[10px] font-semibold"
-                        style={{
-                          backgroundColor: row.status === "Completed" ? "rgba(106,191,75,0.15)" : "rgba(102,102,102,0.15)",
-                          color: row.status === "Completed" ? "#6abf4b" : "#888888",
-                        }}
+                        style={{ backgroundColor: "rgba(106,191,75,0.15)", color: "#6abf4b" }}
                       >
                         {row.status}
                       </span>
                     </span>
-                    <span style={{ color: "#888888" }}>{row.date}</span>
+                    <span style={{ color: "#888888", fontSize: "13px" }}>{row.region}</span>
+                    <span style={{ color: "#555555", fontSize: "13px", fontFamily: "var(--font-mono)" }}>{row.time}</span>
                   </div>
+                ))}
+              </div>
+
+              {/* Row 4 — Mini stat pills */}
+              <div className="flex flex-wrap gap-3">
+                {[
+                  "CRC System: 50+ data sources integrated",
+                  "Momentum Pay: 100,000 active drivers",
+                ].map((pill) => (
+                  <span
+                    key={pill}
+                    className="inline-flex items-center rounded-full px-4 py-1.5"
+                    style={{ fontSize: "12px", fontFamily: "var(--font-mono)", color: "#b8b8b8", backgroundColor: "#141414", border: "1px solid #2a2a2a" }}
+                  >
+                    {pill}
+                  </span>
                 ))}
               </div>
             </div>

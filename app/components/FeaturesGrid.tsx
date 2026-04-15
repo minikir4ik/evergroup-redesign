@@ -17,7 +17,7 @@ const features = [
   {
     title: "Payment Processing",
     description: "Multi-currency settlement and merchant analytics. Supports instant payouts to contractors and suppliers worldwide.",
-    stat: "50+ currencies",
+    stat: "700+ partners",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" strokeWidth={1.5} stroke="#6abf4b" strokeLinecap="round" strokeLinejoin="round">
         <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
@@ -27,7 +27,7 @@ const features = [
   {
     title: "Fare Collection",
     description: "Contactless transit payments and route optimization. Handles NFC, QR, and bank card acceptance at scale.",
-    stat: "48K+ daily rides",
+    stat: "+25% profit increase",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" strokeWidth={1.5} stroke="#6abf4b" strokeLinecap="round" strokeLinejoin="round">
         <rect x="4" y="3" width="16" height="18" rx="2" />
@@ -40,7 +40,7 @@ const features = [
   {
     title: "Custom Development",
     description: "Full-cycle engineering for financial systems. From architecture through deployment with dedicated fintech teams.",
-    stat: "94% test coverage",
+    stat: "10+ years experience",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" strokeWidth={1.5} stroke="#6abf4b" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="16 18 22 12 16 6" />
@@ -52,7 +52,7 @@ const features = [
   {
     title: "Risk Intelligence",
     description: "Automated KYC/AML screening and scoring. Integrates with global watchlists and produces audit-ready reports.",
-    stat: "1,847 KYC verified",
+    stat: "Central Bank compliant",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" strokeWidth={1.5} stroke="#6abf4b" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="11" cy="11" r="8" />
@@ -63,7 +63,7 @@ const features = [
   {
     title: "API Platform",
     description: "Developer-first integrations and webhooks. Comprehensive SDKs and sandbox environments for rapid prototyping.",
-    stat: "<42ms latency",
+    stat: "Low latency",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" strokeWidth={1.5} stroke="#6abf4b" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2v4" />

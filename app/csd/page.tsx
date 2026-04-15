@@ -82,24 +82,24 @@ const steps = [
   {
     title: "Launch & Support",
     description:
-      "Zero-downtime deployments, production monitoring, and ongoing optimization at peak performance.",
+      "Staged deployments, production monitoring, and ongoing optimization.",
   },
 ];
 
 /* ── Activity log ── */
 const activity = [
-  { time: "14:32", text: "Deployed v2.4.1 to production" },
-  { time: "14:18", text: "Merged PR #847: Payment reconciliation" },
-  { time: "13:55", text: "Tests passed: 847/847" },
+  { time: "14:32", text: "Production deployment completed" },
+  { time: "14:18", text: "Code review approved" },
+  { time: "13:55", text: "Full test suite passed" },
   { time: "12:22", text: "Sprint review completed" },
 ];
 
-const techStack = ["TypeScript", "React", "Node.js", "PostgreSQL", "AWS", "Docker"];
+const techStack = ["C#/.NET", "Python", "Flutter", "React", "Vue.js", "Azure", "PostgreSQL", "Oracle SQL"];
 
 /* ── Mockup ── */
 const mockup = (
   <div style={{ fontFamily: "var(--font-body)" }}>
-    {/* Sprint progress */}
+    {/* IS360 Framework */}
     <div style={{ marginBottom: "var(--space-6)" }}>
       <div className="flex items-center justify-between" style={{ marginBottom: "var(--space-2)" }}>
         <span
@@ -109,7 +109,7 @@ const mockup = (
             fontFamily: "var(--font-display)",
           }}
         >
-          Sprint 14
+          IS360 Framework
         </span>
         <span
           style={{
@@ -118,7 +118,7 @@ const mockup = (
             fontFamily: "var(--font-mono)",
           }}
         >
-          68% Complete
+          Full Lifecycle
         </span>
       </div>
       <div
@@ -131,7 +131,7 @@ const mockup = (
         <div
           className="rounded-full"
           style={{
-            width: "68%",
+            width: "100%",
             height: "100%",
             backgroundColor: "var(--color-accent)",
           }}
@@ -145,9 +145,9 @@ const mockup = (
       style={{ marginBottom: "var(--space-6)" }}
     >
       {[
-        { label: "Features Shipped", value: "24" },
-        { label: "Test Coverage", value: "94.2%" },
-        { label: "Deploys Today", value: "3" },
+        { label: "Experience", value: "10+ yrs" },
+        { label: "Domains", value: "BPM/AML" },
+        { label: "Platforms", value: "6+" },
       ].map((s) => (
         <div
           key={s.label}

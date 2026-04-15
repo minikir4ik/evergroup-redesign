@@ -1,0 +1,36 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/hook-stop-checklist.sh"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash(git push|deploy)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/hook-pre-deploy.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash(git commit)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/hook-post-commit.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -28,7 +28,7 @@ const features = [
     icon: <Icon d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />,
     title: "Real-time Processing",
     description:
-      "Process payments instantly with sub-second confirmation times and zero downtime architecture.",
+      "Process payments with fast confirmation times and high-availability architecture.",
   },
   {
     icon: <Icon d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 003 12c0-1.605.42-3.113 1.157-4.418" />,
@@ -40,7 +40,7 @@ const features = [
     icon: <Icon d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />,
     title: "Instant Settlement",
     description:
-      "Funds arrive in merchant accounts within minutes, not days. T+0 settlement as standard.",
+      "Funds arrive in merchant accounts quickly with streamlined settlement processing.",
   },
   {
     icon: <Icon d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />,
@@ -58,7 +58,7 @@ const features = [
     icon: <Icon d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />,
     title: "API-first",
     description:
-      "RESTful APIs with SDKs for every major platform. Go live in days, not months.",
+      "RESTful APIs with SDKs for every major platform. Straightforward integration process.",
   },
 ];
 
@@ -88,10 +88,10 @@ const steps = [
 
 /* ── Payment data ── */
 const recentPayments = [
-  { merchant: "TechFlow Inc.", amount: "$2,450.00", currency: "USD", status: "Settled" },
-  { merchant: "NordBrew GmbH", amount: "\u20AC1,180.50", currency: "EUR", status: "Settled" },
-  { merchant: "Gulf Logistics", amount: "$8,920.00", currency: "GBP", status: "Pending" },
-  { merchant: "Skyline SaaS", amount: "$640.00", currency: "AED", status: "Settled" },
+  { merchant: "Taxi Aggregator", amount: "Instant", currency: "USD", status: "Settled" },
+  { merchant: "Delivery Platform", amount: "Instant", currency: "EUR", status: "Settled" },
+  { merchant: "Ride-Share Network", amount: "Instant", currency: "GBP", status: "Pending" },
+  { merchant: "Cleaning Service", amount: "Instant", currency: "AED", status: "Settled" },
 ];
 
 const barHeights = [40, 65, 50, 85, 55, 95, 70];
@@ -111,13 +111,13 @@ function statusColor(s: string) {
 /* ── Mockup ── */
 const mockup = (
   <div style={{ fontFamily: "var(--font-body)" }}>
-    {/* Total balance */}
+    {/* Key metrics */}
     <div style={{ marginBottom: "var(--space-6)" }}>
       <div
         className="text-3xl font-bold"
         style={{ fontFamily: "var(--font-mono)", lineHeight: 1.2 }}
       >
-        $1,284,930
+        100,000
       </div>
       <span
         style={{
@@ -126,7 +126,7 @@ const mockup = (
           fontWeight: 500,
         }}
       >
-        +12.4% this month
+        Active drivers across 700+ taxi companies
       </span>
     </div>
 
@@ -136,9 +136,9 @@ const mockup = (
       style={{ marginBottom: "var(--space-6)" }}
     >
       {[
-        { label: "Pending", value: "$84,200" },
-        { label: "Settled", value: "$1,200,730" },
-        { label: "Failed", value: "$0" },
+        { label: "Attract", value: "1.9x" },
+        { label: "Retain", value: "-28%" },
+        { label: "Motivate", value: "74%" },
       ].map((s) => (
         <div
           key={s.label}
@@ -205,8 +205,8 @@ const mockup = (
               color: "var(--color-text-muted)",
             }}
           >
-            <th className="text-left pb-2 pr-4 font-medium">Merchant</th>
-            <th className="text-left pb-2 pr-4 font-medium">Amount</th>
+            <th className="text-left pb-2 pr-4 font-medium">Service Type</th>
+            <th className="text-left pb-2 pr-4 font-medium">Payout</th>
             <th className="text-left pb-2 pr-4 font-medium">Currency</th>
             <th className="text-left pb-2 font-medium">Status</th>
           </tr>

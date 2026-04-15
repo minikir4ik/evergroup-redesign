@@ -28,7 +28,7 @@ const features = [
     icon: <Icon d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" />,
     title: "Contactless Payments",
     description:
-      "Accept NFC, QR codes, smart cards, and mobile wallets with sub-second tap-to-go processing.",
+      "Accept NFC, QR codes, smart cards, and mobile wallets with fast tap-to-go processing.",
   },
   {
     icon: <Icon d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0L21.75 16.5 12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" />,
@@ -44,7 +44,7 @@ const features = [
   },
   {
     icon: <Icon d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z M6 6h.008v.008H6V6z" />,
-    title: "Dynamic Pricing",
+    title: "Flexible Fare Rules",
     description:
       "Time-of-day, zone-based, and capped fare rules that adjust automatically to optimize ridership.",
   },
@@ -72,7 +72,7 @@ const steps = [
   {
     title: "Configure Routes",
     description:
-      "Set up zones, fare rules, and dynamic pricing policies through the management console.",
+      "Set up zones and fare rules through the management console.",
   },
   {
     title: "Collect Fares",
@@ -88,10 +88,9 @@ const steps = [
 
 /* ── Route data ── */
 const routes = [
-  { route: "R-101", ridership: "12,481", revenue: "$29,954", status: "Active" },
-  { route: "R-205", ridership: "9,832", revenue: "$23,597", status: "Active" },
-  { route: "R-042", ridership: "7,209", revenue: "$17,302", status: "Delayed" },
-  { route: "R-310", ridership: "6,144", revenue: "$14,746", status: "Active" },
+  { route: "Samarkand", ridership: "Active", revenue: "NFC + Cards", status: "Active" },
+  { route: "Ferghana", ridership: "Active", revenue: "NFC + Cards", status: "Active" },
+  { route: "Vinnitsa", ridership: "Active", revenue: "Cards + Cash", status: "Active" },
 ];
 
 const paymentMethods = ["NFC", "QR Code", "Smart Card", "Mobile Pay"];
@@ -99,13 +98,13 @@ const paymentMethods = ["NFC", "QR Code", "Smart Card", "Mobile Pay"];
 /* ── Mockup ── */
 const mockup = (
   <div style={{ fontFamily: "var(--font-body)" }}>
-    {/* Big number */}
+    {/* Key metric */}
     <div style={{ marginBottom: "var(--space-6)" }}>
       <div
         className="text-3xl font-bold"
         style={{ fontFamily: "var(--font-mono)", lineHeight: 1.2 }}
       >
-        48,293
+        +25%
       </div>
       <div
         style={{
@@ -114,7 +113,7 @@ const mockup = (
           marginTop: "2px",
         }}
       >
-        Today&apos;s Ridership
+        Profit Increase for Transport Enterprises
       </div>
       <span
         style={{
@@ -123,7 +122,7 @@ const mockup = (
           fontWeight: 500,
         }}
       >
-        +8.2% vs last week
+        Revenue growth + cost reduction
       </span>
     </div>
 
@@ -133,9 +132,9 @@ const mockup = (
       style={{ marginBottom: "var(--space-6)" }}
     >
       {[
-        { label: "Revenue", value: "$142,847" },
-        { label: "Routes Active", value: "24" },
-        { label: "On-time", value: "96.3%" },
+        { label: "Cities Live", value: "3" },
+        { label: "Payment Types", value: "4" },
+        { label: "Partners", value: "NXP, Infineon" },
       ].map((s) => (
         <div
           key={s.label}
@@ -176,9 +175,9 @@ const mockup = (
               color: "var(--color-text-muted)",
             }}
           >
-            <th className="text-left pb-2 pr-4 font-medium">Route</th>
-            <th className="text-left pb-2 pr-4 font-medium">Ridership</th>
-            <th className="text-left pb-2 pr-4 font-medium">Revenue</th>
+            <th className="text-left pb-2 pr-4 font-medium">City</th>
+            <th className="text-left pb-2 pr-4 font-medium">Network</th>
+            <th className="text-left pb-2 pr-4 font-medium">Payments</th>
             <th className="text-left pb-2 font-medium">Status</th>
           </tr>
         </thead>

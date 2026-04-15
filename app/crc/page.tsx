@@ -26,9 +26,9 @@ const Icon = ({ d }: { d: string }) => (
 const features = [
   {
     icon: <Icon d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z M15 12a3 3 0 11-6 0 3 3 0 016 0z" />,
-    title: "Real-time Monitoring",
+    title: "Transaction Monitoring",
     description:
-      "Continuous surveillance of transactions and customer activities with instant alerts.",
+      "Integrates with remote and core banking services. Checks incoming and outgoing transfer aggregates and performed transactions.",
   },
   {
     icon: <Icon d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />,
@@ -46,7 +46,7 @@ const features = [
     icon: <Icon d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />,
     title: "Risk Scoring",
     description:
-      "AI-powered risk assessment models that adapt to your institution's profile.",
+      "Automated risk assessment that gathers data from 50+ sources including Central Bank, Federal Tax Service, and UN Security Council.",
   },
   {
     icon: <Icon d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />,
@@ -56,9 +56,9 @@ const features = [
   },
   {
     icon: <Icon d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />,
-    title: "Pipeline Management",
+    title: "Application Processing",
     description:
-      "Track compliance workflows from initiation to resolution with full visibility.",
+      "Track compliance workflows from initiation to resolution. Logs all events and controls timing of each stage.",
   },
 ];
 
@@ -88,10 +88,10 @@ const steps = [
 
 /* ── Transaction data ── */
 const transactions = [
-  { entity: "Meridian Capital Ltd", type: "KYC", risk: "Low", status: "Cleared" },
-  { entity: "Northfield Holdings", type: "AML", risk: "Medium", status: "Review" },
-  { entity: "Atlas Ventures AG", type: "PEP", risk: "High", status: "Flagged" },
-  { entity: "Pacific Trade Corp", type: "AML", risk: "Low", status: "Cleared" },
+  { entity: "KYC Module", type: "Verification", risk: "Low", status: "Active" },
+  { entity: "Transaction Monitoring", type: "AML", risk: "Medium", status: "Screening" },
+  { entity: "AML/CFT Profile", type: "Compliance", risk: "Low", status: "Active" },
+  { entity: "Client Digital ID", type: "Identity", risk: "Low", status: "Active" },
 ];
 
 function riskColor(level: string) {
@@ -101,8 +101,7 @@ function riskColor(level: string) {
 }
 
 function statusColor(status: string) {
-  if (status === "Flagged") return "var(--color-text-muted)";
-  if (status === "Review") return "var(--color-text-muted)";
+  if (status === "Screening") return "var(--color-text-muted)";
   return "var(--color-accent)";
 }
 
@@ -207,9 +206,9 @@ const mockup = (
               color: "var(--color-text-muted)",
             }}
           >
-            <th className="text-left pb-2 pr-4 font-medium">Entity</th>
+            <th className="text-left pb-2 pr-4 font-medium">Module</th>
             <th className="text-left pb-2 pr-4 font-medium">Type</th>
-            <th className="text-left pb-2 pr-4 font-medium">Risk</th>
+            <th className="text-left pb-2 pr-4 font-medium">Priority</th>
             <th className="text-left pb-2 font-medium">Status</th>
           </tr>
         </thead>
@@ -262,7 +261,7 @@ export default function CRCPage() {
   return (
     <ProductPageLayout
       name="Compliance Risk Control"
-      tagline="Automated compliance monitoring, KYC/AML screening, and regulatory reporting in one dashboard."
+      tagline="Modular compliance system with 10 functional blocks. 50+ data sources. Compliant with National Central Bank methodology."
       breadcrumb="CRC"
       mockup={mockup}
       features={features}

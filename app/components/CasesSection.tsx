@@ -17,7 +17,7 @@ const cases = [
     title: "Momentum Pay",
     metric: "100K active drivers",
     description: "Contractor payment infrastructure for 700+ taxi companies. 100,000 active drivers served daily.",
-    scale: "Serving 700+ taxi companies across 5 countries",
+    scale: "Serving 700+ taxi companies and 100,000 active drivers",
     href: "/momentumpay",
   },
   {
@@ -25,15 +25,15 @@ const cases = [
     title: "Fare Collection",
     metric: "+25% revenue",
     description: "Automated fare collection across national transit networks. NFC, bank cards, and cash accepted.",
-    scale: "Operating in 2 national transit networks",
+    scale: "Deployed across municipal transit networks",
     href: "/farecollection",
   },
   {
     tag: "Software",
     title: "Custom Development",
-    metric: "47 features shipped",
+    metric: "Full-cycle delivery",
     description: "End-to-end software delivery for enterprise financial clients. Architecture through deployment.",
-    scale: "Delivered for 4 enterprise financial clients",
+    scale: "End-to-end delivery from architecture to production",
     href: "/csd",
   },
 ];

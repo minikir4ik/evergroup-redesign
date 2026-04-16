@@ -49,7 +49,7 @@ export default function CasesSection() {
           <h2 className="mt-4" style={{ fontSize: "52px", fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
             Selected Engagements
           </h2>
-          <p className="mt-3" style={{ fontSize: "18px", lineHeight: 1.8, color: "#b8b8b8" }}>
+          <p className="mt-3" style={{ fontSize: "18px", lineHeight: 1.8, color: "#999999" }}>
             Real results from production deployments.
           </p>
         </ScrollAnimation>
@@ -72,10 +72,10 @@ export default function CasesSection() {
               <p className="mt-2" style={{ fontSize: "14px", fontWeight: 600, color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
                 {c.metric}
               </p>
-              <p className="mt-3" style={{ fontSize: "16px", lineHeight: 1.8, color: "#b8b8b8" }}>
+              <p className="mt-3" style={{ fontSize: "16px", lineHeight: 1.8, color: "#999999" }}>
                 {c.description}
               </p>
-              <p className="mt-2" style={{ fontSize: "13px", color: "#888888", fontStyle: "italic", fontFamily: "var(--font-mono)" }}>
+              <p className="mt-2" style={{ fontSize: "13px", color: "#777777", fontStyle: "italic", fontFamily: "var(--font-mono)" }}>
                 {c.scale}
               </p>
               <span className="inline-flex items-center gap-2 mt-6 rounded-[6px] border border-[#6abf4b] text-[#6abf4b] group-hover:bg-[#6abf4b] group-hover:text-black transition-colors duration-200" style={{ padding: "10px 20px", fontSize: "15px", fontWeight: 600 }}>

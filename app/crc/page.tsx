@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ProductPageLayout from "../components/ProductPageLayout";
+import ScrollAnimation from "../components/ScrollAnimation";
+import Accordion from "../components/Accordion";
 
 export const metadata: Metadata = {
   title: "CRC — Compliance Risk Control | EVERGROUP",
@@ -257,15 +259,115 @@ const mockup = (
   </div>
 );
 
+/* ── Functional Blocks ── */
+const functionalBlocks = [
+  { title: "KYC Module", content: "Requests and gathers information from 50+ sources including Central Bank, Federal Tax Service, Federal Antimonopoly Service, Federal Migration Service, National Supreme Court of Arbitration, Ministry of Justice, UN Security Council. Defines financial monitoring information, change notifications, and current profile maintenance." },
+  { title: "Application Processing Pipeline", content: "Automates business processes and controls all operations. Tracks documents, participant notifications, remote banking service blocking, operation limits, manual processing selection, event logging, and stage timing controls." },
+  { title: "Financial Monitoring Employee's Desk", content: "Client card with account information, counterparty statements, and transaction data. Tools for remote banking services, operation limits, white/black lists, exceptions, and payment amounts. Queue viewing and client assignment." },
+  { title: "Transaction Monitoring and Verification", content: "Integrates with banking services to check transfers and transactions. Analyzes monetary aggregates including cash withdrawals, tax payments, debit/credit turnover, and entrepreneur transfers." },
+  { title: "Document Request and Video Conference Module", content: "Document request interface, client personal accounts with Q&A, chat functionality, system integration for notifications, and video conference scheduling." },
+  { title: "External Statement Reception and Analysis", content: "Processes account statements via remote banking in ERP, CRM, SRM, MRP formats with automatic analysis capabilities." },
+  { title: "AML and CFT Profile", content: "Records automated and manual client checks with complete action history. Stores requests, documents, correspondence, video conferences, and reports." },
+  { title: "Client Digital ID Module", content: "Integrates with remote banking and document systems. Receives digital fingerprints via cookies, evercookies, Fingerprint JS, and proprietary technology to identify shell companies." },
+  { title: "Rule Management Module", content: "View existing rules and statistics. Enable or disable rules and adjust changing indicators." },
+  { title: "Compliance Protection Module", content: "Client-facing service assessing account blocking risks based on 17 criteria. Provides detailed reports and performance recommendations to offset system expenses." },
+];
+
+/* ── Monitoring Areas ── */
+const monitoringAreas = [
+  "Cash-out via individuals, executive documents, and labor dispute commissions",
+  "Cash-out via radial transits through individual entrepreneurs",
+  "National Central Bank methodology compliance",
+  "Transit operations via legal entities",
+  "Merchants, payment agents, and travel agencies",
+  "E-wallets and mobile carriers",
+  "VAT evasion schemes",
+];
+
+/* ── Value Props ── */
+const valueProps = [
+  { title: "Automated Verification", description: "Automated verification process across 50+ data sources" },
+  { title: "Full Compliance", description: "Full regulatory compliance with National Central Bank methodology" },
+  { title: "Service Level", description: "Increased service levels through streamlined processes" },
+  { title: "Client Retention", description: "Reliable clients are not forced to leave" },
+];
+
 export default function CRCPage() {
   return (
     <ProductPageLayout
       name="Compliance Risk Control"
-      tagline="Modular compliance system with 10 functional blocks. 50+ data sources. Compliant with National Central Bank methodology."
+      tagline="The CRC system is a compromise between the Regulator and your client — offering automated verification, full regulatory compliance, increased service levels, and retention of reliable clients."
       breadcrumb="CRC"
       mockup={mockup}
       features={features}
       steps={steps}
-    />
+    >
+      {/* Value Propositions */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollAnimation>
+            <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+              Value
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              What CRC delivers
+            </h2>
+          </ScrollAnimation>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            {valueProps.map((prop) => (
+              <ScrollAnimation key={prop.title}>
+                <div className="rounded-lg" style={{ border: "1px solid var(--color-border)", padding: "var(--space-6)" }}>
+                  <h3 className="font-semibold" style={{ fontFamily: "var(--font-display)", color: "var(--color-accent)" }}>{prop.title}</h3>
+                  <p className="text-sm mt-2" style={{ color: "var(--color-text-secondary)", lineHeight: 1.65 }}>{prop.description}</p>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What CRC Monitors */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <ScrollAnimation>
+              <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+                Monitoring
+              </p>
+              <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+                What CRC monitors
+              </h2>
+            </ScrollAnimation>
+            <ScrollAnimation delay={0.1}>
+              <ul style={{ display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
+                {monitoringAreas.map((area) => (
+                  <li key={area} className="flex items-start" style={{ gap: "var(--space-3)" }}>
+                    <span className="mt-2 shrink-0" style={{ width: "6px", height: "6px", borderRadius: "100px", backgroundColor: "var(--color-accent)" }} />
+                    <span style={{ color: "var(--color-text-secondary)", fontSize: "var(--text-sm)", lineHeight: 1.65 }}>{area}</span>
+                  </li>
+                ))}
+              </ul>
+            </ScrollAnimation>
+          </div>
+        </div>
+      </section>
+
+      {/* 10 Functional Blocks */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <ScrollAnimation>
+            <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+              Architecture
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              10 Functional Blocks
+            </h2>
+          </ScrollAnimation>
+          <div className="mt-12">
+            <Accordion items={functionalBlocks} />
+          </div>
+        </div>
+      </section>
+    </ProductPageLayout>
   );
 }

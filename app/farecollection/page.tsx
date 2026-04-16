@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProductPageLayout from "../components/ProductPageLayout";
+import ScrollAnimation from "../components/ScrollAnimation";
 
 export const metadata: Metadata = {
   title: "Fare Collection — Transit Fare Systems | EVERGROUP",
@@ -245,11 +246,161 @@ export default function FareCollectionPage() {
   return (
     <ProductPageLayout
       name="Fare Collection"
-      tagline="Contactless payment systems for modern transit networks."
+      tagline="Automatic fare collection system is not just electronic or non-cash payment. This is 100% automated payment accounting with instant data transfer to the system."
       breadcrumb="Fare Collection"
       mockup={mockup}
       features={features}
       steps={steps}
-    />
+    >
+      {/* Section 1 — System Stands Out */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollAnimation>
+            <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+              Advantages
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              System stands out for being
+            </h2>
+          </ScrollAnimation>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            {[
+              { title: "Simple", description: "No additional equipment installation required" },
+              { title: "Profitable", description: "No obligatory supplier payments" },
+              { title: "Independent", description: "Turnkey implementation and support provided" },
+              { title: "Centralized", description: "Single server for all passenger payment types" },
+              { title: "Convenient", description: "Passenger receives ticket showing balance, time, and fare" },
+              { title: "Flexible", description: "Accounting system adjustable for specific conditions" },
+            ].map((item) => (
+              <ScrollAnimation key={item.title}>
+                <div className="rounded-lg" style={{ border: "1px solid var(--color-border)", padding: "var(--space-6)" }}>
+                  <h3 className="font-semibold" style={{ fontFamily: "var(--font-display)", color: "var(--color-accent)" }}>{item.title}</h3>
+                  <p className="text-sm mt-2" style={{ color: "var(--color-text-secondary)", lineHeight: 1.65 }}>{item.description}</p>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2 — Deployments */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollAnimation>
+            <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+              Deployments
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              Live implementations
+            </h2>
+          </ScrollAnimation>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            {[
+              { city: "Samarkand, Uzbekistan", description: "Simplified fare collection with TezCard partnership" },
+              { city: "Ferghana, Uzbekistan", description: "Upgraded system following Samarkand success" },
+              { city: "Vinnitsa, Ukraine", description: "Equipped all trams, trolleybuses, and buses with validators. Issued citizen card." },
+              { city: "Kokshetau, Kazakhstan", description: "Revenue enabled municipal subsidies and bus fleet renovation" },
+            ].map((item) => (
+              <ScrollAnimation key={item.city}>
+                <div className="rounded-lg" style={{ border: "1px solid var(--color-border)", padding: "var(--space-6)" }}>
+                  <h3 className="font-semibold" style={{ fontFamily: "var(--font-display)" }}>{item.city}</h3>
+                  <p className="text-sm mt-2" style={{ color: "var(--color-text-secondary)", lineHeight: 1.65 }}>{item.description}</p>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3 — Implementation Timeline */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <ScrollAnimation>
+            <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+              Timeline
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              What to expect after purchase
+            </h2>
+          </ScrollAnimation>
+          <div className="mt-12" style={{ display: "flex", flexDirection: "column", gap: "var(--space-8)" }}>
+            {[
+              { time: "Start", title: "Processing Center", description: "Organization of processing center" },
+              { time: "1 month", title: "Vehicle Equipping", description: "Equipping vehicles with validators and readers" },
+              { time: "2 months", title: "System Issuance", description: "System issue and cards replenishment organization" },
+              { time: "3 months", title: "Launch", description: "Setup, commissioning, and trial operation" },
+            ].map((item) => (
+              <ScrollAnimation key={item.time}>
+                <div className="flex items-start" style={{ gap: "var(--space-4)" }}>
+                  <span className="shrink-0 rounded-full font-medium" style={{ padding: "var(--space-1) var(--space-3)", fontSize: "var(--text-xs)", fontFamily: "var(--font-mono)", backgroundColor: "var(--color-surface-raised)", color: "var(--color-accent)", whiteSpace: "nowrap" }}>{item.time}</span>
+                  <div>
+                    <h3 className="font-semibold" style={{ fontFamily: "var(--font-display)" }}>{item.title}</h3>
+                    <p className="text-sm mt-1" style={{ color: "var(--color-text-secondary)", lineHeight: 1.65 }}>{item.description}</p>
+                  </div>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4 — Guarantees */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <ScrollAnimation>
+              <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+                Guarantee
+              </p>
+              <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+                We guarantee
+              </h2>
+            </ScrollAnimation>
+            <ScrollAnimation delay={0.1}>
+              <ul style={{ display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
+                {[
+                  "System implementation in 2-3 months",
+                  "System maintenance services",
+                  "Consultations at each stage toward successful results",
+                ].map((item) => (
+                  <li key={item} className="flex items-start" style={{ gap: "var(--space-3)" }}>
+                    <span className="mt-2 shrink-0" style={{ width: "6px", height: "6px", borderRadius: "100px", backgroundColor: "var(--color-accent)" }} />
+                    <span style={{ color: "var(--color-text-secondary)", fontSize: "var(--text-sm)", lineHeight: 1.65 }}>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </ScrollAnimation>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5 — Target Audience */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollAnimation>
+            <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+              Audience
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              Who benefits
+            </h2>
+          </ScrollAnimation>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {[
+              { title: "Transport Enterprises", description: "Increase profits by reducing revenue collection costs and organizing accurate payment accounting without data loss." },
+              { title: "Administration", description: "Release additional budget funds, improve service quality, and maintain control over enterprise income." },
+              { title: "Regional Integrators", description: "Sell wider range of services including passenger accounting and provide statistics for scheduling and tariff management." },
+            ].map((item) => (
+              <ScrollAnimation key={item.title}>
+                <div className="rounded-lg" style={{ border: "1px solid var(--color-border)", padding: "var(--space-8)" }}>
+                  <h3 className="font-semibold" style={{ fontFamily: "var(--font-display)" }}>{item.title}</h3>
+                  <p className="text-sm mt-3" style={{ color: "var(--color-text-secondary)", lineHeight: 1.65 }}>{item.description}</p>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+    </ProductPageLayout>
   );
 }

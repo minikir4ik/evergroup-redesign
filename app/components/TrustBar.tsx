@@ -26,7 +26,7 @@ export default function TrustBar() {
             </div>
             <Image src="/logos/android-pay.png" alt="Android Pay" width={80} height={50} style={{ height: "50px", width: "auto" }} />
             <span style={{ fontSize: "24px", fontWeight: 700, color: "#fff", letterSpacing: "0.5px" }}>
-              cipurse<span style={{ fontSize: "10px", verticalAlign: "super", color: "#888" }}>(TM)</span>
+              cipurse<span style={{ fontSize: "10px", verticalAlign: "super", color: "#777" }}>(TM)</span>
             </span>
           </div>
         </ScrollAnimation>

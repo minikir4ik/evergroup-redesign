@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProductPageLayout from "../components/ProductPageLayout";
+import ScrollAnimation from "../components/ScrollAnimation";
 
 export const metadata: Metadata = {
   title: "Custom Software Development | EVERGROUP",
@@ -258,11 +259,144 @@ export default function CSDPage() {
   return (
     <ProductPageLayout
       name="Custom Software Development"
-      tagline="Full-cycle engineering for financial systems."
+      tagline="Software development services for your innovative ideas. We assist partners in accelerating organizational and industry disruption through production-ready custom software development services."
       breadcrumb="Custom Software"
       mockup={mockup}
       features={features}
       steps={steps}
-    />
+    >
+      {/* Why Choose EVERGROUP */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollAnimation>
+            <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+              Why Us
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              Why choose EVERGROUP
+            </h2>
+          </ScrollAnimation>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {[
+              { title: "360 Approach", description: "Complete lifecycle coverage via IS360 framework — from concept and architecture through development, testing, and ongoing support." },
+              { title: "Client-Centricity", description: "Boutique model enabling customized approach and long-term partnerships. We become a true extension of your team." },
+              { title: "Domain Expertise", description: "Specialized knowledge in niche fintech technologies and solution architecture. BPM, AML, Billing systems." },
+              { title: "Time-To-Market", description: "Leverages accelerators for rapid rollout and reduced costs. Get to market faster without compromising quality." },
+              { title: "A-Class Team", description: "10+ years experience delivering enterprise digital transformation across multiple industries." },
+            ].map((item) => (
+              <ScrollAnimation key={item.title}>
+                <div className="rounded-lg" style={{ border: "1px solid var(--color-border)", padding: "var(--space-8)" }}>
+                  <h3 className="font-semibold" style={{ fontFamily: "var(--font-display)", color: "var(--color-accent)" }}>{item.title}</h3>
+                  <p className="text-sm mt-3" style={{ color: "var(--color-text-secondary)", lineHeight: 1.65 }}>{item.description}</p>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollAnimation>
+            <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+              Technologies
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              Technical capabilities
+            </h2>
+          </ScrollAnimation>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {[
+              { category: "Mobile", items: "Custom iOS and Android apps, Native and cross-platform solutions, Flutter" },
+              { category: "Backend", items: "C#, .NET, .NET Core, Python" },
+              { category: "Frontend", items: "Vue.js, React, HTML5" },
+              { category: "Cloud & Infrastructure", items: "Microsoft Azure" },
+              { category: "Databases", items: "Microsoft SQL, Oracle SQL, PostgreSQL" },
+              { category: "Domain Systems", items: "BPM, AML, Billing" },
+            ].map((group) => (
+              <ScrollAnimation key={group.category}>
+                <div className="rounded-lg" style={{ border: "1px solid var(--color-border)", padding: "var(--space-6)" }}>
+                  <h3 className="font-semibold text-sm" style={{ fontFamily: "var(--font-display)", color: "var(--color-accent)" }}>{group.category}</h3>
+                  <p className="text-sm mt-2" style={{ color: "var(--color-text-secondary)", lineHeight: 1.65 }}>{group.items}</p>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* IS360 Framework */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <ScrollAnimation>
+              <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+                Framework
+              </p>
+              <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+                IS360 Framework
+              </h2>
+              <p className="text-sm mt-4" style={{ color: "var(--color-text-secondary)", lineHeight: 1.65 }}>
+                Our proprietary IS360 framework provides complete lifecycle coverage — from initial concept through architecture, development, testing, deployment, and ongoing support. It ensures consistent quality delivery and predictable outcomes for complex software projects.
+              </p>
+            </ScrollAnimation>
+            <ScrollAnimation delay={0.1}>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  "Consulting & Prototyping",
+                  "UI/UX Design",
+                  "Application Development",
+                  "Automated QA & Testing",
+                  "Integration & Management",
+                  "Maintenance & Support",
+                ].map((phase) => (
+                  <div key={phase} className="rounded-lg flex items-center" style={{ border: "1px solid var(--color-border)", padding: "var(--space-3) var(--space-4)" }}>
+                    <span className="shrink-0 mr-2" style={{ width: "6px", height: "6px", borderRadius: "100px", backgroundColor: "var(--color-accent)" }} />
+                    <span className="text-sm" style={{ color: "var(--color-text-secondary)" }}>{phase}</span>
+                  </div>
+                ))}
+              </div>
+            </ScrollAnimation>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <ScrollAnimation>
+              <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+                Services
+              </p>
+              <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+                What we deliver
+              </h2>
+            </ScrollAnimation>
+            <ScrollAnimation delay={0.1}>
+              <ul style={{ display: "flex", flexDirection: "column", gap: "var(--space-3)" }}>
+                {[
+                  "Full cycle application design, integration, and management",
+                  "Custom iOS and Android app development",
+                  "Native and cross-platform solutions",
+                  "UI/UX design",
+                  "Consulting and prototyping",
+                  "Automated QA and testing",
+                  "Power management, notification, and geofencing",
+                  "Embedded Android & AOSP customizations",
+                  "Maintenance and post-warranty support",
+                ].map((item) => (
+                  <li key={item} className="flex items-start" style={{ gap: "var(--space-3)" }}>
+                    <span className="mt-2 shrink-0" style={{ width: "6px", height: "6px", borderRadius: "100px", backgroundColor: "var(--color-accent)" }} />
+                    <span style={{ color: "var(--color-text-secondary)", fontSize: "var(--text-sm)", lineHeight: 1.65 }}>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </ScrollAnimation>
+          </div>
+        </div>
+      </section>
+    </ProductPageLayout>
   );
 }

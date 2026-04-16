@@ -14,6 +14,7 @@ interface ProductPageProps {
   mockup: ReactNode;
   features: Array<{ icon: ReactNode; title: string; description: string }>;
   steps: Array<{ title: string; description: string }>;
+  children?: ReactNode;
 }
 
 const scrollToContact = (e: React.MouseEvent) => {
@@ -33,6 +34,7 @@ export default function ProductPageLayout({
   mockup,
   features,
   steps,
+  children,
 }: ProductPageProps) {
   return (
     <>
@@ -293,6 +295,9 @@ export default function ProductPageLayout({
           </div>
         </div>
       </section>
+
+      {/* Extra content sections */}
+      {children}
 
       {/* CTA */}
       <section

@@ -65,10 +65,10 @@ export default function Navbar() {
             <div ref={dropRef} className="relative" onMouseEnter={() => setDropOpen(true)} onMouseLeave={() => setDropOpen(false)}>
               <button
                 className="flex items-center gap-1 cursor-pointer"
-                style={{ fontSize: "15px", fontWeight: 500, color: "#888888", transition: "color 200ms ease" }}
+                style={{ fontSize: "15px", fontWeight: 500, color: "#777777", transition: "color 200ms ease" }}
                 onClick={() => setDropOpen((p) => !p)}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#888888")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#777777")}
                 aria-expanded={dropOpen}
               >
                 Products
@@ -94,15 +94,15 @@ export default function Navbar() {
                       style={{ padding: "16px 20px", borderBottom: i < products.length - 1 ? "1px solid #2a2a2a" : "none" }}
                     >
                       <span style={{ fontSize: "17px", fontWeight: 700, color: "#ffffff" }}>{p.label}</span>
-                      <span style={{ fontSize: "14px", color: "#888888" }}>{p.desc}</span>
+                      <span style={{ fontSize: "14px", color: "#777777" }}>{p.desc}</span>
                     </Link>
                   ))}
                 </div>
               </div>
             </div>
 
-            <a href="#" style={{ fontSize: "15px", fontWeight: 500, color: "#888888", transition: "color 200ms ease" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")} onMouseLeave={(e) => (e.currentTarget.style.color = "#888888")}>Company</a>
-            <a href="#contact" onClick={scrollToContact} style={{ fontSize: "15px", fontWeight: 500, color: "#888888", transition: "color 200ms ease" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")} onMouseLeave={(e) => (e.currentTarget.style.color = "#888888")}>Contact</a>
+            <a href="#" style={{ fontSize: "15px", fontWeight: 500, color: "#777777", transition: "color 200ms ease" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")} onMouseLeave={(e) => (e.currentTarget.style.color = "#777777")}>Company</a>
+            <a href="#contact" onClick={scrollToContact} style={{ fontSize: "15px", fontWeight: 500, color: "#777777", transition: "color 200ms ease" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")} onMouseLeave={(e) => (e.currentTarget.style.color = "#777777")}>Contact</a>
 
             <a
               href="#contact"
@@ -139,7 +139,7 @@ export default function Navbar() {
         <div style={{ backgroundColor: "rgba(15,15,15,0.95)", backdropFilter: "blur(16px)", borderTop: "1px solid #2a2a2a", padding: "24px" }} className="flex flex-col" role="menu">
           <button
             className="flex items-center justify-between w-full cursor-pointer"
-            style={{ padding: "12px 0", fontSize: "16px", color: "#b8b8b8" }}
+            style={{ padding: "12px 0", fontSize: "16px", color: "#999999" }}
             onClick={() => setMobileDropOpen((p) => !p)}
             aria-expanded={mobileDropOpen}
           >
@@ -150,15 +150,15 @@ export default function Navbar() {
           <div className="overflow-hidden" style={{ maxHeight: mobileDropOpen ? "15rem" : "0", transition: "max-height 200ms ease" }}>
             <div className="flex flex-col" style={{ paddingLeft: "16px", paddingBottom: "8px", gap: "4px" }}>
               {products.map((p) => (
-                <Link key={p.href} href={p.href} onClick={() => setMobileOpen(false)} style={{ padding: "8px 0", fontSize: "13px", color: "#888888" }} role="menuitem">
+                <Link key={p.href} href={p.href} onClick={() => setMobileOpen(false)} style={{ padding: "8px 0", fontSize: "13px", color: "#777777" }} role="menuitem">
                   {p.label}
                 </Link>
               ))}
             </div>
           </div>
 
-          <a href="#" onClick={() => setMobileOpen(false)} style={{ padding: "12px 0", fontSize: "16px", color: "#b8b8b8" }} role="menuitem">Company</a>
-          <a href="#contact" onClick={(e) => { scrollToContact(e); setMobileOpen(false); }} style={{ padding: "12px 0", fontSize: "16px", color: "#b8b8b8" }} role="menuitem">Contact</a>
+          <a href="#" onClick={() => setMobileOpen(false)} style={{ padding: "12px 0", fontSize: "16px", color: "#999999" }} role="menuitem">Company</a>
+          <a href="#contact" onClick={(e) => { scrollToContact(e); setMobileOpen(false); }} style={{ padding: "12px 0", fontSize: "16px", color: "#999999" }} role="menuitem">Contact</a>
 
           <a
             href="#contact"

@@ -21,7 +21,7 @@ export default function ContactSection() {
           <h2 className="mt-4" style={{ fontSize: "52px", fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
             Get in Touch
           </h2>
-          <p className="mt-3" style={{ fontSize: "18px", lineHeight: 1.8, color: "#b8b8b8" }}>
+          <p className="mt-3" style={{ fontSize: "18px", lineHeight: 1.8, color: "#999999" }}>
             Tell us about your project and we&apos;ll be in touch within one business day.
           </p>
         </ScrollAnimation>
@@ -47,7 +47,7 @@ export default function ContactSection() {
           <ScrollAnimation>
             <div className="py-16 text-center rounded-lg border" style={{ borderColor: "#2a2a2a", background: "#1a1a1a" }}>
               <p className="text-2xl font-semibold mb-2" style={{ fontFamily: "var(--font-display)" }}>Thank you for reaching out!</p>
-              <p style={{ color: "#888888" }}>We&apos;ll get back to you shortly.</p>
+              <p style={{ color: "#777777" }}>We&apos;ll get back to you shortly.</p>
             </div>
           </ScrollAnimation>
         ) : (
@@ -55,7 +55,7 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="font-medium" style={{ fontSize: "15px", color: "#b8b8b8" }}>Name</label>
+                  <label htmlFor="name" className="font-medium" style={{ fontSize: "15px", color: "#999999" }}>Name</label>
                   <input
                     id="name" name="name" type="text" required
                     className="w-full px-4 py-3 rounded-lg bg-transparent border"
@@ -63,7 +63,7 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="company" className="font-medium" style={{ fontSize: "15px", color: "#b8b8b8" }}>Company</label>
+                  <label htmlFor="company" className="font-medium" style={{ fontSize: "15px", color: "#999999" }}>Company</label>
                   <input
                     id="company" name="company" type="text" required
                     className="w-full px-4 py-3 rounded-lg bg-transparent border"
@@ -73,7 +73,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label htmlFor="email" className="font-medium" style={{ fontSize: "15px", color: "#b8b8b8" }}>Email</label>
+                <label htmlFor="email" className="font-medium" style={{ fontSize: "15px", color: "#999999" }}>Email</label>
                 <input
                   id="email" name="email" type="email" required
                   className="w-full px-4 py-3 rounded-lg bg-transparent border"
@@ -82,7 +82,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label htmlFor="message" className="font-medium" style={{ fontSize: "15px", color: "#b8b8b8" }}>Message</label>
+                <label htmlFor="message" className="font-medium" style={{ fontSize: "15px", color: "#999999" }}>Message</label>
                 <textarea
                   id="message" name="message" rows={5} required
                   className="w-full px-4 py-3 rounded-lg bg-transparent border resize-none"

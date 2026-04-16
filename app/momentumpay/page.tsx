@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProductPageLayout from "../components/ProductPageLayout";
+import ScrollAnimation from "../components/ScrollAnimation";
 
 export const metadata: Metadata = {
   title: "Momentum Pay — Payment Processing | EVERGROUP",
@@ -265,11 +266,159 @@ export default function MomentumPayPage() {
   return (
     <ProductPageLayout
       name="Momentum Pay"
-      tagline="Multi-currency payment processing with instant settlement and merchant analytics."
+      tagline="Take care of your contractors and your business. Pay regular orders to a large number of contractors with fraud protection and instant settlement."
       breadcrumb="Momentum Pay"
       mockup={mockup}
       features={features}
       steps={steps}
-    />
+    >
+      {/* Impact Stats */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollAnimation>
+            <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+              Impact
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              Proven results
+            </h2>
+          </ScrollAnimation>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {[
+              { value: "1.9x", label: "Attract", description: "People more likely to apply for daily pay jobs" },
+              { value: "28%", label: "Retain", description: "Reduction in human turnover" },
+              { value: "74%", label: "Motivate", description: "Users more motivated to come to work" },
+            ].map((stat) => (
+              <ScrollAnimation key={stat.label}>
+                <div className="rounded-lg text-center" style={{ border: "1px solid var(--color-border)", padding: "var(--space-8)" }}>
+                  <div className="text-4xl font-bold" style={{ fontFamily: "var(--font-mono)", color: "var(--color-accent)" }}>{stat.value}</div>
+                  <div className="font-semibold mt-2" style={{ fontFamily: "var(--font-display)" }}>{stat.label}</div>
+                  <p className="text-sm mt-2" style={{ color: "var(--color-text-secondary)", lineHeight: 1.65 }}>{stat.description}</p>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who It Helps */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollAnimation>
+            <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+              Use Cases
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              Who it helps
+            </h2>
+          </ScrollAnimation>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            {[
+              { title: "Service Aggregators", description: "Manage and provide immediate payments to contractors across taxi, cleaning, delivery, and other service categories." },
+              { title: "Taxi Aggregators", description: "Find reliable drivers with fast payment infrastructure. Support sub-aggregator work with small taxi parks and individual drivers." },
+            ].map((item) => (
+              <ScrollAnimation key={item.title}>
+                <div className="rounded-lg" style={{ border: "1px solid var(--color-border)", padding: "var(--space-8)" }}>
+                  <h3 className="text-xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>{item.title}</h3>
+                  <p className="text-sm mt-3" style={{ color: "var(--color-text-secondary)", lineHeight: 1.65 }}>{item.description}</p>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Current Network */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollAnimation>
+            <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+              Network
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              Current network
+            </h2>
+          </ScrollAnimation>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            {[
+              { value: "700", label: "Taxi companies" },
+              { value: "100,000", label: "Active taxi drivers" },
+              { value: "200", label: "Acquisition agents" },
+              { value: "100+", label: "Market partners" },
+            ].map((stat) => (
+              <ScrollAnimation key={stat.label}>
+                <div className="rounded-lg" style={{ border: "1px solid var(--color-border)", padding: "var(--space-6)" }}>
+                  <div className="text-2xl font-bold" style={{ fontFamily: "var(--font-mono)", color: "var(--color-accent)" }}>{stat.value}</div>
+                  <div className="text-sm mt-1" style={{ color: "var(--color-text-secondary)" }}>{stat.label}</div>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How Momentum Works */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <ScrollAnimation>
+            <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+              Workflow
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              How Momentum works
+            </h2>
+          </ScrollAnimation>
+          <div className="mt-12" style={{ display: "flex", flexDirection: "column", gap: "var(--space-8)" }}>
+            {[
+              { step: "01", title: "Sign Agreements", description: "Momentum signs agreements with taxi service aggregators. Contractors receive payments from Momentum while aggregators transfer payments to Momentum." },
+              { step: "02", title: "Contractors Install App", description: "Contractors install the app to track orders, payment history, and transfer money to cards or e-wallets." },
+              { step: "03", title: "Commission Model", description: "Momentum takes commission payments from taxi companies or contractors." },
+            ].map((item) => (
+              <ScrollAnimation key={item.step}>
+                <div className="flex items-start" style={{ gap: "var(--space-4)" }}>
+                  <span className="shrink-0 font-bold" style={{ fontFamily: "var(--font-mono)", color: "var(--color-accent)", fontSize: "var(--text-sm)" }}>{item.step}</span>
+                  <div>
+                    <h3 className="font-semibold" style={{ fontFamily: "var(--font-display)" }}>{item.title}</h3>
+                    <p className="text-sm mt-1" style={{ color: "var(--color-text-secondary)", lineHeight: 1.65 }}>{item.description}</p>
+                  </div>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Advantages for Drivers */}
+      <section className="py-24 border-t" style={{ borderColor: "var(--color-border-subtle)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollAnimation>
+            <p className="text-xs uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--color-accent)", fontFamily: "var(--font-mono)" }}>
+              Benefits
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              Advantages for drivers
+            </h2>
+          </ScrollAnimation>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            {[
+              { title: "Earnings Available Sooner", description: "Your earnings are available to you sooner than next week's pay statement." },
+              { title: "Send to Debit Card", description: "Most drivers and delivery partners can use Momentum once you complete your first trip. All you need is a debit card." },
+              { title: "Instant Payments", description: "Get your earnings when you want them by cashing out instantly." },
+              { title: "Automatic Fast Clearing", description: "Automatic and fast clearing of all payments without delays." },
+            ].map((item) => (
+              <ScrollAnimation key={item.title}>
+                <div className="flex items-start" style={{ gap: "var(--space-3)" }}>
+                  <span className="mt-2 shrink-0" style={{ width: "6px", height: "6px", borderRadius: "100px", backgroundColor: "var(--color-accent)" }} />
+                  <div>
+                    <h3 className="font-semibold" style={{ fontFamily: "var(--font-display)" }}>{item.title}</h3>
+                    <p className="text-sm mt-1" style={{ color: "var(--color-text-secondary)", lineHeight: 1.65 }}>{item.description}</p>
+                  </div>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+    </ProductPageLayout>
   );
 }

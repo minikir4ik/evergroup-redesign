@@ -21,7 +21,7 @@ function MockupShell({ children }: { children: React.ReactNode }) {
 function Badge({ text, variant = "green" }: { text: string; variant?: "green" | "gray" | "amber" | "red" }) {
   const styles = {
     green: { backgroundColor: "rgba(106,191,75,0.15)", color: "#6abf4b" },
-    gray: { backgroundColor: "rgba(102,102,102,0.15)", color: "#888888" },
+    gray: { backgroundColor: "rgba(102,102,102,0.15)", color: "#777777" },
     amber: { backgroundColor: "rgba(245,158,11,0.15)", color: "#f59e0b" },
     red: { backgroundColor: "rgba(239,68,68,0.15)", color: "#ef4444" },
   };
@@ -43,14 +43,14 @@ function CRCMockup() {
         ].map((s) => (
           <div key={s.label} className="rounded-lg px-3 py-2.5 text-center" style={{ backgroundColor: "#141414" }}>
             <p className="text-sm font-semibold" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{s.value}</p>
-            <p style={{ fontSize: "13px", color: "#888888" }} className="mt-0.5">{s.label}</p>
+            <p style={{ fontSize: "13px", color: "#777777" }} className="mt-0.5">{s.label}</p>
           </div>
         ))}
       </div>
       <div className="rounded-lg overflow-hidden" style={{ border: "1px solid #2a2a2a" }}>
         <div className="grid grid-cols-3 px-3 py-1.5" style={{ backgroundColor: "#141414" }}>
           {["Module", "Type", "Status"].map((h) => (
-            <span key={h} style={{ fontSize: "13px", color: "#888888", fontFamily: "var(--font-mono)" }}>{h}</span>
+            <span key={h} style={{ fontSize: "13px", color: "#777777", fontFamily: "var(--font-mono)" }}>{h}</span>
           ))}
         </div>
         {[
@@ -60,8 +60,8 @@ function CRCMockup() {
           { module: "Client Digital ID", type: "Identity", variant: "green" as const },
         ].map((row, i) => (
           <div key={row.module} className="grid grid-cols-3 px-3 py-2" style={{ borderBottom: i < 3 ? "1px solid #2a2a2a" : "none" }}>
-            <span className="text-xs" style={{ color: "#b8b8b8" }}>{row.module}</span>
-            <span className="text-xs" style={{ color: "#888888" }}>{row.type}</span>
+            <span className="text-xs" style={{ color: "#999999" }}>{row.module}</span>
+            <span className="text-xs" style={{ color: "#777777" }}>{row.type}</span>
             <span><Badge text="Active" variant={row.variant} /></span>
           </div>
         ))}
@@ -81,14 +81,14 @@ function MomentumPayMockup() {
         ].map((s) => (
           <div key={s.label} className="rounded-lg px-3 py-2.5 text-center" style={{ backgroundColor: "#141414" }}>
             <p className="text-sm font-semibold" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{s.value}</p>
-            <p style={{ fontSize: "13px", color: "#888888" }} className="mt-0.5">{s.label}</p>
+            <p style={{ fontSize: "13px", color: "#777777" }} className="mt-0.5">{s.label}</p>
           </div>
         ))}
       </div>
       <div className="rounded-lg overflow-hidden" style={{ border: "1px solid #2a2a2a" }}>
         <div className="grid grid-cols-3 px-3 py-1.5" style={{ backgroundColor: "#141414" }}>
           {["Metric", "Value", "Status"].map((h) => (
-            <span key={h} style={{ fontSize: "13px", color: "#888888", fontFamily: "var(--font-mono)" }}>{h}</span>
+            <span key={h} style={{ fontSize: "13px", color: "#777777", fontFamily: "var(--font-mono)" }}>{h}</span>
           ))}
         </div>
         {[
@@ -98,7 +98,7 @@ function MomentumPayMockup() {
           { metric: "Contractor Support", value: "24/7", variant: "gray" as const },
         ].map((row, i) => (
           <div key={row.metric} className="grid grid-cols-3 px-3 py-2" style={{ borderBottom: i < 3 ? "1px solid #2a2a2a" : "none" }}>
-            <span className="text-xs" style={{ color: "#b8b8b8" }}>{row.metric}</span>
+            <span className="text-xs" style={{ color: "#999999" }}>{row.metric}</span>
             <span className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{row.value}</span>
             <span><Badge text="Active" variant={row.variant} /></span>
           </div>
@@ -119,14 +119,14 @@ function FareCollectionMockup() {
         ].map((s) => (
           <div key={s.label} className="rounded-lg px-3 py-2.5 text-center" style={{ backgroundColor: "#141414" }}>
             <p className="text-sm font-semibold" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{s.value}</p>
-            <p style={{ fontSize: "13px", color: "#888888" }} className="mt-0.5">{s.label}</p>
+            <p style={{ fontSize: "13px", color: "#777777" }} className="mt-0.5">{s.label}</p>
           </div>
         ))}
       </div>
       <div className="rounded-lg overflow-hidden mb-4" style={{ border: "1px solid #2a2a2a" }}>
         <div className="grid grid-cols-3 px-3 py-1.5" style={{ backgroundColor: "#141414" }}>
           {["Deployment", "Country", "Status"].map((h) => (
-            <span key={h} style={{ fontSize: "13px", color: "#888888", fontFamily: "var(--font-mono)" }}>{h}</span>
+            <span key={h} style={{ fontSize: "13px", color: "#777777", fontFamily: "var(--font-mono)" }}>{h}</span>
           ))}
         </div>
         {[
@@ -135,8 +135,8 @@ function FareCollectionMockup() {
           { city: "Vinnitsa", country: "Ukraine", variant: "green" as const },
         ].map((row, i) => (
           <div key={row.city} className="grid grid-cols-3 px-3 py-2" style={{ borderBottom: i < 2 ? "1px solid #2a2a2a" : "none" }}>
-            <span className="text-xs" style={{ color: "#b8b8b8" }}>{row.city}</span>
-            <span className="text-xs" style={{ color: "#888888" }}>{row.country}</span>
+            <span className="text-xs" style={{ color: "#999999" }}>{row.city}</span>
+            <span className="text-xs" style={{ color: "#777777" }}>{row.country}</span>
             <span><Badge text="Live" variant={row.variant} /></span>
           </div>
         ))}
@@ -155,10 +155,10 @@ function CSDMockup() {
   return (
     <MockupShell>
       <div className="mb-4">
-        <p className="text-xs mb-3" style={{ color: "#888888", fontFamily: "var(--font-mono)" }}>Tech Stack</p>
+        <p className="text-xs mb-3" style={{ color: "#777777", fontFamily: "var(--font-mono)" }}>Tech Stack</p>
         <div className="flex flex-wrap gap-1.5">
           {["C#/.NET", "Python", "iOS", "Android", "Flutter", "Vue.js", "React", "Azure"].map((tech) => (
-            <span key={tech} className="inline-flex rounded-full px-2.5 py-1 text-[10px] font-medium" style={{ backgroundColor: "#141414", color: "#b8b8b8", border: "1px solid #2a2a2a" }}>
+            <span key={tech} className="inline-flex rounded-full px-2.5 py-1 text-[10px] font-medium" style={{ backgroundColor: "#141414", color: "#999999", border: "1px solid #2a2a2a" }}>
               {tech}
             </span>
           ))}
@@ -172,14 +172,14 @@ function CSDMockup() {
         ].map((s) => (
           <div key={s.label} className="rounded-lg px-3 py-2.5 text-center" style={{ backgroundColor: "#141414" }}>
             <p className="text-sm font-semibold" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{s.value}</p>
-            <p style={{ fontSize: "13px", color: "#888888" }} className="mt-0.5">{s.label}</p>
+            <p style={{ fontSize: "13px", color: "#777777" }} className="mt-0.5">{s.label}</p>
           </div>
         ))}
       </div>
       <div className="rounded-lg overflow-hidden" style={{ border: "1px solid #2a2a2a" }}>
         <div className="grid grid-cols-3 px-3 py-1.5" style={{ backgroundColor: "#141414" }}>
           {["Domain", "Stack", "Status"].map((h) => (
-            <span key={h} style={{ fontSize: "13px", color: "#888888", fontFamily: "var(--font-mono)" }}>{h}</span>
+            <span key={h} style={{ fontSize: "13px", color: "#777777", fontFamily: "var(--font-mono)" }}>{h}</span>
           ))}
         </div>
         {[
@@ -189,7 +189,7 @@ function CSDMockup() {
           { domain: "Mobile Apps", stack: "Flutter", variant: "gray" as const },
         ].map((row, i) => (
           <div key={row.domain} className="grid grid-cols-3 px-3 py-2" style={{ borderBottom: i < 3 ? "1px solid #2a2a2a" : "none" }}>
-            <span className="text-xs" style={{ color: "#b8b8b8" }}>{row.domain}</span>
+            <span className="text-xs" style={{ color: "#999999" }}>{row.domain}</span>
             <span className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{row.stack}</span>
             <span><Badge text="Active" variant={row.variant} /></span>
           </div>
@@ -253,7 +253,7 @@ export default function ProductShowcase() {
           </h2>
         </ScrollAnimation>
         <ScrollAnimation delay={0.1}>
-          <p className="mt-3 text-center" style={{ fontSize: "18px", lineHeight: 1.8, color: "#b8b8b8" }}>
+          <p className="mt-3 text-center" style={{ fontSize: "18px", lineHeight: 1.8, color: "#999999" }}>
             Four products, one platform.
           </p>
         </ScrollAnimation>
@@ -271,21 +271,21 @@ export default function ProductShowcase() {
                   <div className={!isOdd ? "lg:order-last" : ""}>
                     <h3 className="text-5xl lg:text-6xl" style={{ fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
                       {product.name}
-                      <span className="block font-normal mt-1" style={{ fontSize: "16px", color: "#888888" }}>
+                      <span className="block font-normal mt-1" style={{ fontSize: "16px", color: "#777777" }}>
                         {product.subtitle}
                       </span>
                     </h3>
-                    <p className="mt-4" style={{ fontSize: "17px", lineHeight: 1.8, color: "#b8b8b8" }}>
+                    <p className="mt-4" style={{ fontSize: "17px", lineHeight: 1.8, color: "#999999" }}>
                       {product.description}
                     </p>
-                    <p className="mt-3" style={{ fontSize: "17px", lineHeight: 1.8, color: "#b8b8b8" }}>
+                    <p className="mt-3" style={{ fontSize: "17px", lineHeight: 1.8, color: "#999999" }}>
                       {product.intro}
                     </p>
                     <ul className="mt-6 space-y-3">
                       {product.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-3">
                           <span className="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style={{ backgroundColor: "#6abf4b" }} />
-                          <span style={{ fontSize: "16px", lineHeight: 1.8, color: "#b8b8b8" }}>{bullet}</span>
+                          <span style={{ fontSize: "16px", lineHeight: 1.8, color: "#999999" }}>{bullet}</span>
                         </li>
                       ))}
                     </ul>

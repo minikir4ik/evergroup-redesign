@@ -28,7 +28,7 @@ export default function Hero() {
           </ScrollAnimation>
 
           <ScrollAnimation delay={0.2}>
-            <p className="mt-8 max-w-2xl mx-auto" style={{ fontSize: "18px", lineHeight: 1.8, color: "#b8b8b8" }}>
+            <p className="mt-8 max-w-2xl mx-auto" style={{ fontSize: "18px", lineHeight: 1.8, color: "#999999" }}>
               Compliance, payments, and fare collection systems built for financial institutions and transport operators.
             </p>
           </ScrollAnimation>
@@ -71,7 +71,7 @@ export default function Hero() {
                 <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#28c840" }} />
               </div>
               <div className="flex-1 mx-8 h-7 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#252525", maxWidth: "340px" }}>
-                <span style={{ fontSize: "12px", color: "#888888", fontFamily: "var(--font-mono)" }}>app.evergroup.tech</span>
+                <span style={{ fontSize: "12px", color: "#777777", fontFamily: "var(--font-mono)" }}>app.evergroup.tech</span>
               </div>
             </div>
 
@@ -83,7 +83,7 @@ export default function Hero() {
                     key={tab}
                     className="text-sm font-medium pb-2"
                     style={{
-                      color: i === 0 ? "#ffffff" : "#888888",
+                      color: i === 0 ? "#ffffff" : "#777777",
                       borderBottom: i === 0 ? "2px solid #6abf4b" : "none",
                     }}
                   >
@@ -96,12 +96,12 @@ export default function Hero() {
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                 {[
                   { label: "Platform Uptime", value: "99.9%", sub: "+0.0%", subColor: "#6abf4b" },
-                  { label: "Partner Companies", value: "700+", sub: "Active across CIS & UAE", subColor: "#888888" },
-                  { label: "Compliance Checks", value: "50+", sub: "Data sources integrated", subColor: "#888888" },
-                  { label: "Active Drivers", value: "100,000", sub: "Momentum Pay network", subColor: "#888888" },
+                  { label: "Partner Companies", value: "700+", sub: "Active across CIS & UAE", subColor: "#777777" },
+                  { label: "Compliance Checks", value: "50+", sub: "Data sources integrated", subColor: "#777777" },
+                  { label: "Active Drivers", value: "100,000", sub: "Momentum Pay network", subColor: "#777777" },
                 ].map((m) => (
                   <div key={m.label} className="rounded-lg p-4" style={{ border: "1px solid #2a2a2a", background: "#141414" }}>
-                    <p style={{ fontSize: "12px", color: "#888888" }}>{m.label}</p>
+                    <p style={{ fontSize: "12px", color: "#777777" }}>{m.label}</p>
                     <p className="text-xl font-bold mt-1" style={{ fontFamily: "var(--font-mono)", color: "#ffffff" }}>{m.value}</p>
                     <p style={{ fontSize: "11px", marginTop: "4px", color: m.subColor }}>{m.sub}</p>
                   </div>
@@ -110,7 +110,7 @@ export default function Hero() {
 
               {/* Row 2 — Bar chart */}
               <div className="rounded-lg p-5 mb-6" style={{ border: "1px solid #2a2a2a", background: "#141414" }}>
-                <p className="mb-4" style={{ fontSize: "12px", color: "#888888", fontFamily: "var(--font-mono)" }}>Transaction Volume &mdash; Last 7 Days</p>
+                <p className="mb-4" style={{ fontSize: "12px", color: "#777777", fontFamily: "var(--font-mono)" }}>Transaction Volume &mdash; Last 7 Days</p>
                 <div className="flex items-end gap-2" style={{ height: "80px" }}>
                   {[45, 68, 52, 80, 62, 74, 90].map((h, i) => (
                     <div
@@ -132,7 +132,7 @@ export default function Hero() {
 
               {/* Row 3 — Activity feed */}
               <div className="hidden sm:block rounded-lg overflow-hidden mb-6" style={{ border: "1px solid #2a2a2a" }}>
-                <div className="grid grid-cols-4 gap-4 px-4 py-2" style={{ fontSize: "12px", color: "#888888", borderBottom: "1px solid #2a2a2a", fontFamily: "var(--font-mono)" }}>
+                <div className="grid grid-cols-4 gap-4 px-4 py-2" style={{ fontSize: "12px", color: "#777777", borderBottom: "1px solid #2a2a2a", fontFamily: "var(--font-mono)" }}>
                   <span>Type</span><span>Status</span><span>Region</span><span>Time</span>
                 </div>
                 {[
@@ -145,7 +145,7 @@ export default function Hero() {
                     className="grid grid-cols-4 gap-4 px-4 py-3 text-sm"
                     style={{ borderBottom: i < 2 ? "1px solid #2a2a2a" : "none" }}
                   >
-                    <span style={{ fontFamily: "var(--font-mono)", color: "#b8b8b8", fontSize: "13px" }}>{row.type}</span>
+                    <span style={{ fontFamily: "var(--font-mono)", color: "#999999", fontSize: "13px" }}>{row.type}</span>
                     <span className="flex items-center gap-1.5">
                       <span style={{ color: "#6abf4b", fontSize: "13px", fontFamily: "var(--font-mono)" }}>&#10003;</span>
                       <span
@@ -155,7 +155,7 @@ export default function Hero() {
                         {row.status}
                       </span>
                     </span>
-                    <span style={{ color: "#888888", fontSize: "13px" }}>{row.region}</span>
+                    <span style={{ color: "#777777", fontSize: "13px" }}>{row.region}</span>
                     <span style={{ color: "#555555", fontSize: "13px", fontFamily: "var(--font-mono)" }}>{row.time}</span>
                   </div>
                 ))}
@@ -170,7 +170,7 @@ export default function Hero() {
                   <span
                     key={pill}
                     className="inline-flex items-center rounded-full px-4 py-1.5"
-                    style={{ fontSize: "12px", fontFamily: "var(--font-mono)", color: "#b8b8b8", backgroundColor: "#141414", border: "1px solid #2a2a2a" }}
+                    style={{ fontSize: "12px", fontFamily: "var(--font-mono)", color: "#999999", backgroundColor: "#141414", border: "1px solid #2a2a2a" }}
                   >
                     {pill}
                   </span>

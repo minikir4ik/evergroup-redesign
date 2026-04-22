@@ -5,10 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 const products = [
-  { label: "CRC", desc: "Compliance Risk Control", href: "/crc" },
+  { label: "CRC", desc: "Compliance Risk Management", href: "/crc" },
   { label: "Momentum Pay", desc: "Payment Processing", href: "/momentumpay" },
   { label: "Fare Collection", desc: "Transit Fare Systems", href: "/farecollection" },
-  { label: "CSD", desc: "Custom Software", href: "/csd" },
+];
+
+const services = [
+  { label: "Custom Software Development", desc: "Engineering & Delivery", href: "/csd" },
 ];
 
 const scrollToContact = (e: React.MouseEvent) => {
@@ -57,7 +60,7 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          <Link href="/">
+          <Link href="/" scroll={true}>
             <Image src="/logos/evergroup-logo.png" alt="EVERGROUP" width={160} height={32} className="h-8 w-auto" />
           </Link>
 
@@ -89,6 +92,7 @@ export default function Navbar() {
                     <Link
                       key={p.href}
                       href={p.href}
+                      scroll={true}
                       onClick={() => setDropOpen(false)}
                       className="flex flex-col transition-colors duration-100 border-l-2 border-l-transparent hover:border-l-[#6abf4b] hover:bg-[#1a1a1a]"
                       style={{ padding: "16px 20px", borderBottom: i < products.length - 1 ? "1px solid #2a2a2a" : "none" }}
@@ -97,6 +101,34 @@ export default function Navbar() {
                       <span style={{ fontSize: "14px", color: "#777777" }}>{p.desc}</span>
                     </Link>
                   ))}
+                  <div style={{ borderTop: "1px solid #2a2a2a", marginTop: "8px", paddingTop: "12px" }}>
+                    <p
+                      className="uppercase"
+                      style={{
+                        fontSize: "11px",
+                        letterSpacing: "0.2em",
+                        fontWeight: 600,
+                        color: "#6abf4b",
+                        fontFamily: "var(--font-mono)",
+                        padding: "0 20px 8px",
+                      }}
+                    >
+                      Services
+                    </p>
+                    {services.map((s) => (
+                      <Link
+                        key={s.href}
+                        href={s.href}
+                        scroll={true}
+                        onClick={() => setDropOpen(false)}
+                        className="flex flex-col transition-colors duration-100 border-l-2 border-l-transparent hover:border-l-[#6abf4b] hover:bg-[#1a1a1a]"
+                        style={{ padding: "16px 20px" }}
+                      >
+                        <span style={{ fontSize: "17px", fontWeight: 700, color: "#ffffff" }}>{s.label}</span>
+                        <span style={{ fontSize: "14px", color: "#777777" }}>{s.desc}</span>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -147,11 +179,31 @@ export default function Navbar() {
             <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileDropOpen ? "rotate-180" : ""}`} />
           </button>
 
-          <div className="overflow-hidden" style={{ maxHeight: mobileDropOpen ? "15rem" : "0", transition: "max-height 200ms ease" }}>
+          <div className="overflow-hidden" style={{ maxHeight: mobileDropOpen ? "22rem" : "0", transition: "max-height 200ms ease" }}>
             <div className="flex flex-col" style={{ paddingLeft: "16px", paddingBottom: "8px", gap: "4px" }}>
               {products.map((p) => (
-                <Link key={p.href} href={p.href} onClick={() => setMobileOpen(false)} style={{ padding: "8px 0", fontSize: "13px", color: "#777777" }} role="menuitem">
+                <Link key={p.href} href={p.href} scroll={true} onClick={() => setMobileOpen(false)} style={{ padding: "8px 0", fontSize: "13px", color: "#777777" }} role="menuitem">
                   {p.label}
+                </Link>
+              ))}
+              <p
+                className="uppercase"
+                style={{
+                  fontSize: "10px",
+                  letterSpacing: "0.2em",
+                  fontWeight: 600,
+                  color: "#6abf4b",
+                  fontFamily: "var(--font-mono)",
+                  marginTop: "12px",
+                  paddingTop: "12px",
+                  borderTop: "1px solid #2a2a2a",
+                }}
+              >
+                Services
+              </p>
+              {services.map((s) => (
+                <Link key={s.href} href={s.href} scroll={true} onClick={() => setMobileOpen(false)} style={{ padding: "8px 0", fontSize: "13px", color: "#777777" }} role="menuitem">
+                  {s.label}
                 </Link>
               ))}
             </div>

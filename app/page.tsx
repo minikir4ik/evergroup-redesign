@@ -4,6 +4,7 @@ import TrustBar from "./components/TrustBar";
 import FeaturesGrid from "./components/FeaturesGrid";
 import ProductShowcase from "./components/ProductShowcase";
 import CasesSection from "./components/CasesSection";
+import CompanySection from "./components/CompanySection";
 import StatsBanner from "./components/StatsBanner";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
@@ -17,6 +18,7 @@ export default function Home() {
       <FeaturesGrid />
       <ProductShowcase />
       <CasesSection />
+      <CompanySection />
       <StatsBanner />
       <ContactSection />
       <Footer />

@@ -260,12 +260,52 @@ export default function ProductShowcase() {
 
         {products.map((product, index) => {
           const isOdd = index % 2 === 0;
+          const isCSD = product.name === "CSD";
           return (
-            <div
-              key={product.name}
-              className={index > 0 ? "py-16 lg:py-24" : "pt-16 lg:pt-24"}
-              style={index > 0 ? { borderTop: "1px solid #2a2a2a" } : undefined}
-            >
+            <div key={product.name}>
+              {isCSD && (
+                <ScrollAnimation>
+                  <div
+                    className="mt-16 lg:mt-24 pt-16 lg:pt-24 text-center"
+                    style={{ borderTop: "1px solid #2a2a2a" }}
+                  >
+                    <p
+                      className="uppercase"
+                      style={{
+                        fontSize: "13px",
+                        letterSpacing: "0.25em",
+                        fontWeight: 500,
+                        color: "#6abf4b",
+                        fontFamily: "var(--font-mono)",
+                      }}
+                    >
+                      Engineering Services
+                    </p>
+                    <h2
+                      className="mt-4"
+                      style={{
+                        fontSize: "52px",
+                        fontWeight: 700,
+                        fontFamily: "var(--font-display)",
+                        color: "#ffffff",
+                        lineHeight: 1.1,
+                      }}
+                    >
+                      Custom Software Development
+                    </h2>
+                    <p
+                      className="mt-4 max-w-2xl mx-auto"
+                      style={{ fontSize: "18px", lineHeight: 1.8, color: "#999999" }}
+                    >
+                      Beyond our core products, we deliver full-cycle software engineering for financial institutions and enterprise clients.
+                    </p>
+                  </div>
+                </ScrollAnimation>
+              )}
+              <div
+                className={index > 0 ? "py-16 lg:py-24" : "pt-16 lg:pt-24"}
+                style={index > 0 && !isCSD ? { borderTop: "1px solid #2a2a2a" } : undefined}
+              >
               <ScrollAnimation>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                   <div className={!isOdd ? "lg:order-last" : ""}>
@@ -289,7 +329,7 @@ export default function ProductShowcase() {
                         </li>
                       ))}
                     </ul>
-                    <Link href={product.link} className="group/btn mt-6 inline-flex items-center gap-2 rounded-[6px] border border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b] hover:text-black transition-colors duration-200" style={{ padding: "10px 20px", fontSize: "15px", fontWeight: 600 }}>
+                    <Link href={product.link} scroll={true} className="group/btn mt-6 inline-flex items-center gap-2 rounded-[6px] border border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b] hover:text-black transition-colors duration-200" style={{ padding: "10px 20px", fontSize: "15px", fontWeight: 600 }}>
                       Learn more <span className="inline-block transition-transform duration-200 group-hover/btn:translate-x-1">&rarr;</span>
                     </Link>
                   </div>
@@ -298,6 +338,7 @@ export default function ProductShowcase() {
                   </div>
                 </div>
               </ScrollAnimation>
+              </div>
             </div>
           );
         })}

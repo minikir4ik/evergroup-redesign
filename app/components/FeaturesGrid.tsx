@@ -82,7 +82,7 @@ export default function FeaturesGrid() {
       <div className="max-w-6xl mx-auto px-6">
         <ScrollAnimation>
           <p className="text-center uppercase" style={{ fontSize: "13px", letterSpacing: "0.25em", fontWeight: 500, color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
-            Capabilities
+            Products &amp; Services
           </p>
         </ScrollAnimation>
         <ScrollAnimation delay={0.05}>
@@ -92,7 +92,7 @@ export default function FeaturesGrid() {
         </ScrollAnimation>
         <ScrollAnimation delay={0.1}>
           <p className="mt-3 max-w-xl text-center mx-auto" style={{ fontSize: "18px", lineHeight: 1.8, color: "#999999" }}>
-            Compliance, payments, transit, and engineering -- delivered as production-grade software.
+            Compliance, payments, transit, and engineering — delivered as production-grade software.
           </p>
         </ScrollAnimation>
 

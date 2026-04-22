@@ -53,7 +53,7 @@ export default function Hero() {
           </ScrollAnimation>
         </div>
 
-        <ScrollAnimation delay={0.4} className="mt-20">
+        <ScrollAnimation delay={0.4} className="mt-20 hidden md:block">
           <div
             className="relative mx-auto max-w-5xl rounded-xl overflow-hidden"
             style={{

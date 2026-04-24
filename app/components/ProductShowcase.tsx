@@ -204,7 +204,7 @@ const products = [
     name: "CRC",
     subtitle: "Compliance Risk Control",
     description: "Automate compliance. Reduce risk. Stay ahead of regulation.",
-    intro: "CRC is a modular compliance risk management system built for banks. It connects to 50+ data sources including Central Bank, Federal Tax Service, and UN Security Council databases. 10 functional blocks from KYC to transaction monitoring.",
+    intro: "CRC connects to 50+ government and public data sources and covers key compliance processes, including KYC, transaction monitoring, AML/CFT profiling, digital ID, and rule management.",
     bullets: ["50+ government and public data sources integrated", "Compliant with National Central Bank methodology"],
     link: "/crc",
     mockup: <CRCMockup />,
@@ -213,7 +213,7 @@ const products = [
     name: "Momentum Pay",
     subtitle: "Payment Processing",
     description: "Fast contractor payments at scale. 700+ taxi companies. 100,000 active drivers.",
-    intro: "Momentum Pay is a payment solution for service aggregators and taxi platforms. It handles fast payouts to large numbers of contractors, fraud risk management, and dedicated contractor support.",
+    intro: "Momentum Pay helps large platforms pay contractors faster, manage fraud risks, and support drivers on payment issues.",
     bullets: ["1.9x higher job application rate with daily pay", "28% reduction in contractor turnover"],
     link: "/momentumpay",
     mockup: <MomentumPayMockup />,
@@ -222,7 +222,7 @@ const products = [
     name: "Fare Collection",
     subtitle: "Transit Fare Systems",
     description: "End-to-end automated fare collection for public transport networks.",
-    intro: "Fare Collection is an automated fare management system deployed in Samarkand, Ferghana, and Vinnitsa. Compatible with NFC, bank cards, transport cards, and cash. Increases transport enterprise profit by 25%.",
+    intro: "Automated fare collection system for public transport. Supports NFC, bank cards, transport cards, and cash, with instant data transfer to the system.",
     bullets: ["NFC, bank cards, transport cards, and cash acceptance", "Turnkey implementation with +25% profit increase"],
     link: "/farecollection",
     mockup: <FareCollectionMockup />,
@@ -231,7 +231,7 @@ const products = [
     name: "CSD",
     subtitle: "Custom Software",
     description: "Full-cycle software development for financial and enterprise clients.",
-    intro: "CSD delivers full-cycle software development using C#/.NET, Python, Flutter, React, and Azure. From ideation to production with the IS360 framework. 10+ years of enterprise delivery experience.",
+    intro: "Full-cycle software development for financial and enterprise clients. From architecture and development to testing, deployment, and long-term support.",
     bullets: ["Full lifecycle: architecture, development, testing, deployment", "Domain expertise in BPM, AML, and Billing systems"],
     link: "/csd",
     mockup: <CSDMockup />,
@@ -253,8 +253,8 @@ export default function ProductShowcase() {
           </h2>
         </ScrollAnimation>
         <ScrollAnimation delay={0.1}>
-          <p className="mt-3 text-center" style={{ fontSize: "18px", lineHeight: 1.8, color: "#999999" }}>
-            Four products, one platform.
+          <p className="mt-3 text-center max-w-3xl mx-auto" style={{ fontSize: "18px", lineHeight: 1.8, color: "#999999" }}>
+            Four core offerings for finance, transport, and enterprise clients.
           </p>
         </ScrollAnimation>
 

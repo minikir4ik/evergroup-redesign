@@ -34,7 +34,7 @@ const cases: CaseStudy[] = [
     problem:
       "Taxi aggregators and service platforms struggled to pay thousands of contractors daily across multiple currencies, with high fraud risk and no real-time settlement.",
     built:
-      "An instant contractor payment platform with ML-based fraud scoring, multi-currency settlement, and a driver-facing app for real-time earnings tracking and card payouts.",
+      "An instant contractor payment platform with fraud risk management, multi-currency settlement, and a driver-facing app for earnings tracking and card payouts.",
     resultMetric: "700+ companies · 100,000 drivers",
     resultDetail:
       "1.9x increase in contractor job applications for companies using daily pay. 28% reduction in turnover.",

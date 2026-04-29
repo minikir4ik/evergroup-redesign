@@ -114,7 +114,7 @@ function FareCollectionMockup() {
       <div className="grid grid-cols-3 gap-3 mb-4">
         {[
           { value: "+25%", label: "Profit Increase" },
-          { value: "3", label: "Cities Live" },
+          { value: "4", label: "Cities Live" },
           { value: "4", label: "Payment Types" },
         ].map((s) => (
           <div key={s.label} className="rounded-lg px-3 py-2.5 text-center" style={{ backgroundColor: "#141414" }}>
@@ -133,8 +133,9 @@ function FareCollectionMockup() {
           { city: "Samarkand", country: "Uzbekistan", variant: "green" as const },
           { city: "Ferghana", country: "Uzbekistan", variant: "green" as const },
           { city: "Vinnitsa", country: "Ukraine", variant: "green" as const },
-        ].map((row, i) => (
-          <div key={row.city} className="grid grid-cols-3 px-3 py-2" style={{ borderBottom: i < 2 ? "1px solid #2a2a2a" : "none" }}>
+          { city: "Kokshetau", country: "Kazakhstan", variant: "green" as const },
+        ].map((row, i, arr) => (
+          <div key={row.city} className="grid grid-cols-3 px-3 py-2" style={{ borderBottom: i < arr.length - 1 ? "1px solid #2a2a2a" : "none" }}>
             <span className="text-xs" style={{ color: "#999999" }}>{row.city}</span>
             <span className="text-xs" style={{ color: "#777777" }}>{row.country}</span>
             <span><Badge text="Live" variant={row.variant} /></span>

@@ -87,12 +87,12 @@ const driverAdvantages = [
       "Most drivers and delivery partners can use Momentum once they complete their first trip. All they need is a debit card.",
   },
   {
-    title: "Instant payments",
+    title: "Faster access to earnings",
     description: "Drivers get earnings when they want them by cashing out instantly.",
   },
   {
     title: "Automatic fast clearing",
-    description: "Automatic and fast clearing of all payments without delays.",
+    description: "Automatic payment processing.",
   },
 ];
 

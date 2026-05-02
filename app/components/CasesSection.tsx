@@ -32,9 +32,9 @@ const cases: CaseStudy[] = [
     tag: "Payments",
     title: "Momentum Pay — Contractor Payment Infrastructure",
     problem:
-      "Taxi aggregators and service platforms struggled to pay thousands of contractors daily across multiple currencies, with high fraud risk and no real-time settlement.",
+      "Taxi aggregators and service platforms struggled to pay thousands of contractors daily, with high fraud risk and slow payment cycles.",
     built:
-      "An instant contractor payment platform with fraud risk management, multi-currency settlement, and a driver-facing app for earnings tracking and card payouts.",
+      "A payment infrastructure and app that helps contractors track orders and payment history and transfer money to cards or e-wallets.",
     resultMetric: "700+ companies · 100,000 drivers",
     resultDetail:
       "1.9x increase in contractor job applications for companies using daily pay. 28% reduction in turnover.",

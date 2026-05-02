@@ -91,7 +91,7 @@ const functionalBlocks = [
 const monitoringAreas = [
   "Cash-out via individuals, executive documents, and labor dispute commissions",
   "Cash-out via radial transits through individual entrepreneurs",
-  "National Central Bank methodology compliance",
+  "Monitoring scenarios aligned with bank compliance processes",
   "Transit operations via legal entities",
   "Merchants, payment agents, and travel agencies",
   "E-wallets and mobile carriers",

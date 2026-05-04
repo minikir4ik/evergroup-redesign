@@ -88,10 +88,10 @@ const driverAdvantages = [
   },
   {
     title: "Faster access to earnings",
-    description: "Drivers get earnings when they want them by cashing out instantly.",
+    description: "Drivers can access earned funds sooner through the app.",
   },
   {
-    title: "Automatic fast clearing",
+    title: "Automatic payment processing",
     description: "Automatic payment processing.",
   },
 ];

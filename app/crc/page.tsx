@@ -39,7 +39,7 @@ const functionalBlocks = [
   {
     title: "KYC module (know-your-client)",
     content:
-      "Requests and gathers information from 50+ sources including Central Bank, Federal Tax Service, Federal Antimonopoly Service, Federal Migration Service, National Supreme Court of Arbitration, Ministry of Justice, UN Security Council. Defines financial monitoring information, change notifications, and current profile maintenance.",
+      "Requests and gathers information from 50+ government and public data sources. Supports financial monitoring data collection, change notifications, and ongoing client profile maintenance.",
   },
   {
     title: "Application processing pipeline",

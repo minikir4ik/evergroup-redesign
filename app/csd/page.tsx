@@ -68,7 +68,7 @@ export default function CSDPage() {
       <Navbar />
 
       {/* Breadcrumb */}
-      <div className="pt-24 pb-4 max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="pt-24 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav
           className="flex items-center"
           style={{ gap: "var(--space-2)", fontSize: "var(--text-sm)" }}
@@ -99,11 +99,11 @@ export default function CSDPage() {
 
       {/* Hero */}
       <section className="relative py-16 lg:py-24">
-        <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <h1
-              className="text-5xl lg:text-7xl font-black tracking-tighter"
-              style={{ fontFamily: "var(--font-display)", lineHeight: 1.1 }}
+              className="font-black tracking-tighter"
+              style={{ fontFamily: "var(--font-display)", lineHeight: 1.1, fontSize: "clamp(28px, 7vw, 80px)" }}
             >
               Custom Software Development
             </h1>
@@ -134,8 +134,8 @@ export default function CSDPage() {
           {/* Facts bar */}
           <ScrollAnimation delay={0.1}>
             <div
-              className="grid grid-cols-2 md:grid-cols-4 mt-12"
-              style={{ gap: "var(--space-4)" }}
+              className="grid grid-cols-2 md:grid-cols-4 mt-10 sm:mt-12"
+              style={{ gap: "var(--space-3)" }}
             >
               {facts.map((fact) => (
                 <div
@@ -143,15 +143,16 @@ export default function CSDPage() {
                   className="rounded-lg"
                   style={{
                     border: "1px solid var(--color-border)",
-                    padding: "var(--space-5)",
+                    padding: "12px",
                   }}
                 >
                   <div
-                    className="text-2xl font-bold"
+                    className="font-bold"
                     style={{
                       fontFamily: "var(--font-mono)",
                       color: "var(--color-accent)",
                       lineHeight: 1.2,
+                      fontSize: "clamp(18px, 4vw, 24px)",
                     }}
                   >
                     {fact.value}
@@ -174,13 +175,14 @@ export default function CSDPage() {
           <ScrollAnimation delay={0.2}>
             <button
               onClick={scrollToContact}
-              className="mt-10 rounded-full font-medium cursor-pointer"
+              className="mt-10 w-full sm:w-auto rounded-full font-medium cursor-pointer"
               style={{
                 padding: "var(--space-3) var(--space-8)",
                 backgroundColor: "var(--color-accent)",
                 color: "var(--color-on-accent)",
                 fontFamily: "var(--font-body)",
-                fontSize: "var(--text-base)",
+                fontSize: "16px",
+                minHeight: "48px",
                 transition:
                   "transform var(--duration-base) var(--ease-spring), background-color var(--duration-base) var(--ease-smooth)",
               }}
@@ -205,7 +207,7 @@ export default function CSDPage() {
         className="py-24 border-t"
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <p
               className="text-xs uppercase mb-3"
@@ -218,8 +220,8 @@ export default function CSDPage() {
               Services
             </p>
             <h2
-              className="text-4xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 44px)", lineHeight: 1.15 }}
             >
               What we deliver
             </h2>
@@ -241,7 +243,7 @@ export default function CSDPage() {
         className="py-24 border-t"
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <p
               className="text-xs uppercase mb-3"
@@ -254,8 +256,8 @@ export default function CSDPage() {
               Why Us
             </p>
             <h2
-              className="text-4xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 44px)", lineHeight: 1.15 }}
             >
               Why choose Evergroup
             </h2>
@@ -312,7 +314,7 @@ export default function CSDPage() {
         className="py-24 border-t"
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <p
               className="text-xs uppercase mb-3"
@@ -325,8 +327,8 @@ export default function CSDPage() {
               Technologies
             </p>
             <h2
-              className="text-4xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 44px)", lineHeight: 1.15 }}
             >
               Technical capabilities
             </h2>
@@ -371,7 +373,7 @@ export default function CSDPage() {
         className="py-24 border-t"
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollAnimation>
               <p
@@ -385,8 +387,8 @@ export default function CSDPage() {
                 Framework
               </p>
               <h2
-                className="text-4xl font-bold tracking-tight"
-                style={{ fontFamily: "var(--font-display)" }}
+                className="font-bold tracking-tight"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 44px)", lineHeight: 1.15 }}
               >
                 IS360 Framework
               </h2>
@@ -443,11 +445,11 @@ export default function CSDPage() {
         className="relative py-24 border-t text-center"
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <h2
-              className="text-4xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 44px)", lineHeight: 1.15 }}
             >
               Ready to get started?
             </h2>
@@ -455,13 +457,14 @@ export default function CSDPage() {
           <ScrollAnimation delay={0.1}>
             <button
               onClick={scrollToContact}
-              className="mt-10 rounded-full font-medium cursor-pointer"
+              className="mt-10 w-full sm:w-auto rounded-full font-medium cursor-pointer"
               style={{
                 padding: "var(--space-3) var(--space-8)",
                 backgroundColor: "var(--color-accent)",
                 color: "var(--color-on-accent)",
                 fontFamily: "var(--font-body)",
-                fontSize: "var(--text-base)",
+                fontSize: "16px",
+                minHeight: "48px",
                 transition:
                   "transform var(--duration-base) var(--ease-spring), background-color var(--duration-base) var(--ease-smooth)",
               }}

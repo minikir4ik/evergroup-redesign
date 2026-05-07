@@ -53,37 +53,37 @@ const features = [
 
 export default function FeaturesGrid() {
   return (
-    <section id="features" className="py-24 lg:py-32 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#141414" }}>
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="features" className="py-20 sm:py-24 lg:py-32 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#141414" }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <ScrollAnimation>
           <p className="text-center uppercase" style={{ fontSize: "13px", letterSpacing: "0.25em", fontWeight: 500, color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
             What we build
           </p>
         </ScrollAnimation>
         <ScrollAnimation delay={0.05}>
-          <h2 className="text-center mt-4" style={{ fontSize: "52px", fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
+          <h2 className="text-center mt-4" style={{ fontSize: "clamp(28px, 6vw, 52px)", fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff", lineHeight: 1.15 }}>
             What we build
           </h2>
         </ScrollAnimation>
         <ScrollAnimation delay={0.1}>
-          <p className="mt-3 max-w-3xl text-center mx-auto" style={{ fontSize: "18px", lineHeight: 1.8, color: "#999999" }}>
+          <p className="mt-3 max-w-3xl text-center mx-auto" style={{ fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: "#999999" }}>
             Evergroup develops and delivers software systems in four core areas: compliance risk management, contractor payments, automated fare collection, and custom software development.
           </p>
         </ScrollAnimation>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 mt-12 sm:mt-16">
           {features.map((feature) => (
             <div
               key={feature.title}
               data-stagger-item
-              className="rounded-xl p-8"
-              style={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a", transition: "all 200ms ease" }}
+              className="rounded-xl"
+              style={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a", transition: "all 200ms ease", padding: "24px" }}
             >
               <div className="mb-4">{feature.icon}</div>
-              <h3 style={{ fontSize: "22px", fontWeight: 600, fontFamily: "var(--font-display)", color: "#ffffff" }}>
+              <h3 style={{ fontSize: "18px", fontWeight: 600, fontFamily: "var(--font-display)", color: "#ffffff" }}>
                 {feature.title}
               </h3>
-              <p className="mt-3" style={{ fontSize: "16px", lineHeight: 1.8, color: "#999999" }}>
+              <p className="mt-3" style={{ fontSize: "15px", lineHeight: 1.7, color: "#999999" }}>
                 {feature.description}
               </p>
             </div>

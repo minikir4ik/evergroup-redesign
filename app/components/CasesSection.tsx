@@ -71,32 +71,31 @@ const cases: CaseStudy[] = [
 
 export default function CasesSection() {
   return (
-    <section className="py-24 lg:py-32 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#141414" }}>
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-20 sm:py-24 lg:py-32 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#141414" }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <ScrollAnimation>
           <p className="uppercase" style={{ fontSize: "13px", letterSpacing: "0.25em", fontWeight: 500, color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
             Cases
           </p>
-          <h2 className="mt-4" style={{ fontSize: "52px", fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
+          <h2 className="mt-4" style={{ fontSize: "clamp(28px, 6vw, 52px)", fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff", lineHeight: 1.15 }}>
             Selected Engagements
           </h2>
-          <p className="mt-3" style={{ fontSize: "18px", lineHeight: 1.8, color: "#999999" }}>
+          <p className="mt-3" style={{ fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: "#999999" }}>
             Real results from production deployments.
           </p>
         </ScrollAnimation>
 
-        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16">
+        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mt-12 sm:mt-16">
           {cases.map((c) => (
             <Link
               key={c.title}
               href={c.href}
               scroll={true}
               data-stagger-item
-              className="group flex flex-col rounded-xl transition-all duration-200 hover:border-[#6abf4b]/40"
+              className="group flex flex-col rounded-xl transition-all duration-200 hover:border-[#6abf4b]/40 p-6 sm:p-10"
               style={{
                 backgroundColor: "#1a1a1a",
                 border: "1px solid #2a2a2a",
-                padding: "40px",
                 minHeight: "480px",
               }}
             >
@@ -116,7 +115,7 @@ export default function CasesSection() {
               <h3
                 className="mt-4"
                 style={{
-                  fontSize: "26px",
+                  fontSize: "clamp(20px, 3.5vw, 26px)",
                   fontWeight: 700,
                   lineHeight: 1.3,
                   fontFamily: "var(--font-display)",
@@ -174,7 +173,7 @@ export default function CasesSection() {
               >
                 <p
                   style={{
-                    fontSize: "20px",
+                    fontSize: "clamp(20px, 3.5vw, 24px)",
                     fontWeight: 700,
                     color: "#6abf4b",
                     fontFamily: "var(--font-mono)",

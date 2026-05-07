@@ -32,10 +32,10 @@ export default function Accordion({ items }: { items: AccordionItem[] }) {
           >
             <button
               onClick={() => setOpenIndex(isOpen ? null : i)}
-              className="w-full flex items-center gap-4 p-6 text-left cursor-pointer"
+              className="w-full flex items-center gap-3 sm:gap-4 p-4 sm:p-6 text-left cursor-pointer"
             >
               <span
-                className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center font-bold"
+                className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center font-bold"
                 style={{
                   fontSize: "var(--text-sm)",
                   backgroundColor: "var(--color-accent-glow)",
@@ -45,8 +45,8 @@ export default function Accordion({ items }: { items: AccordionItem[] }) {
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span
-                className="flex-1 font-semibold text-lg"
-                style={{ color: "var(--color-text)" }}
+                className="flex-1 font-semibold"
+                style={{ color: "var(--color-text)", fontSize: "clamp(15px, 2.2vw, 18px)" }}
               >
                 {item.title}
               </span>
@@ -71,15 +71,15 @@ export default function Accordion({ items }: { items: AccordionItem[] }) {
               </svg>
             </button>
             <div
-              className={`overflow-hidden ${isOpen ? "max-h-96" : "max-h-0"}`}
+              className={`overflow-hidden ${isOpen ? "max-h-[600px]" : "max-h-0"}`}
               style={{
                 transition:
                   "max-height var(--duration-medium) var(--ease-smooth)",
               }}
             >
               <div
-                className="px-6 pb-6 pl-20 leading-relaxed"
-                style={{ color: "var(--color-text-secondary)" }}
+                className="px-4 sm:px-6 pb-4 sm:pb-6 pl-16 sm:pl-20 leading-relaxed"
+                style={{ color: "var(--color-text-secondary)", fontSize: "15px" }}
               >
                 {item.content}
               </div>

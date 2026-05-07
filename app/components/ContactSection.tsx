@@ -12,16 +12,16 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#0f0f0f" }}>
-      <div className="max-w-2xl mx-auto px-6">
+    <section id="contact" className="py-20 sm:py-24 lg:py-32 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#0f0f0f" }}>
+      <div className="max-w-2xl mx-auto px-4 sm:px-6">
         <ScrollAnimation>
           <p className="uppercase" style={{ fontSize: "13px", letterSpacing: "0.25em", fontWeight: 500, color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
             Contact
           </p>
-          <h2 className="mt-4" style={{ fontSize: "52px", fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
+          <h2 className="mt-4" style={{ fontSize: "clamp(28px, 6vw, 52px)", fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff", lineHeight: 1.15 }}>
             Get in Touch
           </h2>
-          <p className="mt-3" style={{ fontSize: "18px", lineHeight: 1.8, color: "#999999" }}>
+          <p className="mt-3" style={{ fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: "#999999" }}>
             Tell us about your project and we&apos;ll be in touch within one business day.
           </p>
         </ScrollAnimation>
@@ -58,16 +58,16 @@ export default function ContactSection() {
                   <label htmlFor="name" className="font-medium" style={{ fontSize: "15px", color: "#999999" }}>Name</label>
                   <input
                     id="name" name="name" type="text" required
-                    className="w-full px-4 py-3 rounded-lg bg-transparent border"
-                    style={{ borderColor: "#2a2a2a", color: "#ffffff", fontFamily: "var(--font-body)" }}
+                    className="w-full px-4 py-3 rounded-lg bg-transparent border mt-2"
+                    style={{ borderColor: "#2a2a2a", color: "#ffffff", fontFamily: "var(--font-body)", fontSize: "16px", minHeight: "48px" }}
                   />
                 </div>
                 <div>
                   <label htmlFor="company" className="font-medium" style={{ fontSize: "15px", color: "#999999" }}>Company</label>
                   <input
                     id="company" name="company" type="text" required
-                    className="w-full px-4 py-3 rounded-lg bg-transparent border"
-                    style={{ borderColor: "#2a2a2a", color: "#ffffff", fontFamily: "var(--font-body)" }}
+                    className="w-full px-4 py-3 rounded-lg bg-transparent border mt-2"
+                    style={{ borderColor: "#2a2a2a", color: "#ffffff", fontFamily: "var(--font-body)", fontSize: "16px", minHeight: "48px" }}
                   />
                 </div>
               </div>
@@ -76,8 +76,8 @@ export default function ContactSection() {
                 <label htmlFor="email" className="font-medium" style={{ fontSize: "15px", color: "#999999" }}>Email</label>
                 <input
                   id="email" name="email" type="email" required
-                  className="w-full px-4 py-3 rounded-lg bg-transparent border"
-                  style={{ borderColor: "#2a2a2a", color: "#ffffff", fontFamily: "var(--font-body)" }}
+                  className="w-full px-4 py-3 rounded-lg bg-transparent border mt-2"
+                  style={{ borderColor: "#2a2a2a", color: "#ffffff", fontFamily: "var(--font-body)", fontSize: "16px", minHeight: "48px" }}
                 />
               </div>
 
@@ -85,14 +85,14 @@ export default function ContactSection() {
                 <label htmlFor="message" className="font-medium" style={{ fontSize: "15px", color: "#999999" }}>Message</label>
                 <textarea
                   id="message" name="message" rows={5} required
-                  className="w-full px-4 py-3 rounded-lg bg-transparent border resize-none"
-                  style={{ borderColor: "#2a2a2a", color: "#ffffff", fontFamily: "var(--font-body)" }}
+                  className="w-full px-4 py-3 rounded-lg bg-transparent border resize-none mt-2"
+                  style={{ borderColor: "#2a2a2a", color: "#ffffff", fontFamily: "var(--font-body)", fontSize: "16px" }}
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full sm:w-auto px-10 py-4 rounded-full font-medium transition-all duration-200 hover:translate-y-[-2px] cursor-pointer"
+                className="w-full sm:w-auto sm:self-start px-10 py-4 rounded-full font-medium transition-all duration-200 hover:translate-y-[-2px] cursor-pointer"
                 style={{ backgroundColor: "#6abf4b", color: "#000000", fontFamily: "var(--font-body)", fontSize: "16px", minHeight: "48px" }}
               >
                 Send Message

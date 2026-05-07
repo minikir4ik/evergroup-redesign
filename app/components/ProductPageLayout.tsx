@@ -42,7 +42,7 @@ export default function ProductPageLayout({
 
       {/* Breadcrumb */}
       <div
-        className="pt-24 pb-4 max-w-7xl mx-auto px-6 lg:px-8"
+        className="pt-24 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <nav
           className="flex items-center"
@@ -75,15 +75,16 @@ export default function ProductPageLayout({
       {/* Hero */}
       <section className="relative py-16 lg:py-24 overflow-hidden">
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Copy */}
             <ScrollAnimation>
               <h1
-                className="text-5xl lg:text-7xl font-black tracking-tighter"
+                className="font-black tracking-tighter"
                 style={{
                   fontFamily: "var(--font-display)",
                   lineHeight: 1.1,
+                  fontSize: "clamp(28px, 7vw, 80px)",
                 }}
               >
                 {name}
@@ -105,7 +106,8 @@ export default function ProductPageLayout({
                   backgroundColor: "var(--color-accent)",
                   color: "var(--color-on-accent)",
                   fontFamily: "var(--font-body)",
-                  fontSize: "var(--text-base)",
+                  fontSize: "16px",
+                  minHeight: "48px",
                   transition:
                     "transform var(--duration-base) var(--ease-spring), background-color var(--duration-base) var(--ease-smooth)",
                 }}
@@ -147,7 +149,7 @@ export default function ProductPageLayout({
         className="py-24 border-t"
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <p
               className="text-xs uppercase mb-3"
@@ -160,8 +162,8 @@ export default function ProductPageLayout({
               Features
             </p>
             <h2
-              className="text-4xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 44px)", lineHeight: 1.15 }}
             >
               Key capabilities
             </h2>
@@ -215,7 +217,7 @@ export default function ProductPageLayout({
         className="py-24 border-t"
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <p
               className="text-xs uppercase mb-3"
@@ -228,8 +230,8 @@ export default function ProductPageLayout({
               Process
             </p>
             <h2
-              className="text-4xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 44px)", lineHeight: 1.15 }}
             >
               How it works
             </h2>
@@ -305,11 +307,11 @@ export default function ProductPageLayout({
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <h2
-              className="text-4xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 44px)", lineHeight: 1.15 }}
             >
               Ready to get started?
             </h2>
@@ -323,7 +325,8 @@ export default function ProductPageLayout({
                 backgroundColor: "var(--color-accent)",
                 color: "var(--color-on-accent)",
                 fontFamily: "var(--font-body)",
-                fontSize: "var(--text-base)",
+                fontSize: "16px",
+                minHeight: "48px",
                 transition:
                   "transform var(--duration-base) var(--ease-spring), background-color var(--duration-base) var(--ease-smooth)",
               }}

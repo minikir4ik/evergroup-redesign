@@ -241,20 +241,20 @@ const products = [
 
 export default function ProductShowcase() {
   return (
-    <section id="products" className="py-24 lg:py-32 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#0f0f0f" }}>
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="products" className="py-20 sm:py-24 lg:py-32 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#0f0f0f" }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <ScrollAnimation>
           <p className="text-center uppercase" style={{ fontSize: "13px", letterSpacing: "0.25em", fontWeight: 500, color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
             Products
           </p>
         </ScrollAnimation>
         <ScrollAnimation delay={0.05}>
-          <h2 className="text-center mt-4" style={{ fontSize: "52px", fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
+          <h2 className="text-center mt-4" style={{ fontSize: "clamp(28px, 6vw, 52px)", fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff", lineHeight: 1.15 }}>
             Product Suite
           </h2>
         </ScrollAnimation>
         <ScrollAnimation delay={0.1}>
-          <p className="mt-3 text-center max-w-3xl mx-auto" style={{ fontSize: "18px", lineHeight: 1.8, color: "#999999" }}>
+          <p className="mt-3 text-center max-w-3xl mx-auto" style={{ fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: "#999999" }}>
             Four core offerings for finance, transport, and enterprise clients.
           </p>
         </ScrollAnimation>
@@ -267,7 +267,7 @@ export default function ProductShowcase() {
               {isCSD && (
                 <ScrollAnimation>
                   <div
-                    className="mt-16 lg:mt-24 pt-16 lg:pt-24 text-center"
+                    className="mt-12 sm:mt-16 lg:mt-24 pt-12 sm:pt-16 lg:pt-24 text-center"
                     style={{ borderTop: "1px solid #2a2a2a" }}
                   >
                     <p
@@ -285,18 +285,18 @@ export default function ProductShowcase() {
                     <h2
                       className="mt-4"
                       style={{
-                        fontSize: "52px",
+                        fontSize: "clamp(28px, 6vw, 52px)",
                         fontWeight: 700,
                         fontFamily: "var(--font-display)",
                         color: "#ffffff",
-                        lineHeight: 1.1,
+                        lineHeight: 1.15,
                       }}
                     >
                       Custom Software Development
                     </h2>
                     <p
                       className="mt-4 max-w-2xl mx-auto"
-                      style={{ fontSize: "18px", lineHeight: 1.8, color: "#999999" }}
+                      style={{ fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: "#999999" }}
                     >
                       Beyond our core products, we deliver full-cycle software engineering for financial institutions and enterprise clients.
                     </p>
@@ -304,29 +304,29 @@ export default function ProductShowcase() {
                 </ScrollAnimation>
               )}
               <div
-                className={index > 0 ? "py-16 lg:py-24" : "pt-16 lg:pt-24"}
+                className={index > 0 ? "py-12 sm:py-16 lg:py-24" : "pt-12 sm:pt-16 lg:pt-24"}
                 style={index > 0 && !isCSD ? { borderTop: "1px solid #2a2a2a" } : undefined}
               >
               <ScrollAnimation>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
                   <div className={!isOdd ? "lg:order-last" : ""}>
-                    <h3 className="text-5xl lg:text-6xl" style={{ fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff" }}>
+                    <h3 style={{ fontSize: "clamp(32px, 7vw, 60px)", fontWeight: 700, fontFamily: "var(--font-display)", color: "#ffffff", lineHeight: 1.1 }}>
                       {product.name}
                       <span className="block font-normal mt-1" style={{ fontSize: "16px", color: "#777777" }}>
                         {product.subtitle}
                       </span>
                     </h3>
-                    <p className="mt-4" style={{ fontSize: "17px", lineHeight: 1.8, color: "#999999" }}>
+                    <p className="mt-4" style={{ fontSize: "clamp(15px, 2.2vw, 17px)", lineHeight: 1.7, color: "#999999" }}>
                       {product.description}
                     </p>
-                    <p className="mt-3" style={{ fontSize: "17px", lineHeight: 1.8, color: "#999999" }}>
+                    <p className="mt-3" style={{ fontSize: "clamp(15px, 2.2vw, 17px)", lineHeight: 1.7, color: "#999999" }}>
                       {product.intro}
                     </p>
                     <ul className="mt-6 space-y-3">
                       {product.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-3">
                           <span className="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style={{ backgroundColor: "#6abf4b" }} />
-                          <span style={{ fontSize: "16px", lineHeight: 1.8, color: "#999999" }}>{bullet}</span>
+                          <span style={{ fontSize: "15px", lineHeight: 1.7, color: "#999999" }}>{bullet}</span>
                         </li>
                       ))}
                     </ul>
@@ -334,7 +334,7 @@ export default function ProductShowcase() {
                       Learn more <span className="inline-block transition-transform duration-200 group-hover/btn:translate-x-1">&rarr;</span>
                     </Link>
                   </div>
-                  <div className={!isOdd ? "lg:order-first" : ""}>
+                  <div className={`max-w-full overflow-hidden ${!isOdd ? "lg:order-first" : ""}`}>
                     {product.mockup}
                   </div>
                 </div>

@@ -58,10 +58,10 @@ export default function Navbar() {
         backdropFilter: "none",
       }}
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           <Link href="/" scroll={true}>
-            <Image src="/logos/evergroup-logo.png" alt="EVERGROUP" width={160} height={32} className="h-8 w-auto" />
+            <Image src="/logos/evergroup-logo.png" alt="EVERGROUP" width={160} height={32} className="h-7 sm:h-8 w-auto" />
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
@@ -146,32 +146,42 @@ export default function Navbar() {
             </a>
           </div>
 
-          <button
-            className="md:hidden p-3 -mr-3 cursor-pointer"
-            style={{ color: "#ffffff" }}
-            onClick={() => setMobileOpen((p) => !p)}
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-            </svg>
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <a
+              href="#contact"
+              onClick={scrollToContact}
+              className="rounded-full cursor-pointer"
+              style={{ padding: "8px 18px", fontSize: "15px", fontWeight: 500, backgroundColor: "#6abf4b", color: "#000000" }}
+            >
+              Get Started
+            </a>
+            <button
+              className="p-2 -mr-2 cursor-pointer"
+              style={{ color: "#ffffff" }}
+              onClick={() => setMobileOpen((p) => !p)}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
       <div
         className="md:hidden overflow-hidden"
         style={{
-          maxHeight: mobileOpen ? "28rem" : "0",
+          maxHeight: mobileOpen ? "40rem" : "0",
           opacity: mobileOpen ? 1 : 0,
           transition: "max-height 300ms ease, opacity 300ms ease",
         }}
       >
-        <div style={{ backgroundColor: "rgba(15,15,15,0.95)", backdropFilter: "blur(16px)", borderTop: "1px solid #2a2a2a", padding: "24px" }} className="flex flex-col" role="menu">
+        <div style={{ backgroundColor: "rgba(15,15,15,0.95)", backdropFilter: "blur(16px)", borderTop: "1px solid #2a2a2a", padding: "16px" }} className="flex flex-col" role="menu">
           <button
             className="flex items-center justify-between w-full cursor-pointer"
-            style={{ padding: "12px 0", fontSize: "16px", color: "#999999" }}
+            style={{ padding: "16px", fontSize: "18px", color: "#ffffff", minHeight: "52px" }}
             onClick={() => setMobileDropOpen((p) => !p)}
             aria-expanded={mobileDropOpen}
           >
@@ -179,48 +189,37 @@ export default function Navbar() {
             <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileDropOpen ? "rotate-180" : ""}`} />
           </button>
 
-          <div className="overflow-hidden" style={{ maxHeight: mobileDropOpen ? "22rem" : "0", transition: "max-height 200ms ease" }}>
-            <div className="flex flex-col" style={{ paddingLeft: "16px", paddingBottom: "8px", gap: "4px" }}>
+          <div className="overflow-hidden" style={{ maxHeight: mobileDropOpen ? "30rem" : "0", transition: "max-height 200ms ease" }}>
+            <div className="flex flex-col" style={{ paddingLeft: "16px", paddingBottom: "8px" }}>
               {products.map((p) => (
-                <Link key={p.href} href={p.href} scroll={true} onClick={() => setMobileOpen(false)} style={{ padding: "8px 0", fontSize: "13px", color: "#777777" }} role="menuitem">
+                <Link key={p.href} href={p.href} scroll={true} onClick={() => setMobileOpen(false)} style={{ padding: "14px 16px", fontSize: "16px", color: "#bbbbbb", minHeight: "48px", display: "flex", alignItems: "center" }} role="menuitem">
                   {p.label}
                 </Link>
               ))}
               <p
                 className="uppercase"
                 style={{
-                  fontSize: "10px",
+                  fontSize: "11px",
                   letterSpacing: "0.2em",
                   fontWeight: 600,
                   color: "#6abf4b",
                   fontFamily: "var(--font-mono)",
                   marginTop: "12px",
-                  paddingTop: "12px",
+                  padding: "12px 16px 8px",
                   borderTop: "1px solid #2a2a2a",
                 }}
               >
                 Services
               </p>
               {services.map((s) => (
-                <Link key={s.href} href={s.href} scroll={true} onClick={() => setMobileOpen(false)} style={{ padding: "8px 0", fontSize: "13px", color: "#777777" }} role="menuitem">
+                <Link key={s.href} href={s.href} scroll={true} onClick={() => setMobileOpen(false)} style={{ padding: "14px 16px", fontSize: "16px", color: "#bbbbbb", minHeight: "48px", display: "flex", alignItems: "center" }} role="menuitem">
                   {s.label}
                 </Link>
               ))}
             </div>
           </div>
 
-          <a href="#" onClick={() => setMobileOpen(false)} style={{ padding: "12px 0", fontSize: "16px", color: "#999999" }} role="menuitem">Company</a>
-          <a href="#contact" onClick={(e) => { scrollToContact(e); setMobileOpen(false); }} style={{ padding: "12px 0", fontSize: "16px", color: "#999999" }} role="menuitem">Contact</a>
-
-          <a
-            href="#contact"
-            onClick={(e) => { scrollToContact(e); setMobileOpen(false); }}
-            className="rounded-full text-center"
-            style={{ marginTop: "12px", padding: "12px 24px", fontSize: "13px", fontWeight: 500, backgroundColor: "#6abf4b", color: "#000000" }}
-            role="menuitem"
-          >
-            Get Started
-          </a>
+          <a href="#contact" onClick={(e) => { scrollToContact(e); setMobileOpen(false); }} style={{ padding: "16px", fontSize: "18px", color: "#ffffff", minHeight: "52px", display: "flex", alignItems: "center" }} role="menuitem">Contact</a>
         </div>
       </div>
     </nav>

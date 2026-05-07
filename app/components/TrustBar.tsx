@@ -5,8 +5,8 @@ import ScrollAnimation from "./ScrollAnimation";
 
 export default function TrustBar() {
   return (
-    <section className="py-24 lg:py-32 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#0f0f0f" }}>
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-20 sm:py-24 lg:py-32 border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#0f0f0f" }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <ScrollAnimation>
           <p className="text-center" style={{ fontSize: "13px", textTransform: "uppercase", letterSpacing: "0.25em", fontWeight: 500, color: "#6abf4b", fontFamily: "var(--font-mono)" }}>
             Payment Systems

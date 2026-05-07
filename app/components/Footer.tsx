@@ -28,17 +28,17 @@ const groupLabelStyle = {
 export default function Footer() {
   return (
     <footer className="border-t" style={{ borderColor: "#2a2a2a", backgroundColor: "#0f0f0f" }}>
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="flex flex-col md:flex-row items-start md:items-start justify-between gap-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
+        <div className="flex flex-col md:flex-row items-start md:items-start justify-between gap-8 md:gap-10">
           <Link href="/" scroll={true}>
-            <Image src="/logos/evergroup-logo.png" alt="EVERGROUP" width={160} height={32} className="h-8 w-auto" />
+            <Image src="/logos/evergroup-logo.png" alt="EVERGROUP" width={160} height={32} className="h-6 sm:h-8 w-auto" />
           </Link>
-          <div className="flex flex-wrap items-start gap-10 md:gap-14">
+          <div className="grid grid-cols-1 sm:grid-cols-3 w-full md:w-auto items-start gap-8 sm:gap-10 md:gap-14">
             <div className="flex flex-col gap-3">
               <p className="uppercase" style={groupLabelStyle}>Products</p>
               <nav className="flex flex-col gap-2">
                 {productLinks.map((link) => (
-                  <Link key={link.href} href={link.href} scroll={true} className="transition-colors" style={{ fontSize: "15px", color: "#999999" }}>
+                  <Link key={link.href} href={link.href} scroll={true} className="transition-colors" style={{ fontSize: "14px", color: "#999999" }}>
                     {link.label}
                   </Link>
                 ))}
@@ -48,7 +48,7 @@ export default function Footer() {
               <p className="uppercase" style={groupLabelStyle}>Services</p>
               <nav className="flex flex-col gap-2">
                 {serviceLinks.map((link) => (
-                  <Link key={link.href} href={link.href} scroll={true} className="transition-colors" style={{ fontSize: "15px", color: "#999999" }}>
+                  <Link key={link.href} href={link.href} scroll={true} className="transition-colors" style={{ fontSize: "14px", color: "#999999" }}>
                     {link.label}
                   </Link>
                 ))}
@@ -58,7 +58,7 @@ export default function Footer() {
               <p className="uppercase" style={groupLabelStyle}>Legal</p>
               <nav className="flex flex-col gap-2">
                 {legalLinks.map((link) => (
-                  <Link key={link.href} href={link.href} scroll={true} className="transition-colors" style={{ fontSize: "15px", color: "#999999" }}>
+                  <Link key={link.href} href={link.href} scroll={true} className="transition-colors" style={{ fontSize: "14px", color: "#999999" }}>
                     {link.label}
                   </Link>
                 ))}
@@ -68,8 +68,8 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t" style={{ borderColor: "#2a2a2a" }}>
-        <div className="max-w-6xl mx-auto px-6 py-6">
-          <p style={{ fontSize: "13px", color: "#999999" }}>&copy; 2026 Evergroup FZCO. All rights reserved.</p>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
+          <p style={{ fontSize: "14px", color: "#999999" }}>&copy; 2026 Evergroup FZCO. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -23,10 +23,10 @@ const coreFacts = [
 export default function CompanySection() {
   return (
     <section
-      className="py-24 lg:py-32 border-t"
+      className="py-20 sm:py-24 lg:py-32 border-t"
       style={{ borderColor: "#2a2a2a", backgroundColor: "#0f0f0f" }}
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <ScrollAnimation>
           <p
             className="uppercase"
@@ -43,31 +43,31 @@ export default function CompanySection() {
           <h2
             className="mt-4"
             style={{
-              fontSize: "52px",
+              fontSize: "clamp(28px, 6vw, 52px)",
               fontWeight: 700,
               fontFamily: "var(--font-display)",
               color: "#ffffff",
-              lineHeight: 1.1,
+              lineHeight: 1.15,
             }}
           >
             Built on trust. Delivered with precision.
           </h2>
           <p
             className="mt-5 max-w-3xl"
-            style={{ fontSize: "18px", lineHeight: 1.8, color: "#999999" }}
+            style={{ fontSize: "clamp(15px, 2.2vw, 18px)", lineHeight: 1.7, color: "#999999" }}
           >
             Evergroup is a Dubai-based software company focused on compliance, payments, fare collection, and custom software development. We work with banks, transport operators, service platforms, and enterprise clients across the UAE, CIS, and Central Asia. Our approach is practical: we build production-ready systems, adapt them to client processes, and support delivery from implementation to long-term use.
           </p>
         </ScrollAnimation>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 mt-12 sm:mt-16">
           <ScrollAnimation>
             <div
               className="rounded-xl h-full"
               style={{
                 backgroundColor: "#1a1a1a",
                 border: "1px solid #2a2a2a",
-                padding: "28px 32px",
+                padding: "20px 22px",
               }}
             >
               <p
@@ -89,7 +89,7 @@ export default function CompanySection() {
                       className="w-1.5 h-1.5 rounded-full mt-2 shrink-0"
                       style={{ backgroundColor: "#6abf4b" }}
                     />
-                    <span style={{ fontSize: "16px", lineHeight: 1.7, color: "#bbbbbb" }}>
+                    <span style={{ fontSize: "15px", lineHeight: 1.7, color: "#bbbbbb" }}>
                       {item}
                     </span>
                   </li>
@@ -104,7 +104,7 @@ export default function CompanySection() {
               style={{
                 backgroundColor: "#1a1a1a",
                 border: "1px solid #2a2a2a",
-                padding: "28px 32px",
+                padding: "20px 22px",
               }}
             >
               <p
@@ -156,7 +156,7 @@ export default function CompanySection() {
           </p>
         </ScrollAnimation>
 
-        <StaggerContainer className="grid grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
+        <StaggerContainer className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mt-8">
           {coreFacts.map((fact) => (
             <div
               key={fact.label}
@@ -165,13 +165,13 @@ export default function CompanySection() {
               style={{
                 backgroundColor: "#1a1a1a",
                 border: "1px solid #2a2a2a",
-                padding: "32px",
-                minHeight: "180px",
+                padding: "20px",
+                minHeight: "150px",
               }}
             >
               <p
                 style={{
-                  fontSize: "clamp(40px, 4vw, 52px)",
+                  fontSize: "clamp(28px, 6vw, 52px)",
                   fontWeight: 700,
                   fontFamily: "var(--font-display)",
                   color: "#6abf4b",
@@ -181,8 +181,8 @@ export default function CompanySection() {
                 {fact.value}
               </p>
               <p
-                className="mt-5"
-                style={{ fontSize: "14px", lineHeight: 1.6, color: "#bbbbbb" }}
+                className="mt-4 sm:mt-5"
+                style={{ fontSize: "13px", lineHeight: 1.5, color: "#bbbbbb" }}
               >
                 {fact.label}
               </p>

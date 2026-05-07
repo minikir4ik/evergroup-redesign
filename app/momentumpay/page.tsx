@@ -112,7 +112,7 @@ export default function MomentumPayPage() {
       <Navbar />
 
       {/* Breadcrumb */}
-      <div className="pt-24 pb-4 max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="pt-24 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav
           className="flex items-center"
           style={{ gap: "var(--space-2)", fontSize: "var(--text-sm)" }}
@@ -141,11 +141,11 @@ export default function MomentumPayPage() {
 
       {/* Hero */}
       <section className="relative py-16 lg:py-24">
-        <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <h1
-              className="text-5xl lg:text-7xl font-black tracking-tighter"
-              style={{ fontFamily: "var(--font-display)", lineHeight: 1.1 }}
+              className="font-black tracking-tighter"
+              style={{ fontFamily: "var(--font-display)", lineHeight: 1.1, fontSize: "clamp(28px, 7vw, 80px)" }}
             >
               Momentum Pay
             </h1>
@@ -174,9 +174,9 @@ export default function MomentumPayPage() {
           {/* Facts bar */}
           <ScrollAnimation delay={0.1}>
             <div
-              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-12"
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-10 sm:mt-12"
               style={{
-                gap: "var(--space-4)",
+                gap: "var(--space-3)",
               }}
             >
               {facts.map((fact) => (
@@ -185,15 +185,16 @@ export default function MomentumPayPage() {
                   className="rounded-lg"
                   style={{
                     border: "1px solid var(--color-border)",
-                    padding: "var(--space-5)",
+                    padding: "12px",
                   }}
                 >
                   <div
-                    className="text-2xl font-bold"
+                    className="font-bold"
                     style={{
                       fontFamily: "var(--font-mono)",
                       color: "var(--color-accent)",
                       lineHeight: 1.2,
+                      fontSize: "clamp(18px, 4vw, 24px)",
                     }}
                   >
                     {fact.value}
@@ -216,13 +217,14 @@ export default function MomentumPayPage() {
           <ScrollAnimation delay={0.2}>
             <button
               onClick={scrollToContact}
-              className="mt-10 rounded-full font-medium cursor-pointer"
+              className="mt-10 w-full sm:w-auto rounded-full font-medium cursor-pointer"
               style={{
                 padding: "var(--space-3) var(--space-8)",
                 backgroundColor: "var(--color-accent)",
                 color: "var(--color-on-accent)",
                 fontFamily: "var(--font-body)",
-                fontSize: "var(--text-base)",
+                fontSize: "16px",
+                minHeight: "48px",
                 transition:
                   "transform var(--duration-base) var(--ease-spring), background-color var(--duration-base) var(--ease-smooth)",
               }}
@@ -247,7 +249,7 @@ export default function MomentumPayPage() {
         className="py-24 border-t"
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <p
               className="text-xs uppercase mb-3"
@@ -260,8 +262,8 @@ export default function MomentumPayPage() {
               Overview
             </p>
             <h2
-              className="text-4xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 44px)", lineHeight: 1.15 }}
             >
               What Momentum Pay solves
             </h2>
@@ -288,7 +290,7 @@ export default function MomentumPayPage() {
         className="py-24 border-t"
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <p
               className="text-xs uppercase mb-3"
@@ -301,8 +303,8 @@ export default function MomentumPayPage() {
               Capabilities
             </p>
             <h2
-              className="text-4xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 44px)", lineHeight: 1.15 }}
             >
               Key capabilities
             </h2>
@@ -359,7 +361,7 @@ export default function MomentumPayPage() {
         className="py-24 border-t"
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <p
               className="text-xs uppercase mb-3"
@@ -372,8 +374,8 @@ export default function MomentumPayPage() {
               Impact
             </p>
             <h2
-              className="text-4xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 44px)", lineHeight: 1.15 }}
             >
               Proven results
             </h2>
@@ -424,7 +426,7 @@ export default function MomentumPayPage() {
         className="py-24 border-t"
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <p
               className="text-xs uppercase mb-3"
@@ -437,8 +439,8 @@ export default function MomentumPayPage() {
               Network
             </p>
             <h2
-              className="text-4xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 44px)", lineHeight: 1.15 }}
             >
               Current network
             </h2>
@@ -480,7 +482,7 @@ export default function MomentumPayPage() {
         className="py-24 border-t"
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <p
               className="text-xs uppercase mb-3"
@@ -493,8 +495,8 @@ export default function MomentumPayPage() {
               Workflow
             </p>
             <h2
-              className="text-4xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 44px)", lineHeight: 1.15 }}
             >
               How Momentum works
             </h2>
@@ -552,7 +554,7 @@ export default function MomentumPayPage() {
         className="py-24 border-t"
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <p
               className="text-xs uppercase mb-3"
@@ -565,8 +567,8 @@ export default function MomentumPayPage() {
               Benefits
             </p>
             <h2
-              className="text-4xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 44px)", lineHeight: 1.15 }}
             >
               Advantages for drivers
             </h2>
@@ -616,11 +618,11 @@ export default function MomentumPayPage() {
         className="relative py-24 border-t text-center"
         style={{ borderColor: "var(--color-border-subtle)" }}
       >
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation>
             <h2
-              className="text-4xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+              className="font-bold tracking-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 44px)", lineHeight: 1.15 }}
             >
               Ready to get started?
             </h2>
@@ -628,13 +630,14 @@ export default function MomentumPayPage() {
           <ScrollAnimation delay={0.1}>
             <button
               onClick={scrollToContact}
-              className="mt-10 rounded-full font-medium cursor-pointer"
+              className="mt-10 w-full sm:w-auto rounded-full font-medium cursor-pointer"
               style={{
                 padding: "var(--space-3) var(--space-8)",
                 backgroundColor: "var(--color-accent)",
                 color: "var(--color-on-accent)",
                 fontFamily: "var(--font-body)",
-                fontSize: "var(--text-base)",
+                fontSize: "16px",
+                minHeight: "48px",
                 transition:
                   "transform var(--duration-base) var(--ease-spring), background-color var(--duration-base) var(--ease-smooth)",
               }}
